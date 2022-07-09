@@ -15,7 +15,7 @@ public class Solution {
         Collections.reverse(list);
     }
 
-    
+
     public static void sort(ArrayList<Integer> list) {
         Collections.sort(list);
     }
