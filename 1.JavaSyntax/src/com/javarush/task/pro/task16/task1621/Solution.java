@@ -20,6 +20,5 @@ public class Solution
         LocalDateTime dateTime = LocalDateTime.parse(timeString, dateTimeFormatter);
 
         System.out.println(dateTime);
-        LocalTime.
     }
 }
