@@ -9,5 +9,13 @@ import com.javarush.engine.cell.Color;
 
 public class SymbolGame extends Game {
 
-    //напишите тут ваш код
+    @Override
+    public void initialize()
+    {
+        setScreenSize(8,3);
+        final String str = "JAVARUSH";
+
+        for(int i = 0; i < str.length(); ++i)
+        setCellValueEx(i,1,Color.ORANGE,String.valueOf(str.charAt(i)));
+    }
 }

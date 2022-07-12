@@ -19,7 +19,12 @@ public class FigureView extends Game {
             {7, 0, 7, 0, 7},
     };
 
-    //напишите тут ваш код
+    @Override
+   public void initialize()
+    {
+        setScreenSize(5,7);
+        showShip();
+    }
 
     public void showShip() {
         for (int i = 0; i < SHIP.length; i++) {
