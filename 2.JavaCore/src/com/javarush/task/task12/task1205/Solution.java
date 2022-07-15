@@ -11,7 +11,9 @@ public class Solution {
         System.out.println(getObjectType(new Whale()));
         System.out.println(getObjectType(new Pig()));
     }
-
+{
+    System.out.println("ff");
+}
     public static String getObjectType(Object o) {
         String result = "Неизвестное животное";
 
