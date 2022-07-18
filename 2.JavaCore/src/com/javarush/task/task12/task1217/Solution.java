@@ -1,0 +1,28 @@
+package com.javarush.task.task12.task1217;
+
+/* 
+Лететь, бежать и плыть
+*/
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+
+    }
+
+    public interface CanFly
+    {
+        boolean canFly();
+    }
+
+    public interface CanRun
+    {
+        boolean canRun();
+    }
+
+    public interface CanSwim
+    {
+        boolean canSwim();
+    }
+}
