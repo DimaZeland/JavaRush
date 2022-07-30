@@ -28,7 +28,7 @@ public class Solution {
 
         fileReader.close();
 
-        String res = sb.toString().replaceAll("\\p{P}", "")/*.replaceAll("\\n", "")*/;
+        String res = sb.toString().replaceAll("\\p{P}", "");
         sb = null;
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(f2));
