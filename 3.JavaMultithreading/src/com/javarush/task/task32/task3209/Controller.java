@@ -19,8 +19,7 @@ public class Controller
         this.view = view;
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         View view = new View();
         Controller controller = new Controller(view);
         
@@ -29,21 +28,25 @@ public class Controller
         controller.init();
     }
 
+    @SuppressWarnings("checkstyle:LeftCurly")
     public void init()
     {
         createNewDocument();
     }
 
+    @SuppressWarnings("checkstyle:LeftCurly")
     public void exit()
     {
         System.exit(0);
     }
 
+    @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:DesignForExtension"})
     public HTMLDocument getDocument()
     {
         return document;
     }
 
+    @SuppressWarnings("checkstyle:WhitespaceAround")
     public void resetDocument(){
         UndoListener undoListener = view.getUndoListener();
         if(document != null)
@@ -54,6 +57,7 @@ public class Controller
             view.update();
     }
 
+    @SuppressWarnings("checkstyle:FinalParameters")
     public void setPlainText(String text){
         resetDocument();
         StringReader stringReader = new StringReader(text);
@@ -79,6 +83,7 @@ public class Controller
         return stringWriter.toString();
     }
     
+    @SuppressWarnings("checkstyle:DesignForExtension")
     public void createNewDocument(){
         view.selectHtmlTab();
         resetDocument();
@@ -86,6 +91,7 @@ public class Controller
         currentFile = null;
     }
 
+    @SuppressWarnings("checkstyle:WhitespaceAround")
     public void openDocument(){
         view.selectHtmlTab();
         JFileChooser fileChooser = new JFileChooser();
