@@ -13,6 +13,7 @@ public class AdvertisementStorage {
     }
 
     private final List<Advertisement> videos = new LinkedList<>();
+
     private AdvertisementStorage() {
         //init random videos
         Object someContent = new Object();
