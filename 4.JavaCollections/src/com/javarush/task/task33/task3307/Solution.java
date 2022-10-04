@@ -1,11 +1,10 @@
 package com.javarush.task.task33.task3307;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -14,7 +13,8 @@ import java.io.StringReader;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException, JAXBException {
+    public static void main(String[] args) throws IOException, JAXBException
+    {
         String xmlData = "<cat><name>Murka</name><age>5</age><weight>4</weight></cat>";
         Cat cat = convertFromXmlToNormal(xmlData, Cat.class);
         System.out.println(cat);

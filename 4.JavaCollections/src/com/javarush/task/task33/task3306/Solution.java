@@ -1,18 +1,10 @@
 package com.javarush.task.task33.task3306;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-/*import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import java.io.IOException;
-import java.io.StringWriter;*/
-
 import java.io.IOException;
 import java.io.StringWriter;
 

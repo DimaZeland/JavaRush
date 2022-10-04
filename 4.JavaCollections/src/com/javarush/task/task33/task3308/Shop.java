@@ -1,10 +1,7 @@
 package com.javarush.task.task33.task3308;
 
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-
-/*import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;*/
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
