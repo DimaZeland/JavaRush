@@ -2,67 +2,67 @@ package com.javarush.task.task33.task3310;
 
 import com.javarush.task.task33.task3310.strategy.*;
 
+import javax.xml.crypto.Data;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Solution {
-    public static void main(String[] args) {
-        long elementsNumber = 10000;
+    public static void main(String[] args) throws SQLException {
+        testStrategy(new JdbcStorageStrategy(), 10000);
+        testStrategy(new HashMapStorageStrategy(), 10000);
+        testStrategy(new OurHashMapStorageStrategy(), 10000);
+        testStrategy(new FileStorageStrategy(), 100);
+        testStrategy(new OurHashBiMapStorageStrategy(), 10000);
+        testStrategy(new HashBiMapStorageStrategy(), 10000);
+        testStrategy(new DualHashBidiMapStorageStrategy(), 10000);
 
-        testStrategy(new HashMapStorageStrategy(), elementsNumber);
+    }
 
-        testStrategy(new FileStorageStrategy(), elementsNumber);
+    public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
+        Set<Long> result = new HashSet<>();
 
-        testStrategy(new OurHashBiMapStorageStrategy(), elementsNumber);
+        for (String string : strings)
+            result.add(shortener.getId(string));
 
-        testStrategy(new OurHashMapStorageStrategy(), elementsNumber);
+        return result;
+    }
+
+    public static Set<String> getStrings(Shortener shortener, Set<Long> keys) {
+        Set<String> result = new HashSet<>();
+
+        for (Long key : keys)
+            result.add(shortener.getString(key));
+
+        return result;
     }
 
     public static void testStrategy(StorageStrategy strategy, long elementsNumber) {
-        Helper.printMessage(strategy.getClass().getSimpleName() + ":");
-
-        Set<String> origStrings = new HashSet<>();
-
-        for (int i = 0; i < elementsNumber; ++i) {
-            origStrings.add(Helper.generateRandomString());
+        Helper.printMessage(strategy.getClass().getSimpleName());
+        Set<String> testSet = new HashSet<>();
+        for (int i = 0; i < elementsNumber; i++) {
+            testSet.add(Helper.generateRandomString());
         }
 
         Shortener shortener = new Shortener(strategy);
 
-        Date startTimestamp = new Date();
-        Set<Long> keys = getIds(shortener, origStrings);
-        Date endTimestamp = new Date();
-        long time = endTimestamp.getTime() - startTimestamp.getTime();
-        Helper.printMessage("Время получения идентификаторов для " + elementsNumber + " строк: " + time);
+        Date startGetIds = new Date();
+        Set<Long> setIds = getIds(shortener, testSet);
+        Date endGetIds = new Date();
+        Helper.printMessage(Long.valueOf(endGetIds.getTime() - startGetIds.getTime()).toString());
 
-        startTimestamp = new Date();
-        Set<String> strings = getStrings(shortener, keys);
-        endTimestamp = new Date();
-        time = endTimestamp.getTime() - startTimestamp.getTime();
-        Helper.printMessage("Время получения строк для " + elementsNumber + " идентификаторов: " + time);
+        Date startGetValues = new Date();
+        Set<String> setValues = getStrings(shortener, setIds);
+        Date endGetValues = new Date();
+        Helper.printMessage(Long.valueOf(endGetValues.getTime() - startGetValues.getTime()).toString());
 
-        if (origStrings.equals(strings))
+        if (testSet.equals(setValues))
             Helper.printMessage("Тест пройден.");
         else
             Helper.printMessage("Тест не пройден.");
 
-        Helper.printMessage("");
+        strategy.close();
     }
 
-    public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
-        Set<Long> keys = new HashSet<>();
-        for (String s : strings) {
-            keys.add(shortener.getId(s));
-        }
-        return keys;
-    }
-
-    public static Set<String> getStrings(Shortener shortener, Set<Long> keys) {
-        Set<String> strings = new HashSet<>();
-        for (Long k : keys) {
-            strings.add(shortener.getString(k));
-        }
-        return strings;
-    }
 }
