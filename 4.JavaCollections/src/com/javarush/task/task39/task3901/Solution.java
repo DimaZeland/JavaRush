@@ -20,33 +20,25 @@ public class Solution {
     }
 
     public static int lengthOfLongestUniqueSubstring(String s) {
-
-        if(s.length() == 0 || null == s)
+        if (s == null) {
             return 0;
-
-        Set<Character> characters = new HashSet<>();
-
-        int maxLength = 0;
-
-        for (int i = 0, len = 0; i < s.length(); ++i, ++len)
-        {
-            Character ch = s.charAt(i);
-
-            if(len > maxLength)
-                maxLength = len;
-
-            if(characters.contains(ch))
-            {
-                len = 0;
-                characters.clear();
-                characters.add(ch);
-            }
-            else
-                characters.add(ch);
-
-
         }
-        
-        return maxLength;
+        int maxLength = 0;
+        Set<Character> chars = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (chars.size() > maxLength) {
+                maxLength = chars.size();
+            }
+            chars.clear();
+            for (int j = i; j < s.length(); j++) {
+                char c = s.charAt(j);
+                if (!chars.contains(c)) {
+                    chars.add(c);
+                } else {
+                    break;
+                }
+            }
+        }
+        return chars.size() > maxLength ? chars.size() : maxLength;
     }
 }
