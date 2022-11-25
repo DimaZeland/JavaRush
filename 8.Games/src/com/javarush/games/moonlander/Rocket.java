@@ -22,10 +22,8 @@ public class Rocket extends GameObject {
 
         if (isLeftPressed) {
             speedX -= boost;
-            x += speedX;
         } else if (isRightPressed) {
             speedX += boost;
-            x += speedX;
         } else if (speedX > slowdown) {
             speedX -= slowdown;
         } else if (speedX < -slowdown) {
@@ -77,5 +75,9 @@ public class Rocket extends GameObject {
 
     public void land() {
         y--;
+    }
+
+    public void crash() {
+        matrix = ShapeMatrix.ROCKET_CRASH;
     }
 }
