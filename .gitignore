@@ -41,3 +41,6 @@ JavaRushPlugin.properties
 
 # mintty.exe logs
 mintty.exe.stackdump
+
+#task conditions
+*.jrtc
