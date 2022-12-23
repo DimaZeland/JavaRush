@@ -1,6 +1,5 @@
 package com.javarush.games.racer.road;
 
-import com.javarush.games.racer.ShapeMatrix;
 import com.javarush.games.racer.GameObject;
 import com.javarush.games.racer.ShapeMatrix;
 
