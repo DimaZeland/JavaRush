@@ -19,10 +19,10 @@ public class Solution {
     }
 
     public static int frequency(ArrayList<Integer> list, Integer element) {
-        return Collections.frequency(list,element);
+        return Collections.frequency(list, element);
     }
 
     public static int binarySearch(ArrayList<Integer> list, Integer key) {
-        return Collections.binarySearch(list,key);
+        return Collections.binarySearch(list, key);
     }
 }

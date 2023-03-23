@@ -1,10 +1,8 @@
 package com.javarush.task.task14.task1413;
 
-public class Keyboard implements CompItem
-{
+public class Keyboard implements CompItem {
     @Override
-    public String getName()
-    {
+    public String getName() {
         return "Keyboard";
     }
 }

@@ -1,7 +1,6 @@
 package com.javarush.task.task29.task2909.user;
 
-public class Address
-{
+public class Address {
     private String country;
     private String city;
     private String house;
@@ -22,13 +21,11 @@ public class Address
         this.city = city;
     }
 
-    public String getHouse()
-    {
+    public String getHouse() {
         return house.toString();
     }
 
-    public void setHouse(String house)
-    {
+    public void setHouse(String house) {
         this.house = house;
     }
 }

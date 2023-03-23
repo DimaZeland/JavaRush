@@ -13,7 +13,6 @@ public class Solution {
     public static int B;
 
 
-
     public static void main(String[] args) {
         System.out.println(MIN);
     }
@@ -22,18 +21,14 @@ public class Solution {
         return a < b ? a : b;
     }
 
-    static
-    {
-        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in)))
-
-        {
+    static {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             A = Integer.parseInt(bufferedReader.readLine());
             B = Integer.parseInt(bufferedReader.readLine());
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public static final int MIN = min(A, B);
 }

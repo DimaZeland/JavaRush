@@ -11,27 +11,21 @@ import java.util.List;
 Файл в статическом блоке
 */
 
-public class Solution
-{
+public class Solution {
     public static List<String> lines = new ArrayList<String>();
 
-    static
-    {
+    static {
         Path path = Paths.get(Statics.FILE_NAME);
-        try
-        {
+        try {
             lines = Files.readAllLines(path);
-        } catch (FileNotFoundException fN)
-        {
+        } catch (FileNotFoundException fN) {
             fN.printStackTrace();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println(lines);
     }
 }

@@ -2,21 +2,17 @@ package com.javarush.task.task34.task3410.model;
 
 import java.awt.*;
 
-public class Home extends GameObject
-{
-    public Home(int x, int y)
-    {
+public class Home extends GameObject {
+    public Home(int x, int y) {
         super(x, y, 2, 2);
     }
 
-    public Home(int x, int y, int width, int height)
-    {
+    public Home(int x, int y, int width, int height) {
         super(x, y, width, height);
     }
 
     @Override
-    public void draw(Graphics graphics)
-    {
+    public void draw(Graphics graphics) {
         graphics.setColor(Color.RED);
 
         int xc = getX();

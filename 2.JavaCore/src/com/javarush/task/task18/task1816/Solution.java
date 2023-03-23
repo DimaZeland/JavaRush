@@ -12,19 +12,17 @@ import java.util.Set;
 */
 
 public class Solution {
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         String name = args[0];
 
         FileReader fr = new FileReader(name);
 
         int count = 0;
 
-        while (fr.ready())
-        {
+        while (fr.ready()) {
             int data = fr.read();
 
-            if(data >= 65 && data <= 90  ||  data >= 97 && data <= 122)
+            if (data >= 65 && data <= 90 || data >= 97 && data <= 122)
                 ++count;
         }
         fr.close();

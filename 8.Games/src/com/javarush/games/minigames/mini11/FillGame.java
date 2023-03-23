@@ -7,7 +7,7 @@ public class FillGame extends Game {
 
     @Override
     public void initialize() {
-        setScreenSize(5,5);
+        setScreenSize(5, 5);
         fill();
     }
 

@@ -42,18 +42,16 @@ public class Solution extends SimpleFileVisitor<Path> {
     }
 
     @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
-    {
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         String fileName = file.toString();
-        if(fileName.endsWith(".zip") || fileName.endsWith("rar"))
+        if (fileName.endsWith(".zip") || fileName.endsWith("rar"))
             archived.add(fileName);
 
         return super.visitFile(file, attrs);
     }
 
     @Override
-    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException
-    {
+    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
         failed.add(file.toString());
         return FileVisitResult.SKIP_SUBTREE;
     }

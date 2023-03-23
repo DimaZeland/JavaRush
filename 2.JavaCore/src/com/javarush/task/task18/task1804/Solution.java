@@ -10,10 +10,8 @@ import java.util.stream.Collectors;
 Самые редкие байты
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String fileName = br.readLine();
         br.close();
@@ -65,21 +63,17 @@ public class Solution
         } while (true);
     }*/
         int[] byteCountArray = new int[256];
-        try (FileInputStream fileInputStream = new FileInputStream(fileName))
-        {
-            while (fileInputStream.available() > 0)
-            {
+        try (FileInputStream fileInputStream = new FileInputStream(fileName)) {
+            while (fileInputStream.available() > 0) {
                 byteCountArray[fileInputStream.read()] += 1;
             }
         }
         int minCount = Integer.MAX_VALUE;
-        for (int byteCount : byteCountArray)
-        {
+        for (int byteCount : byteCountArray) {
             if (byteCount > 0 && byteCount < minCount) minCount = byteCount;
         }
         ArrayList<Integer> resultList = new ArrayList<>();
-        for (int i = 0; i < byteCountArray.length; i++)
-        {
+        for (int i = 0; i < byteCountArray.length; i++) {
             if (byteCountArray[i] == minCount) resultList.add(i);
         }
         for (Integer resultItem : resultList) System.out.print(resultItem + " ");

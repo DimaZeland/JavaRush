@@ -24,56 +24,47 @@ public class Solution {
         void eat();
     }
 
-    public class Dog implements Movable,Eat
-    {
+    public class Dog implements Movable, Eat {
         @Override
-        public void move()
-        {
+        public void move() {
 
         }
 
         @Override
-        public void eat()
-        {
+        public void eat() {
 
         }
     }
-    public class Cat implements Movable,Eat,Edible
-    {
-        public Cat()
-        {
+
+    public class Cat implements Movable, Eat, Edible {
+        public Cat() {
             super();
         }
 
         @Override
-        public void move()
-        {
+        public void move() {
 
         }
 
         @Override
-        public void beEaten()
-        {
+        public void beEaten() {
 
         }
 
         @Override
-        public void eat()
-        {
+        public void eat() {
 
         }
     }
-    public class Mouse  implements Movable,Edible
-    {
+
+    public class Mouse implements Movable, Edible {
         @Override
-        public void move()
-        {
+        public void move() {
 
         }
 
         @Override
-        public void beEaten()
-        {
+        public void beEaten() {
 
         }
 

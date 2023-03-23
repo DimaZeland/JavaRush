@@ -12,11 +12,11 @@ public class Solution {
 
     }
 
-    public class Lizard extends Fish{
+    public class Lizard extends Fish {
 
     }
 
-    public class Dinosaur extends Lizard{
+    public class Dinosaur extends Lizard {
 
     }
 

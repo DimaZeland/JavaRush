@@ -3,8 +3,7 @@ package com.javarush.task.task37.task3708.retrievers;
 import com.javarush.task.task37.task3708.cache.LRUCache;
 import com.javarush.task.task37.task3708.storage.Storage;
 
-public class CachingProxyRetriever implements Retriever
-{
+public class CachingProxyRetriever implements Retriever {
     OriginalRetriever originalRetriever;
     LRUCache<Long, Object> cache = new LRUCache<>(10);
 
@@ -13,11 +12,9 @@ public class CachingProxyRetriever implements Retriever
     }
 
     @Override
-    public Object retrieve(long id)
-    {
+    public Object retrieve(long id) {
         Object result = cache.find(id);
-        if(null == result)
-        {
+        if (null == result) {
             Object o = originalRetriever.retrieve(id);
             cache.set(id, o);
             return o;

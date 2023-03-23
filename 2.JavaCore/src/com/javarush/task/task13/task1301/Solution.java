@@ -22,28 +22,24 @@ public class Solution {
         void sleepOnTheFloor();
     }
 
-    public static class BeerLover implements Alcoholic{
+    public static class BeerLover implements Alcoholic {
         @Override
-        public void askForMore(String message)
-        {
+        public void askForMore(String message) {
             System.out.println(message);
         }
 
         @Override
-        public void sayThankYou()
-        {
+        public void sayThankYou() {
             System.out.println("Thank you");
         }
 
         @Override
-        public boolean isReadyToGoHome()
-        {
+        public boolean isReadyToGoHome() {
             return READY_TO_GO_HOME;
         }
 
         @Override
-        public void sleepOnTheFloor()
-        {
+        public void sleepOnTheFloor() {
 
         }
     }

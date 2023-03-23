@@ -21,22 +21,21 @@ public class Solution {
     public static void callSelectableMethods(Selectable selectable) {
         selectable.onSelect();
 
-       // if(selectable instanceof Food)
-       //     ((Food) selectable).onEat();
+        // if(selectable instanceof Food)
+        //     ((Food) selectable).onEat();
     }
 
     interface Selectable {
         void onSelect();
     }
 
-    static class Food implements Selectable{
+    static class Food implements Selectable {
         public void onEat() {
             System.out.println("The food was eaten");
         }
 
         @Override
-        public void onSelect()
-        {
+        public void onSelect() {
             System.out.println("The food was selected");
         }
     }

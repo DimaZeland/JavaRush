@@ -17,7 +17,7 @@ public class Solution {
             return new Pair(null, null);
         }
 
-        return new Pair(Arrays.stream(inputArray).min().getAsInt(),Arrays.stream(inputArray).max().getAsInt());
+        return new Pair(Arrays.stream(inputArray).min().getAsInt(), Arrays.stream(inputArray).max().getAsInt());
     }
 
     public static class Pair {

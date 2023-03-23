@@ -23,14 +23,13 @@ public class Solution {
         */
     }
 
-    public static SomeInterfaceWithMethods getProxy()
-    {
+    public static SomeInterfaceWithMethods getProxy() {
         SomeInterfaceWithMethods original = new SomeInterfaceWithMethodsImpl();
         ClassLoader classLoader = original.getClass().getClassLoader();
-        Class<?> [] interfaces = original.getClass().getInterfaces();
+        Class<?>[] interfaces = original.getClass().getInterfaces();
         CustomInvocationHandler invocationHandler = new CustomInvocationHandler(original);
         SomeInterfaceWithMethods someInterfaceWithMethods =
-                (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader,interfaces,invocationHandler);
+                (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);
 
         return someInterfaceWithMethods;
     }

@@ -6,10 +6,8 @@ import java.io.*;
 Округление чисел
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String str1 = br.readLine();
@@ -22,14 +20,12 @@ public class Solution
         double d = .0;
         int dInt = 0;
 
-        while (fi1.ready())
-        {
+        while (fi1.ready()) {
             char ch = (char) fi1.read();
             if (' ' != ch)
                 number += ch;
 
-            if (' ' == ch || fi1.ready() == false)
-            {
+            if (' ' == ch || fi1.ready() == false) {
                 d = Double.parseDouble(number);
 
                 dInt = (int) Math.round(d);

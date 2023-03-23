@@ -14,8 +14,7 @@ public class Solution {
     }
 
     public static void decodeURLString(String s) throws MalformedURLException {
-        try
-        {
+        try {
             URL url = new URL(s);
             System.out.println("URL is " + url.toString());
             System.out.println("Protocol: " + url.getProtocol());
@@ -27,8 +26,7 @@ public class Solution {
             System.out.println("DefaultPort: " + url.getDefaultPort());
             System.out.println("Query: " + url.getQuery());
             System.out.println("Ref: " + url.getRef());
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Parameter " + s + " is not a valid URL.");
         }
     }

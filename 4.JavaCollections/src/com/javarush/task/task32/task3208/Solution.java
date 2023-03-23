@@ -38,22 +38,19 @@ public class Solution {
         @Override
         public void run() {
             Remote stub = null;
-            try
-            {
+            try {
                 registry = LocateRegistry.createRegistry(2099);
                 final Cat service1 = new Cat("Meyson");
                 final Dog service2 = new Dog("Pirat");
-                
+
                 stub = UnicastRemoteObject.exportObject(service1, 0);
                 registry.bind("class.cat", stub);
-                
+
                 stub = UnicastRemoteObject.exportObject(service2, 0);
                 registry.bind("class.dog", stub);
-            } catch (RemoteException e)
-            {
+            } catch (RemoteException e) {
                 e.printStackTrace();
-            } catch (AlreadyBoundException e)
-            {
+            } catch (AlreadyBoundException e) {
                 e.printStackTrace();
             }
         }

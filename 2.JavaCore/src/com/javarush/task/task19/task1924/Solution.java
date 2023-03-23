@@ -13,8 +13,7 @@ public class Solution {
     private static final boolean tested = false;
     public static Map<Integer, String> map = new HashMap<Integer, String>();
 
-    static
-    {
+    static {
         map.put(12, "двенадцать");
         map.put(11, "одиннадцать");
         map.put(10, "десять");

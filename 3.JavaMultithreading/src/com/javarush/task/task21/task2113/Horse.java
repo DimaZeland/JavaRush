@@ -1,57 +1,47 @@
 package com.javarush.task.task21.task2113;
 
-public class Horse
-{
+public class Horse {
     private String name;
     private double speed;
     private double distance;
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public double getSpeed()
-    {
+    public double getSpeed() {
         return speed;
     }
 
-    public double getDistance()
-    {
+    public double getDistance() {
         return distance;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setSpeed(double speed)
-    {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
-    public void setDistance(double distance)
-    {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
-    public Horse(String name, double speed, double distance)
-    {
+    public Horse(String name, double speed, double distance) {
         this.name = name;
         this.speed = speed;
         this.distance = distance;
     }
 
-    public void move()
-    {
+    public void move() {
         distance += speed * Math.random();
     }
 
-    public void print()
-    {
+    public void print() {
         StringBuilder str = new StringBuilder("");
-        for (int i = 0; i < (int )distance; i++)
+        for (int i = 0; i < (int) distance; i++)
             str.append(".");
 
         str.append(name);

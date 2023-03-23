@@ -12,14 +12,13 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(5);
 
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             final int k = i + 1;
-            service.submit(()->doExpensiveOperation(k));
+            service.submit(() -> doExpensiveOperation(k));
         }
 
         service.shutdown();
-        service.awaitTermination(5,TimeUnit.SECONDS);
+        service.awaitTermination(5, TimeUnit.SECONDS);
 
         /* output example
 pool-1-thread-2, localId=2

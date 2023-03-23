@@ -4,12 +4,10 @@ package com.javarush.task.task24.task2407;
 В работе вам иногда будет нужно закастить класс к какому-нибудь интерфейсу (тут Sayable),
 который не реализован в текущем классе
  */
-public class Cat implements Pet
-{
+public class Cat implements Pet {
     private String name;
 
-    public Cat(String name)
-    {
+    public Cat(String name) {
         this.name = name;
     }
 
@@ -31,19 +29,15 @@ public class Cat implements Pet
      * @param i количество букв 'я' в слове мяу
      * @return экземпляр класса CatPet
      */
-    public Sayable toSayable(final int i)
-    {
-        class CatPet implements Sayable
-        {
+    public Sayable toSayable(final int i) {
+        class CatPet implements Sayable {
             @Override
-            public String say()
-            {
+            public String say() {
                 String result = "";
 
-                if(i < 1)
+                if (i < 1)
                     result = name + " спит.";
-                else
-                {
+                else {
                     result = name + " говорит м";
 
                     int j = i;

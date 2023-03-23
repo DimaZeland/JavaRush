@@ -29,8 +29,7 @@ public class Solution {
         }
 
         @Override
-        public User initializeIdAndName(long id, String name)
-        {
+        public User initializeIdAndName(long id, String name) {
             this.id = id;
             this.name = name;
             return this;

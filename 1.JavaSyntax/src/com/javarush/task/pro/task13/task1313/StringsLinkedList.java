@@ -8,7 +8,7 @@ public class StringsLinkedList {
         first.next = last;
         last.prev = first;
     }
-    
+
     public void printAll() {
         Node currentElement = first.next;
         while ((currentElement) != null) {
@@ -20,7 +20,7 @@ public class StringsLinkedList {
     public void add(String value) {
         Node node = new Node();
         node.value = value;
-        
+
         node.next = last;
         node.prev = last.prev;
         last.prev.next = node;

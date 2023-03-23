@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class Solution {
 
     private static ArrayList<String> initList() {
-        String glassTop     = "       🍷       ";
-        String glassSecond  = "      🍷🍷      ";
-        String glassThird   = "     🍷🍷🍷     ";
-        String glassFourth  = "    🍷🍷🍷🍷    ";
-        String glassFifth   = "   🍷🍷🍷🍷🍷   ";
-        String glassSixth   = "  🍷🍷🍷🍷🍷🍷  ";
+        String glassTop = "       🍷       ";
+        String glassSecond = "      🍷🍷      ";
+        String glassThird = "     🍷🍷🍷     ";
+        String glassFourth = "    🍷🍷🍷🍷    ";
+        String glassFifth = "   🍷🍷🍷🍷🍷   ";
+        String glassSixth = "  🍷🍷🍷🍷🍷🍷  ";
         String glassSeventh = " 🍷🍷🍷🍷🍷🍷🍷 ";
-        String glassEighth  = "🍷🍷🍷🍷🍷🍷🍷🍷";
+        String glassEighth = "🍷🍷🍷🍷🍷🍷🍷🍷";
         ArrayList<String> list = new ArrayList<>();
         list.add(glassEighth);
         list.add(glassSeventh);
@@ -30,7 +30,7 @@ public class Solution {
     }
 
     public static void print(ArrayList<String> glasses) {
-        for(int i = glasses.size() - 1; i >= 0; i--) {
+        for (int i = glasses.size() - 1; i >= 0; i--) {
             System.out.println(glasses.get(i));
         }
     }
@@ -38,14 +38,13 @@ public class Solution {
     public static void removeGlassesReverse(ArrayList<String> glasses) {
         System.out.println("Начинаем разбирать пирамиду...");
 
-        while (false == glasses.isEmpty())
-        {
+        while (false == glasses.isEmpty()) {
             glasses.remove(glasses.size() - 1);
             print(glasses);
             System.out.println();
         }
 
-            System.out.println("Пирамида разобрана!");
+        System.out.println("Пирамида разобрана!");
     }
 
     public static void main(String[] args) {

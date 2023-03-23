@@ -11,23 +11,19 @@ import java.nio.charset.StandardCharsets;
 
 public class Solution {
     public static void main(String... args) {
-        try (RandomAccessFile raf = new RandomAccessFile(args[0],"w"))
-        {
+        try (RandomAccessFile raf = new RandomAccessFile(args[0], "w")) {
             int number = Integer.parseInt(args[1]);
             long length = raf.length();
             byte[] bytes = args[2].getBytes(StandardCharsets.UTF_8);
 
-            if (number > length)
-            {
+            if (number > length) {
                 raf.seek(length);
-            } else
-            {
+            } else {
                 raf.seek(number);
             }
 
             raf.write(bytes);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

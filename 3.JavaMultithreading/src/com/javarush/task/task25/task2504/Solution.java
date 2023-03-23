@@ -4,13 +4,10 @@ package com.javarush.task.task25.task2504;
 Switch для нитей
 */
 
-public class Solution
-{
-    public static void processThreads(Thread... threads)
-    {
+public class Solution {
+    public static void processThreads(Thread... threads) {
         for (Thread thread : threads)
-            switch (thread.getState())
-            {
+            switch (thread.getState()) {
                 case NEW:
                     thread.start();
                     break;
@@ -28,7 +25,6 @@ public class Solution
             }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
     }
 }

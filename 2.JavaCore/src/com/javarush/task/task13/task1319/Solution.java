@@ -9,10 +9,8 @@ import java.util.Scanner;
 Писатель в файл с консоли
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
         String line = scanner.nextLine();
@@ -21,19 +19,17 @@ public class Solution
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        while (scanner.hasNext())
-        {
+        while (scanner.hasNext()) {
             line = scanner.nextLine();
             stringBuilder.append(line).append("\n");
 
-            if ("exit".equals(line))
-            {
+            if ("exit".equals(line)) {
                 break;
             }
         }
         bufferedWriter.write(stringBuilder.toString());
         bufferedWriter.close();
         scanner.close();
-        
+
     }
 }

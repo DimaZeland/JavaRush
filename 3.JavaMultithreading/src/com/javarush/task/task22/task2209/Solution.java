@@ -10,18 +10,15 @@ import java.util.StringTokenizer;
 Составить цепочку слов
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         boolean isTest = false;
         List<String> words = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader fileReader = new BufferedReader(new FileReader(isTest ? "D:\\1.txt":bufferedReader.readLine()));
+        BufferedReader fileReader = new BufferedReader(new FileReader(isTest ? "D:\\1.txt" : bufferedReader.readLine()));
         bufferedReader.close();
 
-        while (fileReader.ready())
-        {
+        while (fileReader.ready()) {
             words.addAll(Arrays.asList(fileReader.readLine().split(" ")));
         }
         fileReader.close();

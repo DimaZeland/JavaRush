@@ -17,9 +17,9 @@ public class Solution {
 
     @Override
     public boolean equals(Object n) {
-        if(this == n)
+        if (this == n)
             return true;
-        if(! (n instanceof Solution))
+        if (!(n instanceof Solution))
             return false;
 
         Solution guest = (Solution) n;
@@ -30,7 +30,7 @@ public class Solution {
        /* if (first != null ? !first.equals(solution.first) : solution.first != null) return false;
         return last != null ? last.equals(solution.last) : solution.last == null;*/
     }
-    
+
     @Override
     public int hashCode() {
         int result = first != null ? first.hashCode() : 0;

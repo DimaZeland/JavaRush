@@ -12,10 +12,9 @@ public class Solution {
     }
 
     //Add your code below - добавь код ниже
-    public static class TestThread extends Thread{
+    public static class TestThread extends Thread {
         @Override
-        public void run()
-        {
+        public void run() {
             super.run();
         }
     }

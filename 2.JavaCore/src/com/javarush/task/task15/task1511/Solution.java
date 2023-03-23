@@ -22,7 +22,7 @@ public class Solution {
         }
     }
 
-    public static class JuniorJavaDev extends JavaDev  {
+    public static class JuniorJavaDev extends JavaDev {
         JavaDev zapp = new JavaDev();
         JavaDev hubert = new JavaDev();
 

@@ -11,10 +11,8 @@ import java.util.TreeSet;
 Самый богатый
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         Boolean tested = false;
 
         String fileName = tested ? "D:\\1.txt" : args[0];
@@ -25,8 +23,7 @@ public class Solution
 
         TreeMap<String, Double> data = new TreeMap<>();
 
-        while (null != (line = bufferedReader.readLine()))
-        {
+        while (null != (line = bufferedReader.readLine())) {
             String[] lineValues = line.split(" ");
             String key = lineValues[0];
             Double newValue = Double.parseDouble(lineValues[1]);
@@ -51,7 +48,7 @@ public class Solution
         });
 
         for (String key : maxData.keySet())
-           System.out.println(key);
+            System.out.println(key);
 
         //maxData.entrySet().forEach(System.out::println);
     }

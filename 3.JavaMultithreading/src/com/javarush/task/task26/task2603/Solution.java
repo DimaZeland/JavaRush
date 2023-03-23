@@ -6,27 +6,21 @@ import java.util.Comparator;
 Убежденному убеждать других не трудно
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static class CustomizedComparator<T> implements Comparator<T>
-    {
+    public static class CustomizedComparator<T> implements Comparator<T> {
         private Comparator<T>[] comparators;
 
-        public CustomizedComparator(Comparator<T>... vararg)
-        {
+        public CustomizedComparator(Comparator<T>... vararg) {
             comparators = vararg;
         }
 
         @Override
-        public int compare(T o1, T o2)
-        {
+        public int compare(T o1, T o2) {
             int res = 0;
-            for (Comparator<T> comparator : comparators)
-            {
+            for (Comparator<T> comparator : comparators) {
                 res = comparator.compare(o1, o2);
-                if (res != 0)
-                {
+                if (res != 0) {
                     return res;
                 }
             }
@@ -34,8 +28,7 @@ public class Solution
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
     }
 }

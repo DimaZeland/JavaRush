@@ -19,19 +19,14 @@ public class Solution extends Thread {
     }
 
     public void interrupt() {
-       try
-       {
-           in.close();
-           socket.close();
-       }
-       catch (Exception e)
-       {
+        try {
+            in.close();
+            socket.close();
+        } catch (Exception e) {
 
-       }
-       finally
-       {
-           super.interrupt();
-       }
+        } finally {
+            super.interrupt();
+        }
     }
 
     public void run() {

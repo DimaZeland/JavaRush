@@ -12,8 +12,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class View extends JFrame implements ActionListener
-{
+public class View extends JFrame implements ActionListener {
     private Controller controller;
 
     private JTabbedPane tabbedPane = new JTabbedPane();
@@ -23,28 +22,25 @@ public class View extends JFrame implements ActionListener
     private UndoManager undoManager = new UndoManager();
     private UndoListener undoListener = new UndoListener(undoManager);
 
-    public View(){
-        try{
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());    
-        }catch (Exception e) {
+    public View() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
             ExceptionHandler.log(e);
         }
     }
-    
-    public Controller getController()
-    {
+
+    public Controller getController() {
         return controller;
     }
 
-    public void setController(Controller controller)
-    {
+    public void setController(Controller controller) {
         this.controller = controller;
     }
 
     @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        switch (e.getActionCommand()){
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
             case "Новый":
                 controller.createNewDocument();
                 break;
@@ -66,57 +62,52 @@ public class View extends JFrame implements ActionListener
         }
     }
 
-    public void init()
-    {
+    public void init() {
         initGui();
         addWindowListener(new FrameListener(this));
         setVisible(true);
     }
 
-    public void exit()
-    {
+    public void exit() {
         controller.exit();
     }
 
-    public void initMenuBar()
-    {
+    public void initMenuBar() {
         JMenuBar menuBar = new JMenuBar();
-        MenuHelper.initFileMenu(this,menuBar);
-        MenuHelper.initEditMenu(this,menuBar);
-        MenuHelper.initStyleMenu(this,menuBar);
-        MenuHelper.initAlignMenu(this,menuBar);
-        MenuHelper.initColorMenu(this,menuBar);
-        MenuHelper.initFontMenu(this,menuBar);
-        MenuHelper.initHelpMenu(this,menuBar);
-        
-        getContentPane().add(menuBar,BorderLayout.NORTH);
+        MenuHelper.initFileMenu(this, menuBar);
+        MenuHelper.initEditMenu(this, menuBar);
+        MenuHelper.initStyleMenu(this, menuBar);
+        MenuHelper.initAlignMenu(this, menuBar);
+        MenuHelper.initColorMenu(this, menuBar);
+        MenuHelper.initFontMenu(this, menuBar);
+        MenuHelper.initHelpMenu(this, menuBar);
+
+        getContentPane().add(menuBar, BorderLayout.NORTH);
     }
 
     public void initEditor() {
         htmlTextPane.setContentType("text/html");
         JScrollPane htmlScrollPane = new JScrollPane(htmlTextPane);
         tabbedPane.addTab("HTML", htmlScrollPane);
-        
+
         JScrollPane plainScrollPane = new JScrollPane(plainTextPane);
         tabbedPane.addTab("Текст", plainScrollPane);
-        
+
         tabbedPane.setPreferredSize(new Dimension(300, 300));
-        
+
         tabbedPane.addChangeListener(new TabbedPaneChangeListener(this));
-        
-        getContentPane().add(tabbedPane,BorderLayout.CENTER);
+
+        getContentPane().add(tabbedPane, BorderLayout.CENTER);
     }
 
-    public void initGui()
-    {
+    public void initGui() {
         initMenuBar();
         initEditor();
         pack();
     }
 
-    public void selectedTabChanged(){
-        switch (tabbedPane.getSelectedIndex())
-        {
+    public void selectedTabChanged() {
+        switch (tabbedPane.getSelectedIndex()) {
             case 0:
                 controller.setPlainText(plainTextPane.getText());
                 break;
@@ -125,66 +116,55 @@ public class View extends JFrame implements ActionListener
                 break;
         }
         resetUndo();
-        
+
     }
 
-    public boolean canUndo()
-    {
+    public boolean canUndo() {
         return undoManager.canUndo();
     }
 
-    public boolean canRedo()
-    {
+    public boolean canRedo() {
         return undoManager.canRedo();
     }
 
-    public void undo()
-    {
-        try
-        {
+    public void undo() {
+        try {
             undoManager.undo();
-        }catch (CannotUndoException e)
-        {
+        } catch (CannotUndoException e) {
             ExceptionHandler.log(e);
         }
     }
 
-    public void redo()
-    {
-        try
-        {
+    public void redo() {
+        try {
             undoManager.redo();
-        }catch (CannotRedoException e)
-        {
+        } catch (CannotRedoException e) {
             ExceptionHandler.log(e);
         }
     }
 
-    public UndoListener getUndoListener()
-    {
+    public UndoListener getUndoListener() {
         return undoListener;
     }
 
-    public void resetUndo()
-    {
+    public void resetUndo() {
         undoManager.discardAllEdits();
     }
-    
-    public boolean isHtmlTabSelected()
-    {
+
+    public boolean isHtmlTabSelected() {
         return tabbedPane.getSelectedIndex() == 0;
     }
 
-    public void selectHtmlTab(){
+    public void selectHtmlTab() {
         tabbedPane.setSelectedIndex(0);
         resetUndo();
     }
 
-    public void update(){
+    public void update() {
         htmlTextPane.setDocument(controller.getDocument());
     }
-    
-    public void showAbout(){
-        JOptionPane.showMessageDialog(this,"Лучший HTML редактор","О программе", JOptionPane.INFORMATION_MESSAGE);
+
+    public void showAbout() {
+        JOptionPane.showMessageDialog(this, "Лучший HTML редактор", "О программе", JOptionPane.INFORMATION_MESSAGE);
     }
 }

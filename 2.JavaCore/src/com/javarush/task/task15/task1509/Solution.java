@@ -21,11 +21,11 @@ public class Solution {
 
     }
 
-    public static class Man extends Human{
+    public static class Man extends Human {
 
     }
 
-    public static class Woman extends Human{
+    public static class Woman extends Human {
 
     }
 }

@@ -10,12 +10,12 @@ public class Solution {
 
 
     public static void printList(ArrayList<String> words) {
-        for (String word:words)
+        for (String word : words)
             System.out.println(word);
     }
 
     public static void printHashSet(HashSet<String> words) {
-        for (String word: words)
+        for (String word : words)
             System.out.println(word);
     }
 

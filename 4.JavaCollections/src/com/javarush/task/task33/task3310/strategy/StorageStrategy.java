@@ -11,5 +11,6 @@ public interface StorageStrategy {
 
     String getValue(Long key);
 
-    default void close(){}
+    default void close() {
+    }
 }

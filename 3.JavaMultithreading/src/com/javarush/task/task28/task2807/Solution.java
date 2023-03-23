@@ -12,18 +12,17 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
 
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             final int k = i + 1;
-            queue.add(()->doExpensiveOperation(k+1));
+            queue.add(() -> doExpensiveOperation(k + 1));
         }
 
         ThreadPoolExecutor threadPoolExecutor =
-                new ThreadPoolExecutor(3,5,1000,TimeUnit.MILLISECONDS,queue);
+                new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, queue);
 
         threadPoolExecutor.prestartAllCoreThreads();
         threadPoolExecutor.shutdown();
-        threadPoolExecutor.awaitTermination(5,TimeUnit.SECONDS);
+        threadPoolExecutor.awaitTermination(5, TimeUnit.SECONDS);
 
         /* Example output
 pool-1-thread-2, localId=2

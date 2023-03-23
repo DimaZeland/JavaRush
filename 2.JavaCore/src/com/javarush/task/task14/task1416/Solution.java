@@ -4,10 +4,8 @@ package com.javarush.task.task14.task1416;
 Стой, кто плывет?
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         CanSwim creature = new Orca();
         creature.swim();
         creature = new Whale();
@@ -16,83 +14,67 @@ public class Solution
         creature.swim();
     }
 
-    public static void test(CanSwim creature)
-    {
+    public static void test(CanSwim creature) {
         creature.swim();
     }
 
-    interface CanWalk
-    {
+    interface CanWalk {
         void walk();
     }
 
-    interface CanSwim
-    {
+    interface CanSwim {
         void swim();
     }
 
-    static abstract class SeaCreature
-    {
-        public void swim()
-        {
+    static abstract class SeaCreature {
+        public void swim() {
             SeaCreature currentCreature = (SeaCreature) getCurrentCreature();
             currentCreature.displaySwim();
         }
 
-        private void displaySwim()
-        {
+        private void displaySwim() {
             System.out.println(getCurrentCreature().getClass().getSimpleName() + " is swimming");
         }
 
         abstract CanSwim getCurrentCreature();
     }
 
-    static class Orca extends SeaCreature implements CanSwim
-    {
+    static class Orca extends SeaCreature implements CanSwim {
         @Override
-        public void swim()
-        {
+        public void swim() {
             super.swim();
         }
 
         @Override
-        CanSwim getCurrentCreature()
-        {
+        CanSwim getCurrentCreature() {
             return this;
         }
     }
 
-    static class Whale extends SeaCreature implements CanSwim
-    {
+    static class Whale extends SeaCreature implements CanSwim {
         @Override
-        public void swim()
-        {
+        public void swim() {
             super.swim();
         }
 
         @Override
-        CanSwim getCurrentCreature()
-        {
+        CanSwim getCurrentCreature() {
             return this;
         }
     }
 
-    static class RiverOtter implements CanSwim, CanWalk
-    {
-        public RiverOtter()
-        {
+    static class RiverOtter implements CanSwim, CanWalk {
+        public RiverOtter() {
             super();
         }
 
         @Override
-        public void walk()
-        {
+        public void walk() {
 
         }
 
         @Override
-        public void swim()
-        {
+        public void swim() {
 
         }
     }

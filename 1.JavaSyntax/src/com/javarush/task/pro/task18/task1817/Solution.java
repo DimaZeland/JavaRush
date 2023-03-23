@@ -33,10 +33,10 @@ public class Solution {
     }
 
     public static boolean hasOnlyPositiveNumbers(Stream<Integer> stream) {
-        return stream.allMatch(x-> x > 0);
+        return stream.allMatch(x -> x > 0);
     }
 
     public static boolean hasOnlyNegativeNumbers(Stream<Integer> stream) {
-        return stream.noneMatch(x-> x > 0);
+        return stream.noneMatch(x -> x > 0);
     }
 }

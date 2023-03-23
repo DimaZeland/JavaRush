@@ -12,15 +12,15 @@ public class Solution {
 
     }
 
-    public class Student extends Schoolboy{
+    public class Student extends Schoolboy {
 
     }
 
-    public class Worker extends Student{
+    public class Worker extends Student {
 
     }
 
-    public class Retiree extends Worker{
+    public class Retiree extends Worker {
 
     }
 

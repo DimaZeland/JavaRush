@@ -1,7 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
-public class UniversityPerson extends Human
-{
+public class UniversityPerson extends Human {
     private University university;
 
     public University getUniversity() {
@@ -12,8 +11,7 @@ public class UniversityPerson extends Human
         this.university = university;
     }
 
-    public UniversityPerson(String name, int age)
-    {
+    public UniversityPerson(String name, int age) {
         super(name, age);
         //this.university = university;
     }

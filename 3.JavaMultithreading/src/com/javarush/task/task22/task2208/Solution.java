@@ -25,12 +25,10 @@ public class Solution {
         StringBuilder stringBuilder = new StringBuilder();
         String format = "%s = '%s'";
         String result;
-        for(Map.Entry<String, String> entry : params.entrySet())
-        {
-            if(entry.getValue() != null)
-            {
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (entry.getValue() != null) {
                 result = stringBuilder.toString().length() != 0 ? " and " : "";
-                result += String.format(format,entry.getKey(),entry.getValue());
+                result += String.format(format, entry.getKey(), entry.getValue());
                 stringBuilder.append(result);
             }
         }

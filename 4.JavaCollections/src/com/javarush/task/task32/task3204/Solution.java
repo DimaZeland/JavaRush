@@ -22,8 +22,7 @@ public class Solution {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < 3; i++)
-        {
+        for (int i = 0; i < 3; i++) {
             int index1 = (int) (48 + Math.random() * 9);
             char ch1 = (char) index1;
             int index2 = (int) (97 + Math.random() * 25);
@@ -34,11 +33,9 @@ public class Solution {
         }
         byte[] bytes = stringBuilder.deleteCharAt(8).toString().getBytes(StandardCharsets.UTF_8);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        try
-        {
+        try {
             byteArrayOutputStream.write(bytes);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return byteArrayOutputStream;

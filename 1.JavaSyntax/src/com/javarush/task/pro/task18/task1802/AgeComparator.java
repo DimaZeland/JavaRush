@@ -6,11 +6,9 @@ import java.util.Comparator;
 Сортировка по возрасту
 */
 
-public class AgeComparator implements Comparator<Student>
-{
+public class AgeComparator implements Comparator<Student> {
     @Override
-    public int compare(Student obj1, Student obj2)
-    {
+    public int compare(Student obj1, Student obj2) {
         return obj2.getAge() - obj1.getAge();
     }
 }

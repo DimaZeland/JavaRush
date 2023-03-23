@@ -7,7 +7,7 @@ import java.util.List;
 Вход воспрещен!
 */
 
-public class  House <T> {
+public class House<T> {
 
     private List<T> residents = new ArrayList<T>();
 

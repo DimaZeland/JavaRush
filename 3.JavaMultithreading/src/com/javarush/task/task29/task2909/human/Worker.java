@@ -1,6 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
-public class Worker extends Human{
+public class Worker extends Human {
     private double salary;
     private String company;
 
@@ -20,13 +20,11 @@ public class Worker extends Human{
         this.salary = salary;
     }
 
-    public String getCompany()
-    {
+    public String getCompany() {
         return company;
     }
 
-    public void setCompany(String company)
-    {
+    public void setCompany(String company) {
         this.company = company;
     }
 }

@@ -7,11 +7,9 @@ import java.util.Collections;
 Преобразование списка в массив
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         var strings = new ArrayList<String>();
         Collections.addAll(strings, "Ты", "ж", "программист");
 
@@ -20,25 +18,21 @@ public class Solution
 
 
         String[] stringArray = toStringArray(strings);
-        for (String string : stringArray)
-        {
+        for (String string : stringArray) {
             System.out.println(string);
         }
 
         Integer[] integerArray = toIntegerArray(integers);
-        for (Integer integer : integerArray)
-        {
+        for (Integer integer : integerArray) {
             System.out.println(integer);
         }
     }
 
-    public static String[] toStringArray(ArrayList<String> strings)
-    {
+    public static String[] toStringArray(ArrayList<String> strings) {
         return strings.toArray(String[]::new);
     }
 
-    public static Integer[] toIntegerArray(ArrayList<Integer> integers)
-    {
+    public static Integer[] toIntegerArray(ArrayList<Integer> integers) {
         return integers.toArray(Integer[]::new);
     }
 }

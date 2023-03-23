@@ -4,35 +4,27 @@ package com.javarush.task.task24.task2405;
 Black box
 */
 
-public class Solution implements Action
-{
+public class Solution implements Action {
     public static int countActionObjects;
 
     private int param;
 
-    private Action solutionAction = new Action()
-    {
+    private Action solutionAction = new Action() {
         private FirstClass first;
         private SecondClass second;
 
-        public void someAction()
-        {
-            if (param > 0)
-            {
-                if (first == null)
-                {
-                    first = new FirstClass()
-                    {
+        public void someAction() {
+            if (param > 0) {
+                if (first == null) {
+                    first = new FirstClass() {
                         @Override
-                        public void someAction()
-                        {
+                        public void someAction() {
                             super.someAction();
                             Solution.this.someAction();
                         }
 
                         @Override
-                        public Action getDependantAction()
-                        {
+                        public Action getDependantAction() {
                             System.out.println(param);
                             param--;
                             return param > 0 ? Solution.this : this;
@@ -40,15 +32,11 @@ public class Solution implements Action
                     };
                 }
                 first.getDependantAction().someAction();
-            } else
-            {
-                if (second == null)
-                {
-                    second = new SecondClass()
-                    {
+            } else {
+                if (second == null) {
+                    second = new SecondClass() {
                         @Override
-                        public void someAction()
-                        {
+                        public void someAction() {
                             sb.append(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM).append(param);
                             super.someAction();
 
@@ -61,14 +49,12 @@ public class Solution implements Action
     };
 
 
-    public Solution(int param)
-    {
+    public Solution(int param) {
         this.param = param;
     }
 
     @Override
-    public void someAction()
-    {
+    public void someAction() {
         solutionAction.someAction();
     }
 
@@ -86,8 +72,7 @@ public class Solution implements Action
      * Specific action for anonymous SecondClass, param = -1
      * Count of created Action objects is 3
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Solution solution = new Solution(5);
         solution.someAction();
         System.out.println("Count of created Action objects is " + countActionObjects);

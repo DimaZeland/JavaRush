@@ -23,9 +23,8 @@ public class Solution {
 
         Integer minValue = Arrays.stream(array).min().getAsInt();
         Integer index = Integer.valueOf(0);
-        for (int i = 0; i < array.length; i++)
-        {
-            if(minValue.intValue() == array[i])
+        for (int i = 0; i < array.length; i++) {
+            if (minValue.intValue() == array[i])
                 index = Integer.valueOf(i);
         }
 

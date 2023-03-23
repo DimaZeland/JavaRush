@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Solution {
 
-    public static class Person implements Serializable{
+    public static class Person implements Serializable {
         String firstName;
         String lastName;
         transient String fullName;

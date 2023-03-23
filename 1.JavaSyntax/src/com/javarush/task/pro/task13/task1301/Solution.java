@@ -18,18 +18,16 @@ public class Solution {
         System.out.println("____________________________________");
 
         HashSet<String> hashSet = arrayToHashSet(array);
-        for(String s : hashSet) {
+        for (String s : hashSet) {
             System.out.println(s);
         }
     }
 
-    public static HashSet<String> arrayToHashSet(String[] strings)
-    {
-       HashSet<String> result = new HashSet<>();
-        for (int i = 0; i < strings.length; i++)
-        {
+    public static HashSet<String> arrayToHashSet(String[] strings) {
+        HashSet<String> result = new HashSet<>();
+        for (int i = 0; i < strings.length; i++) {
             result.add(strings[i]);
         }
-            return result;
+        return result;
     }
 }

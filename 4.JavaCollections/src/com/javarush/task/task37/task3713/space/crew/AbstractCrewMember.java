@@ -17,7 +17,7 @@ public abstract class AbstractCrewMember {
     }
 
     public void handleRequest(CompetencyLevel competencyLevel, String request) {
-        if(this.competencyLevel == competencyLevel)
+        if (this.competencyLevel == competencyLevel)
             doTheJob(request);
         else if (nextCrewMember != null)
             nextCrewMember.handleRequest(competencyLevel, request);

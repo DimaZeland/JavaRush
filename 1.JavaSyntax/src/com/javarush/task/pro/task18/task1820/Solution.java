@@ -32,12 +32,12 @@ public class Solution {
     }
 
     public static Optional<Car> getMostExpensiveCar(Stream<Car> cars) {
-        Optional<Car>  car = cars.max((car1,car2)->car1.getPrice()- car2.getPrice());
+        Optional<Car> car = cars.max((car1, car2) -> car1.getPrice() - car2.getPrice());
         return car;
     }
 
     public static Optional<Car> getMoreExpensiveCar(Stream<Car> cars, Car mostExpensiveCar) {
-        return cars.filter(x-> x.getPrice() > mostExpensiveCar.getPrice()).findFirst();
+        return cars.filter(x -> x.getPrice() > mostExpensiveCar.getPrice()).findFirst();
     }
 }
 

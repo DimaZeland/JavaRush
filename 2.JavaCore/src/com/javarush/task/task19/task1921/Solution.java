@@ -10,12 +10,10 @@ import java.util.*;
 Хуан Хуанович
 */
 
-public class Solution
-{
+public class Solution {
     public static final List<Person> PEOPLE = new ArrayList<Person>();
 
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         Boolean tested = false;
 
         String fileName = tested ? "D:\\1.txt" : args[0];
@@ -24,8 +22,7 @@ public class Solution
 
         String line = "";
 
-        while (null != (line = bufferedReader.readLine()))
-        {
+        while (null != (line = bufferedReader.readLine())) {
             String[] lineValues = line.split(" ");
 
             int lineValuesLastIndex = lineValues.length - 1;
@@ -47,8 +44,7 @@ public class Solution
 
             String name = "";
 
-            for (int i = 0; i <= lineValuesLastIndex; i++)
-            {
+            for (int i = 0; i <= lineValuesLastIndex; i++) {
                 name += lineValues[i] + " ";
             }
 

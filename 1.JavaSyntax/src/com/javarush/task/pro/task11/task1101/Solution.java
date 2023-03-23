@@ -13,7 +13,7 @@ public class Solution {
         System.out.println("В Солнечной системе " + SolarSystem.planetsCount + " известных планет.");
         System.out.println("Как и большинство звездных систем, состоит из " + SolarSystem.starsCount + " звезды.");
         System.out.println("Звезды по имени " + SolarSystem.starName + ".");
-        System.out.println("Расстояние к центру галактики составляет "+ SolarSystem.galacticCenterDistance + " световых лет.");
+        System.out.println("Расстояние к центру галактики составляет " + SolarSystem.galacticCenterDistance + " световых лет.");
         System.out.println("Каждый обитатель Солнечной системы должен знать эту информацию!");
 
     }

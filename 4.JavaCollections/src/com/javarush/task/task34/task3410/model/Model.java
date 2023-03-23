@@ -5,8 +5,7 @@ import com.javarush.task.task34.task3410.controller.EventListener;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 
-public class Model
-{
+public class Model {
     public static final int FIELD_CELL_SIZE = 20;
     private EventListener eventListener;
     private GameObjects gameObjects;
@@ -20,33 +19,27 @@ public class Model
         }
     }
 
-    public void setEventListener(EventListener eventListener)
-    {
+    public void setEventListener(EventListener eventListener) {
         this.eventListener = eventListener;
     }
 
-    public GameObjects getGameObjects()
-    {
+    public GameObjects getGameObjects() {
         return gameObjects;
     }
 
-    public void restartLevel(int level)
-    {
+    public void restartLevel(int level) {
         gameObjects = levelLoader.getLevel(level);
     }
 
-    public void restart()
-    {
+    public void restart() {
         restartLevel(currentLevel);
     }
 
-    public void startNextLevel()
-    {
+    public void startNextLevel() {
         restartLevel(++currentLevel);
     }
 
-    public boolean checkWallCollision(CollisionObject gameObject, Direction direction)
-    {
+    public boolean checkWallCollision(CollisionObject gameObject, Direction direction) {
         for (Wall wall : gameObjects.getWalls()) {
             if (gameObject.isCollision(wall, direction)) {
                 return true;
@@ -54,9 +47,8 @@ public class Model
         }
         return false;
     }
-    
-    public boolean checkBoxCollisionAndMoveIfAvailable(Direction direction)
-    {
+
+    public boolean checkBoxCollisionAndMoveIfAvailable(Direction direction) {
         for (Box box : gameObjects.getBoxes()) {
             if (gameObjects.getPlayer().isCollision(box, direction)) {
                 for (Box item : gameObjects.getBoxes()) {
@@ -76,9 +68,8 @@ public class Model
         }
         return false;
     }
-    
-    public void checkCompletion()
-    {
+
+    public void checkCompletion() {
         int numberOfHomes = gameObjects.getHomes().size();
         int numberOfHomesWithBox = 0;
 
@@ -92,11 +83,10 @@ public class Model
 
         if (numberOfHomesWithBox == numberOfHomes) {
             eventListener.levelCompleted(currentLevel);
-        } 
+        }
     }
-    
-    public void move(Direction direction)
-    {
+
+    public void move(Direction direction) {
         if (checkWallCollision(gameObjects.getPlayer(), direction)) {
             return;
         }

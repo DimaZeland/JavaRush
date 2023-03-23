@@ -28,7 +28,7 @@ public class CustomStringArrayList {
         capacity *= 1.5;
         String[] elements1 = new String[capacity];
 
-        for(int i = 0; i < size; ++i)
+        for (int i = 0; i < size; ++i)
             elements1[i] = elements[i];
 
         elements = elements1;

@@ -4,25 +4,20 @@ package com.javarush.task.task12.task1217;
 Лететь, бежать и плыть
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
 
     }
 
-    public interface CanFly
-    {
+    public interface CanFly {
         boolean canFly();
     }
 
-    public interface CanRun
-    {
+    public interface CanRun {
         boolean canRun();
     }
 
-    public interface CanSwim
-    {
+    public interface CanSwim {
         boolean canSwim();
     }
 }

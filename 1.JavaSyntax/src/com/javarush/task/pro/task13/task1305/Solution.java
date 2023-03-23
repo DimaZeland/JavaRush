@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 public class Solution {
     public static String bug = "bug";
-    
+
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<>();
         words.add("Hello world!");
@@ -39,10 +39,9 @@ public class Solution {
     }
 
     public static void removeBugWithFor(ArrayList<String> list) {
-        for (int i = 0; i < list.size(); i++)
-        {
-           String s = list.get(i);
-            if(s.equalsIgnoreCase("bug")) {
+        for (int i = 0; i < list.size(); i++) {
+            String s = list.get(i);
+            if (s.equalsIgnoreCase("bug")) {
                 list.remove(i);
 
                 --i;
@@ -53,8 +52,7 @@ public class Solution {
     public static void removeBugWithWhile(ArrayList<String> list) {
         Iterator<String> it = list.iterator();
 
-        while (it.hasNext()) 
-        {
+        while (it.hasNext()) {
             String str = it.next();
             if (str.equalsIgnoreCase("bug"))
                 it.remove();
@@ -64,10 +62,9 @@ public class Solution {
     public static void removeBugWithCopy(ArrayList<String> list) {
         ArrayList<String> copy = new ArrayList<String>(list);
 
-        for (String word: copy)
-        {
-         if(bug.equalsIgnoreCase(word))
-         list.remove(word);
+        for (String word : copy) {
+            if (bug.equalsIgnoreCase(word))
+                list.remove(word);
 
         }
     }

@@ -6,10 +6,8 @@ import java.io.*;
 Слова с цифрами
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         String fileName1 = args[0];
         String fileName2 = args[1];
 
@@ -17,8 +15,7 @@ public class Solution
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName2));
 
         String line = "";
-        while (null != (line = bufferedReader.readLine()))
-        {
+        while (null != (line = bufferedReader.readLine())) {
             String[] words = line.split(" ");
 
             for (String word : words)

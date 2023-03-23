@@ -25,21 +25,21 @@ public class FillGame extends Game {
 
     @Override
     public void onMouseLeftClick(int x, int y) {
-        setCellColor(x,y,Color.ORANGE);
+        setCellColor(x, y, Color.ORANGE);
 
-        Cell cell = new Cell(x,y);
+        Cell cell = new Cell(x, y);
 
-        if(false == cells.contains(cell))
+        if (false == cells.contains(cell))
             cells.add(cell);
     }
 
     @Override
     public void onMouseRightClick(int x, int y) {
-        setCellColor(x,y,Color.WHITE);
+        setCellColor(x, y, Color.WHITE);
 
-        Cell cell = new Cell(x,y);
+        Cell cell = new Cell(x, y);
 
-        if(cells.contains(cell))
+        if (cells.contains(cell))
             cells.remove(cell);
     }
 }

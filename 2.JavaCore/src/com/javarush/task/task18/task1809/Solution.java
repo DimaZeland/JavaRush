@@ -13,7 +13,7 @@ import java.util.List;
 public class Solution {
 
 
-   public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String f1 = br.readLine();
         String f2 = br.readLine();
@@ -24,27 +24,25 @@ public class Solution {
         int count = 0;
         byte[] arr = {};
 
-        while (fi.available() > 0)
-        {
+        while (fi.available() > 0) {
             arr = new byte[fi.available()];
             count = fi.read(arr);
         }
 
         fi.close();
 
-       Byte[] bytes = new Byte[arr.length];
-       byte[] finalArr = arr;
-       Arrays.setAll(bytes, n -> finalArr[n]);
+        Byte[] bytes = new Byte[arr.length];
+        byte[] finalArr = arr;
+        Arrays.setAll(bytes, n -> finalArr[n]);
 
         Collections.reverse(Arrays.asList(bytes));
 
-       for (int i = 0; i <arr.length ; i++)
-       {
-           arr[i] = bytes[i];
-       }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = bytes[i];
+        }
 
 
-        fo.write(arr,0,count);
+        fo.write(arr, 0, count);
         fo.close();
-   }
+    }
 }

@@ -38,13 +38,11 @@ public class Solution {
         }
 
         private void printTime() throws InterruptedException {
-            if(60 == ++seconds)
-            {
+            if (60 == ++seconds) {
                 seconds = 0;
-                if(60 == ++minutes)
-                {
+                if (60 == ++minutes) {
                     minutes = 0;
-                    if(24 == ++hours)
+                    if (24 == ++hours)
                         hours = 0;
                 }
             }

@@ -9,9 +9,9 @@ public class Solution {
 
     }
 
-    public interface CanFly
-    {
+    public interface CanFly {
         void m();
+
         void m21();
     }
 

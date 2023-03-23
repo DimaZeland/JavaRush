@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Solution {
     private static ScheduledExecutorService interruptScheduledExecutor;
-    private static  Thread taskThread;
+    private static Thread taskThread;
     private static RethrowableTask task;
 
     public static void main(String[] args) throws Exception {

@@ -53,6 +53,7 @@ public class Solution {
         System.out.println("Заполняем объектами Integer");
         printMatrix(m, n, (Object) value);
     }
+
     public static void printMatrix(int m, int n, Object value) {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {

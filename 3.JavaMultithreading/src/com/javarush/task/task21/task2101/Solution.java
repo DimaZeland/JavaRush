@@ -6,10 +6,8 @@ package com.javarush.task.task21.task2101;
 
 import java.nio.charset.StandardCharsets;
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         byte[] ip = new byte[]{(byte) 192, (byte) 168, 1, 2};
         byte[] mask = new byte[]{(byte) 255, (byte) 255, (byte) 254, 0};
         byte[] netAddress = getNetAddress(ip, mask);
@@ -45,8 +43,7 @@ public class Solution
 
     }
 
-    public static byte[] getNetAddress(byte[] ip, byte[] mask)
-    {
+    public static byte[] getNetAddress(byte[] ip, byte[] mask) {
         byte[] netAddress = new byte[4];
 
         for (int i = 0; i < ip.length; i++)
@@ -55,12 +52,10 @@ public class Solution
         return netAddress;
     }
 
-    public static void print(byte[] bytes)
-    {
+    public static void print(byte[] bytes) {
         String currentBinary;
 
-        for (byte aByte : bytes)
-        {
+        for (byte aByte : bytes) {
             currentBinary = Integer.toBinaryString(256 + (int) aByte);
             //System.out.print(currentBinary + " ");
             System.out.print(currentBinary.substring(currentBinary.length() - 8) + " ");

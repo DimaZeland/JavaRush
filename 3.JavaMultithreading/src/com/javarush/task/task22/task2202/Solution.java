@@ -41,6 +41,6 @@ public class Solution {
         }*/
     }
 
-    public static class TooShortStringException extends RuntimeException{
+    public static class TooShortStringException extends RuntimeException {
     }
 }

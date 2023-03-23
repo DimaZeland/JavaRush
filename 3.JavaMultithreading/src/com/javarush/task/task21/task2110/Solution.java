@@ -21,8 +21,7 @@ public class Solution {
         Path outputFilePath = Paths.get(outputFileName);
 
         try (ZipFile zip = new ZipFile(zipFileName);
-        BufferedWriter writer = Files.newBufferedWriter(outputFilePath, charset))
-        {
+             BufferedWriter writer = Files.newBufferedWriter(outputFilePath, charset)) {
             String newLine = System.getProperty("line.separator");
             for (Enumeration entries = zip.entries(); entries.hasMoreElements(); ) {
                 // Берем имя файла из архива и записываем его в результирующий файл

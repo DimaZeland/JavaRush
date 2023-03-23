@@ -21,7 +21,7 @@ public class Solution {
 
         testString.printSomething();
 
-        String result = byteArrayOutputStream.toString().replaceAll("te","??");
+        String result = byteArrayOutputStream.toString().replaceAll("te", "??");
 
         System.setOut(old);
 

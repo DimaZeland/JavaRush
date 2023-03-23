@@ -23,8 +23,7 @@ public class OurUncaughtExceptionHandler implements Thread.UncaughtExceptionHand
         // java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : StringForSecondThreadTooShortException : 2#
     }
 
-    protected String getFormattedStringForFirstThread(Thread t, Throwable e, String string)
-    {
+    protected String getFormattedStringForFirstThread(Thread t, Throwable e, String string) {
         return String.format(string, t.getName(), e.getClass().getSimpleName(), e.getCause());
         // 1# : StringForFirstThreadTooShortException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1
     }

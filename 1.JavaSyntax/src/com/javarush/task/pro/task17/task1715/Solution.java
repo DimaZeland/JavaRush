@@ -7,34 +7,29 @@ import java.util.List;
 Вилларибо и Виллабаджо.
 */
 
-public class Solution
-{
+public class Solution {
     static List<MusicalInstrument> orchestra = new ArrayList<>();
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         createKeyboardOrchestra();
         createStringedOrchestra();
         playOrchestra();
     }
 
-    public static void createKeyboardOrchestra()
-    {
+    public static void createKeyboardOrchestra() {
         orchestra.add(new Organ());
         orchestra.add(new Piano());
         orchestra.add(new Piano());
         orchestra.add(new Piano());
     }
 
-    public static void createStringedOrchestra()
-    {
+    public static void createStringedOrchestra() {
         orchestra.add(new Violin());
         orchestra.add(new Violin());
         orchestra.add(new Guitar());
     }
 
-    public static void playOrchestra()
-    {
+    public static void playOrchestra() {
         for (var instrument : orchestra)
             instrument.play();
     }

@@ -28,7 +28,7 @@ public class Solution {
         Date stopPlaying();
     }
 
-    public static class Violin implements MusicalInstrument{
+    public static class Violin implements MusicalInstrument {
         private String owner;
 
         public Violin(String owner) {
@@ -46,8 +46,7 @@ public class Solution {
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
             Date startDate = startPlaying();
             sleepNSeconds(1);
             Date endDate = stopPlaying();

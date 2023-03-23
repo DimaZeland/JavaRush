@@ -24,7 +24,7 @@ public class Solution {
 
         void onPress();
 
-       // private void onPress();
+        // private void onPress();
 
         //protected String onPress(Object o);
 

@@ -20,16 +20,13 @@ public class Solution {
     public static Thread CLIENT_THREAD = new Thread(new Runnable() {
         @Override
         public void run() {
-            try
-            {
+            try {
                 DoubleString service = (DoubleString) registry.lookup(UNIC_BINDING_NAME);
                 String result = service.doubleString("tesT");
                 System.out.println(result);
-            } catch (RemoteException e)
-            {
+            } catch (RemoteException e) {
                 e.printStackTrace();
-            } catch (NotBoundException e)
-            {
+            } catch (NotBoundException e) {
                 e.printStackTrace();
             }
         }

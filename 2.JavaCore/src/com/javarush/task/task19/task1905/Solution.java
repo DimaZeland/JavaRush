@@ -10,8 +10,7 @@ import java.util.Map;
 public class Solution {
     public static Map<String, String> countries = new HashMap<String, String>();
 
-    static
-    {
+    static {
         countries.put("UA", "Ukraine");
         countries.put("RU", "Russia");
         countries.put("CA", "Canada");
@@ -22,7 +21,7 @@ public class Solution {
     }
 
 
-    public static class DataAdapter implements RowItem{
+    public static class DataAdapter implements RowItem {
         private Customer customer;
         private Contact contact;
 
@@ -32,46 +31,41 @@ public class Solution {
         }
 
         @Override
-        public String getCountryCode()
-        {
+        public String getCountryCode() {
             String countryName1 = customer.getCountryName();
 
             return countries.entrySet().stream()
-                    .filter(entry->entry.getValue().equals(customer.getCountryName()))
+                    .filter(entry -> entry.getValue().equals(customer.getCountryName()))
                     .findAny().get().getKey()
                     .toString();
         }
 
         @Override
-        public String getCompany()
-        {
+        public String getCompany() {
             return customer.getCompanyName();
         }
 
         @Override
-        public String getContactFirstName()
-        {
+        public String getContactFirstName() {
             String lastFirstName = contact.getName();
-            String [] names = lastFirstName.split(", ");
+            String[] names = lastFirstName.split(", ");
 
             return names[1];
         }
 
         @Override
-        public String getContactLastName()
-        {
+        public String getContactLastName() {
             String lastFirstName = contact.getName();
-            String [] names = lastFirstName.split(", ");
+            String[] names = lastFirstName.split(", ");
 
             return names[0];
         }
 
         @Override
-        public String getDialString()
-        {
+        public String getDialString() {
             String phoneNumber = contact.getPhoneNumber();
-            
-            phoneNumber = phoneNumber.replaceAll("\\D","");
+
+            phoneNumber = phoneNumber.replaceAll("\\D", "");
 
             return "callto://+" + phoneNumber;
         }
@@ -89,13 +83,13 @@ public class Solution {
         String getDialString();         //For example: callto://+380501234567
     }
 
-    public  interface Customer {
+    public interface Customer {
         String getCompanyName();        //For example: JavaRush Ltd.
 
         String getCountryName();        //For example: Ukraine
     }
 
-    public  interface Contact {
+    public interface Contact {
         String getName();               //For example: Ivanov, Ivan
 
         String getPhoneNumber();        //For example: +38(050)123-45-67 or +3(805)0123-4567 or +380(50)123-4567 or ...

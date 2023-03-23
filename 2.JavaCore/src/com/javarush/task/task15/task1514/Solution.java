@@ -10,13 +10,12 @@ import java.util.Map;
 public class Solution {
     public static Map<Double, String> labels = new HashMap<Double, String>();
 
-    static
-    {
-        labels.put(1.0,"q");
-        labels.put(1.1,"q1");
-        labels.put(1.2,"q2");
-        labels.put(1.3,"q3");
-        labels.put(1.4,"q4");
+    static {
+        labels.put(1.0, "q");
+        labels.put(1.1, "q1");
+        labels.put(1.2, "q2");
+        labels.put(1.3, "q3");
+        labels.put(1.4, "q4");
     }
 
     public static void main(String[] args) {

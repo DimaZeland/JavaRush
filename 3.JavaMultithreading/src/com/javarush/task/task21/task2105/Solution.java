@@ -17,7 +17,7 @@ public class Solution {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o)
+        if (this == o)
             return true;
 
         if (!(o instanceof Solution))
@@ -27,17 +27,16 @@ public class Solution {
 
         return (first == n.first || (null != first && n.first.equals(first)))
                 &&
-                (last == n.last  || (null != last  && n.last.equals(last  )));
+                (last == n.last || (null != last && n.last.equals(last)));
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result = null != first ? first.hashCode() : 0;
-        result    += null != last  ?  last.hashCode() : 0;
+        result += null != last ? last.hashCode() : 0;
         result *= 31;
         return result;
-        
+
     }
 
     public static void main(String[] args) {

@@ -25,21 +25,16 @@ public class Solution {
             throw new NullPointerException("it's an example");
         }
 
-        private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler
-        {
+        private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler {
 
             @Override
-            public void uncaughtException(Thread t, Throwable e)
-            {
-                try
-                {
+            public void uncaughtException(Thread t, Throwable e) {
+                try {
                     Thread.sleep(500);
+                } catch (InterruptedException be) {
+
                 }
-                catch (InterruptedException be)
-                {
-                    
-                }
-                System.out.println(String.format("%s, %s, %s", secretKey,t.getName(),e.getMessage()));
+                System.out.println(String.format("%s, %s, %s", secretKey, t.getName(), e.getMessage()));
             }
         }
     }

@@ -22,11 +22,10 @@ public class Solution {
 
 
     public static void rotate(ArrayList<Integer> list, int distance) {
-        Collections.rotate(list,distance);
+        Collections.rotate(list, distance);
     }
 
-    public static void shuffle(ArrayList<Integer> list)
-    {
+    public static void shuffle(ArrayList<Integer> list) {
         Collections.shuffle(list);
     }
 }

@@ -11,11 +11,11 @@ public class Solution {
         Cat cat2 = new Cat("Пушинка");
     }
 
-    private static void investigateWorld()
-    {
-    try{Thread.sleep(200);}
-    catch (InterruptedException e)
-    {}
+    private static void investigateWorld() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+        }
     }
 
     public static class Cat extends Thread {

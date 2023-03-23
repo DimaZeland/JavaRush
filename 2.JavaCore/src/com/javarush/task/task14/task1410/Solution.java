@@ -13,14 +13,14 @@ public class Solution {
     }
 
     public static Drink getDeliciousDrink() {
-                return new Wine();
+        return new Wine();
     }
 
     public static Wine getWine() {
-            return new Wine();
+        return new Wine();
     }
 
     public static Wine getSparklingWine() {
-            return new SparklingWine();
+        return new SparklingWine();
     }
 }

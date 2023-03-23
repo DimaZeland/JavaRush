@@ -8,10 +8,8 @@ import java.util.concurrent.Phaser;
 Plants vs Zombies
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws InterruptedException
-    {
+public class Solution {
+    public static void main(String[] args) throws InterruptedException {
         List<Character> characters = new ArrayList<>();
         characters.add(new Plant());
         characters.add(new Plant());
@@ -23,23 +21,18 @@ public class Solution
 
     private static boolean isEveryoneReady = false;
 
-    private static void start(List<Character> characters) throws InterruptedException
-    {
+    private static void start(List<Character> characters) throws InterruptedException {
         final Phaser phaser = new Phaser(1 + characters.size());
 
-        for (final Character character : characters)
-        {
+        for (final Character character : characters) {
             final String member = character.toString();
             System.out.println(member + " присоединился к игре");
-            new Thread()
-            {
+            new Thread() {
                 @Override
-                public void run()
-                {
+                public void run() {
                     System.out.println(member + " готовится играть");
                     phaser.arriveAndAwaitAdvance();
-                    if (!isEveryoneReady)
-                    {
+                    if (!isEveryoneReady) {
                         isEveryoneReady = true;
                         System.out.println("Игра началась!");
                     }

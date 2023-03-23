@@ -4,10 +4,8 @@ package com.javarush.task.task39.task3909;
 Одно изменение
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         System.out.println(isOneEditAway("abacba", "abaccba"));
     }
 

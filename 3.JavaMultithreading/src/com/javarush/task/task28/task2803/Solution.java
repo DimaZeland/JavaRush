@@ -16,7 +16,7 @@ public class Solution {
     }
 
     public static long getRandomLongBetween0AndN(long n) {
-        return ThreadLocalRandom.current().nextLong(0,n + 1);
+        return ThreadLocalRandom.current().nextLong(0, n + 1);
     }
 
     public static void main(String[] args) {

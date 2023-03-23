@@ -39,7 +39,7 @@ public class Solution {
         }
     }
 
-    public static class Test4 extends Test3 implements Cloneable{
+    public static class Test4 extends Test3 implements Cloneable {
         protected Object c1one() throws CloneNotSupportedException {
             return super.c1one();
         }

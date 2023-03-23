@@ -85,8 +85,8 @@ public class Solution {
         String first;
         String second;
 
-        public Pair()
-        {}
+        public Pair() {
+        }
 
         @Override
         public boolean equals(Object o) {

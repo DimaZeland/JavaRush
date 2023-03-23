@@ -10,14 +10,12 @@ public class FactorialCalculator implements Callable {
     }
 
     @Override
-    public Long call()
-    {
+    public Long call() {
         long result = 0;
-        try
-        {
+        try {
             result = factorial(number);
-        }catch (InterruptedException e)
-        {}
+        } catch (InterruptedException e) {
+        }
         return result;
     }
 

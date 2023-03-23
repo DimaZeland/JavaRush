@@ -7,16 +7,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 Пишем свою ThreadFactory
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
-        class EmulatorThreadFactoryTask implements Runnable
-        {
+    public static void main(String[] args) {
+        class EmulatorThreadFactoryTask implements Runnable {
             @Override
-            public void run()
-            {
+            public void run() {
                 emulateThreadFactory();
             }
         }
@@ -31,14 +27,11 @@ public class Solution
         thread2.start();
     }
 
-    private static void emulateThreadFactory()
-    {
+    private static void emulateThreadFactory() {
         AmigoThreadFactory factory = new AmigoThreadFactory();
-        Runnable r = new Runnable()
-        {
+        Runnable r = new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 System.out.println(Thread.currentThread().getName());
             }
         };

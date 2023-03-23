@@ -16,7 +16,8 @@ public class Solution {
 
     public static synchronized void printInfo(String name, int age) {
         for (int i = 1; i <= 5; i++) {
-            /*synchronized (Solution.class)*/ {
+            /*synchronized (Solution.class)*/
+            {
                 System.out.print(i);
                 System.out.print(".");
                 System.out.print(" ");

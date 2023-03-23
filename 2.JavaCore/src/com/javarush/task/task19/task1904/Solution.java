@@ -10,26 +10,21 @@ import java.util.Scanner;
 И еще один адаптер
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
     }
 
-    public static class PersonScannerAdapter implements PersonScanner
-    {
+    public static class PersonScannerAdapter implements PersonScanner {
         private Scanner fileScanner;
 
-        public PersonScannerAdapter(Scanner s)
-        {
+        public PersonScannerAdapter(Scanner s) {
             fileScanner = s;
         }
 
         @Override
-        public Person read() throws IOException
-        {
+        public Person read() throws IOException {
             //Scanner scanner = new Scanner(System.in);
 
             String line = fileScanner.nextLine();
@@ -49,8 +44,7 @@ public class Solution
         }
 
         @Override
-        public void close() throws IOException
-        {
+        public void close() throws IOException {
             fileScanner.close();
         }
     }

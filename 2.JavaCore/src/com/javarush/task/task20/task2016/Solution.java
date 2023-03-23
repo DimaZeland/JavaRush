@@ -7,7 +7,7 @@ import java.io.Serializable;
 */
 
 public class Solution {
-    public class A implements Serializable{
+    public class A implements Serializable {
         String name = "A";
 
         public A(String name) {

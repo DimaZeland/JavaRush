@@ -22,8 +22,7 @@ public class ServiceLocator {
     public static Service getService(String jndiName) {
         Service service = cache.getService(jndiName);
 
-        if(null == service)
-        {
+        if (null == service) {
             InitialContext initialContext = new InitialContext();
             service = (Service) initialContext.lookup(jndiName);
             cache.addService(service);

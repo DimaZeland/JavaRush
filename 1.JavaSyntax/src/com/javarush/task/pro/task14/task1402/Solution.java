@@ -37,14 +37,11 @@ public class Solution {
                 break;
             }
 
-                int studentId = Integer.parseInt(input);
+            int studentId = Integer.parseInt(input);
 
-            try
-            {
-            System.out.println(ANSWERING + studentsJournal.get(studentId));
-            }
-            catch (ArrayIndexOutOfBoundsException e)
-            {
+            try {
+                System.out.println(ANSWERING + studentsJournal.get(studentId));
+            } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println(NOT_EXIST);
             }
         }

@@ -35,7 +35,7 @@ public class CarController {
 
     public void increaseSpeed(int seconds) {
         if (model.getSpeed() < model.getMaxSpeed()) {
-            model.setSpeed(model.getSpeed() + (int)(3.5 * seconds));
+            model.setSpeed(model.getSpeed() + (int) (3.5 * seconds));
         }
         if (model.getSpeed() > model.getMaxSpeed()) {
             model.setSpeed(model.getMaxSpeed());

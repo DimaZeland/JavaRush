@@ -11,8 +11,7 @@ import java.math.RoundingMode;
 */
 
 public class Solution {
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         String name = args[0];
 
         FileReader fr = new FileReader(name);
@@ -20,19 +19,17 @@ public class Solution {
         int countC = 0;
         int whiteSpaceCount = 0;
 
-        while (fr.ready())
-        {
-           int symb = fr.read();
+        while (fr.ready()) {
+            int symb = fr.read();
             ++countC;
 
-            if( symb == (int) ' ')
+            if (symb == (int) ' ')
                 ++whiteSpaceCount;
         }
         fr.close();
 
-        if(0 != countC)
-        {
-            double koef =  (double) whiteSpaceCount / countC * 100;
+        if (0 != countC) {
+            double koef = (double) whiteSpaceCount / countC * 100;
         /*BigDecimal result = new BigDecimal(koef);
         result = result.setScale(2, RoundingMode.DOWN);*/
 

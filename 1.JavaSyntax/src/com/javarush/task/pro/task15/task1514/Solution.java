@@ -7,21 +7,17 @@ import java.util.Scanner;
 Все относительно
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str1 = scanner.nextLine();
         String str2 = scanner.nextLine();
         Path path1 = Path.of(str1);
         Path path2 = Path.of(str2);
-        try
-        {
+        try {
             Path result = path1.relativize(path2);
             System.out.println(result.toString());
-        } catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
 

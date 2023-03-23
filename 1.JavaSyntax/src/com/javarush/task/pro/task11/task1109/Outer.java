@@ -10,6 +10,7 @@ public class Outer {
             System.out.println("Создание объекта внутреннего класса");
         }
     }
+
     static class Nested {
         Nested() {
             System.out.println("Создание объекта вложенного класса");

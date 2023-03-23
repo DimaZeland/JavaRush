@@ -14,7 +14,7 @@ public class Solution {
         printCrewInfo();
     }
 
-    public static void createCrew(){
+    public static void createCrew() {
         astronauts.add(new Human());
         astronauts.add(new Human());
         astronauts.add(new Dog());

@@ -40,49 +40,41 @@ public class Solution {
         }
     }
 
-    public static class MarkTwainBook extends Book
-    {
+    public static class MarkTwainBook extends Book {
         private String title;
 
-        public MarkTwainBook(String title)
-        {
+        public MarkTwainBook(String title) {
             super("Mark Twain");
             this.title = title;
         }
 
         @Override
-        public MarkTwainBook getBook()
-        {
+        public MarkTwainBook getBook() {
             return this;
         }
 
         @Override
-        public String getTitle()
-        {
+        public String getTitle() {
             return title;
         }
     }
 
-    public static class AgathaChristieBook extends Book
-    {
+    public static class AgathaChristieBook extends Book {
         private String title;
 
 
-       public AgathaChristieBook(String title)
-        {
+        public AgathaChristieBook(String title) {
             super("Agatha Christie");
             this.title = title;
         }
 
         @Override
-        public AgathaChristieBook getBook()
-        {
+        public AgathaChristieBook getBook() {
             return this;
         }
 
         @Override
-        public String getTitle()
-        {
+        public String getTitle() {
             return title;
         }
     }

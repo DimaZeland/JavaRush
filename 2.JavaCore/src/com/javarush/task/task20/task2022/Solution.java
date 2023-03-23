@@ -16,7 +16,7 @@ public class Solution implements Serializable, AutoCloseable {
     }
 
     public void writeObject(String string) throws IOException {
-       
+
         stream.write(string.getBytes());
         stream.write("\n".getBytes());
         stream.flush();

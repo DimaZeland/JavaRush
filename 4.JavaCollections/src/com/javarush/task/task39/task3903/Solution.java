@@ -25,13 +25,13 @@ public class Solution {
     }
 
     public static long swapBits(long number, int i, int j) {
-        BitSet bs = BitSet.valueOf(new long[] { number });
+        BitSet bs = BitSet.valueOf(new long[]{number});
 
         boolean bitIsSetAtIndexI = ((number >>> i) & 1) == 1 ? true : false;
         boolean bitIsSetAtIndexJ = ((number >>> j) & 1) == 1 ? true : false;
 
-        bs.set(i,bitIsSetAtIndexJ);
-        bs.set(j,bitIsSetAtIndexI);
+        bs.set(i, bitIsSetAtIndexJ);
+        bs.set(j, bitIsSetAtIndexI);
 
         return bs.toLongArray()[0];
     }

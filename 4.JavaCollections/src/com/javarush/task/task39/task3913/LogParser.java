@@ -18,9 +18,9 @@ import java.util.regex.Pattern;
 public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
     private Path logDir;
 
-    private DateFormat simpleDateFormat = new   SimpleDateFormat("d.M.yyyy H:m:s");
+    private DateFormat simpleDateFormat = new SimpleDateFormat("d.M.yyyy H:m:s");
 
-    private List<LogEntity>  logEntities = new ArrayList<>();
+    private List<LogEntity> logEntities = new ArrayList<>();
 
     public LogParser(Path logDir) {
         this.logDir = logDir;

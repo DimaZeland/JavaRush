@@ -5,15 +5,12 @@ package com.javarush.task.task22.task2203;
 */
 
 public class Solution {
-    public static String getPartOfString(String string) throws TooShortStringException{
-        try
-        {
+    public static String getPartOfString(String string) throws TooShortStringException {
+        try {
             int beginIndex = string.indexOf('\t') + 1;
             int lastIndex = string.indexOf('\t', beginIndex);
             return string.substring(beginIndex, lastIndex);
-        }
-        catch (Throwable throwable)
-        {
+        } catch (Throwable throwable) {
             throw new TooShortStringException();
         }
     }

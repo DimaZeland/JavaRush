@@ -14,19 +14,18 @@ import java.util.Scanner;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         String path = scanner.nextLine();
-        
+
         scanner = new Scanner(new FileInputStream(path));
 
-        ArrayList<Integer> list  = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         while (scanner.hasNext())
             list.add(scanner.nextInt());
 
-        list.stream().filter(x-> 0 == x % 2).sorted().forEach(System.out::println);
+        list.stream().filter(x -> 0 == x % 2).sorted().forEach(System.out::println);
         scanner.close();
     }
 }

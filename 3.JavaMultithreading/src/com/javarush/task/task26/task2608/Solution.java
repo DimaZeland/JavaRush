@@ -20,15 +20,13 @@ public class Solution {
     }
 
     public int getSumOfVar1AndVar2() {
-       synchronized (lock1)
-       {
-           return var1 + var2;
-       }
+        synchronized (lock1) {
+            return var1 + var2;
+        }
     }
 
     public int getSumOfVar3AndVar4() {
-        synchronized (lock2)
-        {
+        synchronized (lock2) {
             return var3 + var4;
         }
     }

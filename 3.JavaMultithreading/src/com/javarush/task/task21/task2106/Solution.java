@@ -30,9 +30,9 @@ public class Solution {
 
         if (solution1.aDouble != aDouble) return false;
         if (anInt != solution1.anInt) return false;
-        if (date     != null ? !date.equals(solution1.date)         : solution1.date     != null) return false;
+        if (date != null ? !date.equals(solution1.date) : solution1.date != null) return false;
         if (solution != null ? !solution.equals(solution1.solution) : solution1.solution != null) return false;
-        if (string   != null ? !string.equals(solution1.string)     : solution1.string   != null) return false;
+        if (string != null ? !string.equals(solution1.string) : solution1.string != null) return false;
 
         return true;
     }

@@ -10,10 +10,8 @@ import java.util.TreeSet;
 Использование TreeSet
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         String name = /*"D:\\1.txt"*/args[0];
         File file = new File(name);
         FileReader reader = new FileReader(file);
@@ -22,16 +20,14 @@ public class Solution
 
         int symb = 0;
 
-        while ((symb = reader.read()) != -1)
-        {
+        while ((symb = reader.read()) != -1) {
             int codePoint = Character.toLowerCase(symb);
             Character character = new Character((char) codePoint);
             if (Character.isLetter(character))
                 characters.add(character);
         }
 
-        for (int i = 0; i < 5 && characters.size() > 0; i++)
-        {
+        for (int i = 0; i < 5 && characters.size() > 0; i++) {
             System.out.print(characters.pollFirst());
         }
     }

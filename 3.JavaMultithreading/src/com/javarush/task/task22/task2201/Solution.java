@@ -4,10 +4,8 @@ package com.javarush.task.task22.task2201;
 Строки нитей или строковые нити? Вот в чем вопрос
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         new Solution();
     }
 
@@ -18,13 +16,11 @@ public class Solution
     private Thread thread2;
     private Thread thread3;
 
-    public Solution()
-    {
+    public Solution() {
         initThreads();
     }
 
-    protected void initThreads()
-    {
+    protected void initThreads() {
         this.thread1 = new Thread(new Task(this, "A\tB\tC\tD\tE\tF\tG\tH\tI"), FIRST_THREAD_NAME);
         this.thread2 = new Thread(new Task(this, "J\tK\tL\tM\tN\tO\tP\tQ\tR\tS\tT\tU\tV\tW\tX\tY\tZ"), SECOND_THREAD_NAME);
         this.thread3 = new Thread(new Task(this, "\t\t"), "3#");
@@ -36,16 +32,13 @@ public class Solution
         this.thread3.start();
     }
 
-    public synchronized String getPartOfString(String string, String threadName)
-    {
-        try
-        {
+    public synchronized String getPartOfString(String string, String threadName) {
+        try {
             int indexStart = string.indexOf('\t') + 1;
             int indexLast = string.lastIndexOf('\t');
 
             return string.substring(indexStart, indexLast);
-        } catch (Throwable e)
-        {
+        } catch (Throwable e) {
             if (threadName.equals(FIRST_THREAD_NAME))
                 throw new StringForFirstThreadTooShortException();
             else if (threadName.equals(SECOND_THREAD_NAME))

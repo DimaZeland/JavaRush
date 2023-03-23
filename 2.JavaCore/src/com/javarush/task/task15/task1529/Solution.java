@@ -8,37 +8,30 @@ import java.io.InputStreamReader;
 Осваивание статического блока
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
 
     }
 
-    static
-    {
+    static {
         reset();
     }
 
     public static CanFly result;
 
-    public static void reset()
-    {
-        try
-        {
+    public static void reset() {
+        try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String str = br.readLine();
 
             if (str.equals("helicopter"))
                 result = new Helicopter();
-            else if (str.equals("plane"))
-            {
+            else if (str.equals("plane")) {
                 int passangers = Integer.parseInt(br.readLine());
                 result = new Plane(passangers);
             }
-        br.close();
-        } catch (IOException e)
-        {
+            br.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

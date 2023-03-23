@@ -26,10 +26,9 @@ public class CountGame extends Game {
         int sum = 0, count = 0;
 
 
-        for(int i = 0; i < 10; ++i)
-            for(int k = 0; k < 10; ++k)
-                if(Color.GREEN == getCellColor(i, k))
-                {
+        for (int i = 0; i < 10; ++i)
+            for (int k = 0; k < 10; ++k)
+                if (Color.GREEN == getCellColor(i, k)) {
                     ++count;
                     sum += getCellNumber(i, k);
                 }

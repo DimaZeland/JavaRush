@@ -10,23 +10,19 @@ import java.util.Scanner;
 Поверхностное копирование
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         Path sourceDirectory = Path.of(scanner.nextLine());
         Path targetDirectory = Path.of(scanner.nextLine());
-        
-            try (var files = Files.newDirectoryStream(sourceDirectory))
-            {
-                for (Path path : files)
-                    if (Files.isRegularFile(path))
-                    {
-                        Path resolve = targetDirectory.resolve(path.getFileName());
-                        Files.copy(path, resolve);
-                    }
-            }
+
+        try (var files = Files.newDirectoryStream(sourceDirectory)) {
+            for (Path path : files)
+                if (Files.isRegularFile(path)) {
+                    Path resolve = targetDirectory.resolve(path.getFileName());
+                    Files.copy(path, resolve);
+                }
+        }
     }
 }
 

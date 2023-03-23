@@ -9,12 +9,11 @@ import java.nio.charset.StandardCharsets;
 AmigoOutputStream
 */
 
-public class AmigoOutputStream extends FileOutputStream{
+public class AmigoOutputStream extends FileOutputStream {
     public static String fileName = "C:/tmp/result.txt";
     private FileOutputStream fo;
 
-    public AmigoOutputStream(FileOutputStream f) throws FileNotFoundException
-    {
+    public AmigoOutputStream(FileOutputStream f) throws FileNotFoundException {
         super(fileName);
         fo = f;
     }
@@ -24,40 +23,34 @@ public class AmigoOutputStream extends FileOutputStream{
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException
-    {
+    protected Object clone() throws CloneNotSupportedException {
         return this.clone();
     }
 
     @Override
-    public void write(int b) throws IOException
-    {
+    public void write(int b) throws IOException {
         fo.write(b);
     }
 
     @Override
-    public void write(byte[] b) throws IOException
-    {
+    public void write(byte[] b) throws IOException {
         fo.write(b);
     }
 
     @Override
-    public void write(byte[] b, int off, int len) throws IOException
-    {
+    public void write(byte[] b, int off, int len) throws IOException {
         fo.write(b, off, len);
     }
 
     @Override
-    public void close() throws IOException
-    {
+    public void close() throws IOException {
         fo.flush();
         fo.write("JavaRush © All rights reserved.".getBytes(StandardCharsets.UTF_8));
         fo.close();
     }
 
     @Override
-    public void flush() throws IOException
-    {
+    public void flush() throws IOException {
         fo.flush();
     }
 }

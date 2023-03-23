@@ -8,31 +8,27 @@ import java.util.Locale;
 */
 
 public class Solution {
-    public class TableInterfaceWrapper implements TableInterface{
+    public class TableInterfaceWrapper implements TableInterface {
         TableInterface t;
 
-        public TableInterfaceWrapper(TableInterface tt)
-        {
+        public TableInterfaceWrapper(TableInterface tt) {
             t = tt;
         }
 
         @Override
-        public void setModel(List rows)
-        {
+        public void setModel(List rows) {
             System.out.println(rows.size());
             t.setModel(rows);
         }
 
         @Override
-        public String getHeaderText()
-        {
+        public String getHeaderText() {
             return t.getHeaderText().toUpperCase();
         }
 
         @Override
-        public void setHeaderText(String newHeaderText)
-        {
-t.setHeaderText(newHeaderText);
+        public void setHeaderText(String newHeaderText) {
+            t.setHeaderText(newHeaderText);
         }
     }
 

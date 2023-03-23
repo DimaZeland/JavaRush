@@ -14,17 +14,17 @@ public class Solution {
         void startToWork();
     }
 
-    interface HasManagementPotential{
+    interface HasManagementPotential {
         boolean inspiresOthersToWork();
     }
 
-    interface Secretary extends Person{
+    interface Secretary extends Person {
     }
 
-    interface Boss extends Person, HasManagementPotential{
+    interface Boss extends Person, HasManagementPotential {
     }
 
-    class Manager implements Boss{
+    class Manager implements Boss {
         public void use(Person person) {
             person.startToWork();
         }
@@ -37,7 +37,7 @@ public class Solution {
         }
     }
 
-    class Subordinate implements Secretary{
+    class Subordinate implements Secretary {
         public void use(Person person) {
         }
 

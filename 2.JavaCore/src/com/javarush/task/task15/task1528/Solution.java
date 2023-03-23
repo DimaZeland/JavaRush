@@ -22,8 +22,7 @@ public class Solution {
         private double amount = 123d;
 
         @Override
-        public Double getAmount()
-        {
+        public Double getAmount() {
             return amount;
         }
 

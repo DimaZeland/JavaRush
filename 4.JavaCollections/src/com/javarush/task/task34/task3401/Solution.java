@@ -15,6 +15,6 @@ public class Solution {
     }
 
     public int fibonacci(int n) {
-        return 1 >= n  ? n : fibonacci(n - 2) + fibonacci(n - 1);
+        return 1 >= n ? n : fibonacci(n - 2) + fibonacci(n - 1);
     }
 }

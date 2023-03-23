@@ -26,7 +26,7 @@ public class UserHelper {
     }
 
     public int calculateRate(AtomicInteger base, int age, boolean hasWork, boolean hasHouse) {
-        int result =base.get() + age / 100;
+        int result = base.get() + age / 100;
         result *= hasWork ? 1.1 : 0.9;
         result *= hasHouse ? 1.1 : 0.9;
         return result;

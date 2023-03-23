@@ -25,14 +25,14 @@ public class Solution {
     public Properties getProperties(String fileName) {
         File file = new File(fileName);
         Properties properties = new Properties();
-        try
-        {
+        try {
             if (fileName.endsWith(".xml"))
                 properties.loadFromXML(new FileInputStream(file));
             else
                 properties.load(new FileReader(file));
 
-        }catch (IOException e){}
+        } catch (IOException e) {
+        }
 
         return properties;
     }

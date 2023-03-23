@@ -4,37 +4,32 @@ import com.javarush.engine.cell.*;
 
 import java.util.Arrays;
 
-public class Game2048 extends Game
-{
+public class Game2048 extends Game {
     private static final int SIDE = 4;
     private int[][] gameField = new int[SIDE][SIDE];
     private boolean isGameStopped = false;
     private int score;
 
     @Override
-    public void initialize()
-    {
+    public void initialize() {
         setScreenSize(SIDE, SIDE);
         createGame();
         drawScene();
     }
 
-    private void createGame()
-    {
+    private void createGame() {
         gameField = new int[SIDE][SIDE];
         createNewNumber();
         createNewNumber();
     }
 
-    private void drawScene()
-    {
+    private void drawScene() {
         for (int lineIndex = 0; lineIndex < SIDE; ++lineIndex)
             for (int columnIndex = 0; columnIndex < SIDE; ++columnIndex)
                 setCellColoredNumber(lineIndex, columnIndex, gameField[columnIndex][lineIndex]);
     }
 
-    private void createNewNumber()
-    {
+    private void createNewNumber() {
         if (2048 == getMaxTileValue())
             win();
 
@@ -42,13 +37,11 @@ public class Game2048 extends Game
         int lineIndex;
 
         boolean isCreated = false;
-        do
-        {
+        do {
             columnIndex = getRandomNumber(SIDE);
             lineIndex = getRandomNumber(SIDE);
 
-            if (0 == gameField[lineIndex][columnIndex])
-            {
+            if (0 == gameField[lineIndex][columnIndex]) {
                 gameField[lineIndex][columnIndex] = 9 == getRandomNumber(10) ? 4 : 2;
                 isCreated = true;
             }
@@ -56,12 +49,10 @@ public class Game2048 extends Game
         while (false == isCreated);
     }
 
-    private Color getColorByValue(int value)
-    {
+    private Color getColorByValue(int value) {
         Color cellColour = Color.NONE;
 
-        switch (value)
-        {
+        switch (value) {
             case 0:
                 cellColour = Color.RED;
                 break;
@@ -104,23 +95,19 @@ public class Game2048 extends Game
         return cellColour;
     }
 
-    private void setCellColoredNumber(int x, int y, int value)
-    {
+    private void setCellColoredNumber(int x, int y, int value) {
         Color cellColor = getColorByValue(value);
         String valueString = 0 == value ? "" : Integer.toString((Integer.valueOf(value)));
         setCellValueEx(x, y, cellColor, valueString);
     }
 
-    private boolean compressRow(int[] row)
-    {
+    private boolean compressRow(int[] row) {
         boolean result = false;
         int insertPosition = 0;
 
         for (int i = 0; i < SIDE; ++i)
-            if (row[i] > 0)
-            {
-                if (i != insertPosition)
-                {
+            if (row[i] > 0) {
+                if (i != insertPosition) {
                     row[insertPosition] = row[i];
                     row[i] = 0;
                     result = true;
@@ -130,14 +117,11 @@ public class Game2048 extends Game
         return result;
     }
 
-    private boolean mergeRow(int[] row)
-    {
+    private boolean mergeRow(int[] row) {
         boolean result = false;
 
-        for (int i = 0; i < row.length - 1; ++i)
-        {
-            if (0 != row[i] && row[i] == row[i + 1])
-            {
+        for (int i = 0; i < row.length - 1; ++i) {
+            if (0 != row[i] && row[i] == row[i + 1]) {
                 row[i] += row[i + 1];
                 row[i + 1] = 0;
                 result = true;
@@ -151,11 +135,9 @@ public class Game2048 extends Game
     }
 
     @Override
-    public void onKeyPress(Key key)
-    {
+    public void onKeyPress(Key key) {
         if (isGameStopped)
-            if (Key.SPACE == key)
-            {
+            if (Key.SPACE == key) {
                 isGameStopped = false;
                 score = 0;
                 setScore(score);
@@ -164,39 +146,32 @@ public class Game2048 extends Game
             } else
                 return;
 
-        if (false == canUserMove())
-        {
+        if (false == canUserMove()) {
             gameOver();
             return;
         }
 
-        if (Key.LEFT == key)
-        {
+        if (Key.LEFT == key) {
             moveLeft();
             drawScene();
-        } else if (Key.RIGHT == key)
-        {
+        } else if (Key.RIGHT == key) {
             moveRight();
             drawScene();
-        } else if (Key.UP == key)
-        {
+        } else if (Key.UP == key) {
             moveUp();
             drawScene();
-        } else if (Key.DOWN == key)
-        {
+        } else if (Key.DOWN == key) {
             moveDown();
             drawScene();
         }
     }
 
-    private void moveLeft()
-    {
+    private void moveLeft() {
         boolean wasCompressed = false;
         boolean wasMerged = false;
         boolean isNewNumberNeeded = false;
 
-        for (int i = 0; i < SIDE; ++i)
-        {
+        for (int i = 0; i < SIDE; ++i) {
             wasCompressed = compressRow(gameField[i]);
             wasMerged = mergeRow(gameField[i]);
 
@@ -210,8 +185,7 @@ public class Game2048 extends Game
             createNewNumber();
     }
 
-    private void moveRight()
-    {
+    private void moveRight() {
         rotateClockwise();
         rotateClockwise();
         moveLeft();
@@ -219,8 +193,7 @@ public class Game2048 extends Game
         rotateClockwise();
     }
 
-    private void moveUp()
-    {
+    private void moveUp() {
         rotateClockwise();
         rotateClockwise();
         rotateClockwise();
@@ -228,8 +201,7 @@ public class Game2048 extends Game
         rotateClockwise();
     }
 
-    private void moveDown()
-    {
+    private void moveDown() {
         rotateClockwise();
         moveLeft();
         rotateClockwise();
@@ -237,8 +209,7 @@ public class Game2048 extends Game
         rotateClockwise();
     }
 
-    private void rotateClockwise()
-    {
+    private void rotateClockwise() {
         int[][] res = new int[SIDE][SIDE];
 
         for (int i = 0; i < SIDE; i++)
@@ -248,8 +219,7 @@ public class Game2048 extends Game
         gameField = res;
     }
 
-    private int getMaxTileValue()
-    {
+    private int getMaxTileValue() {
         int max = 0;
 
         for (int lines = 0; lines < gameField.length; ++lines)
@@ -260,17 +230,14 @@ public class Game2048 extends Game
         return max;
     }
 
-    private void win()
-    {
+    private void win() {
         isGameStopped = true;
         showMessageDialog(Color.NONE, "YOU WIN", Color.WHITE, 50);
     }
 
-    private boolean canUserMove()
-    {
+    private boolean canUserMove() {
         for (int y = 0; y < SIDE; ++y)
-            for (int x = 0; x < SIDE; ++x)
-            {
+            for (int x = 0; x < SIDE; ++x) {
                 if (gameField[y][x] == 0)
                     return true;
                 else if (y < SIDE - 1 && gameField[y][x] == gameField[y + 1][x])
@@ -281,8 +248,7 @@ public class Game2048 extends Game
         return false;
     }
 
-    private void gameOver()
-    {
+    private void gameOver() {
         isGameStopped = true;
         showMessageDialog(Color.NONE, "GAME OVER", Color.WHITE, 50);
 

@@ -5,12 +5,11 @@ import com.javarush.task.task34.task3410.model.GameObjects;
 import com.javarush.task.task34.task3410.model.Model;
 import com.javarush.task.task34.task3410.view.View;
 
-public class Controller implements  EventListener
-{
+public class Controller implements EventListener {
     private View view;
     private Model model;
-    public Controller()
-    {
+
+    public Controller() {
         view = new View(this);
         model = new Model();
         view.init();
@@ -19,8 +18,7 @@ public class Controller implements  EventListener
         model.setEventListener(this);
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Controller controller = new Controller();
     }
 
@@ -31,27 +29,23 @@ public class Controller implements  EventListener
     }
 
     @Override
-    public void restart()
-    {
+    public void restart() {
         model.restart();
         view.update();
     }
 
     @Override
-    public void startNextLevel()
-    {
+    public void startNextLevel() {
         model.startNextLevel();
         view.update();
     }
 
     @Override
-    public void levelCompleted(int level)
-    {
+    public void levelCompleted(int level) {
         view.completed(level);
     }
 
-    public GameObjects getGameObjects()
-    {
+    public GameObjects getGameObjects() {
         return model.getGameObjects();
     }
 }

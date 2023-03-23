@@ -1,36 +1,27 @@
 package com.javarush.task.task25.task2506;
 
-public class LoggingStateThread extends Thread
-{
+public class LoggingStateThread extends Thread {
     private Thread target;
 
-    public LoggingStateThread(Thread target)
-    {
+    public LoggingStateThread(Thread target) {
         this.target = target;
     }
 
     @Override
-    public void run()
-    {
-        String oldState  = "";
+    public void run() {
+        String oldState = "";
         String newState = "";
 
-        while (!newState.equals("TERMINATED"))
-        {
+        while (!newState.equals("TERMINATED")) {
             oldState = target.getState().toString();
 
-            if(!oldState.equals(newState))
-            {
+            if (!oldState.equals(newState)) {
                 newState = oldState;
                 System.out.println(newState);
-            }
-            else
-                try
-                {
+            } else
+                try {
                     Thread.sleep(100);
-                }
-                catch (InterruptedException e)
-                {
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
         }

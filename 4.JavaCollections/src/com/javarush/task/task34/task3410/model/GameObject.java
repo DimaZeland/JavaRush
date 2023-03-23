@@ -2,64 +2,54 @@ package com.javarush.task.task34.task3410.model;
 
 import java.awt.*;
 
-public abstract class GameObject
-{
-     int x;
+public abstract class GameObject {
+    int x;
     int y;
     int width;
-   int height;
+    int height;
 
-    public GameObject(int x, int y)
-    {
+    public GameObject(int x, int y) {
         this.x = x;
         this.y = y;
         width = height = Model.FIELD_CELL_SIZE;
     }
-    public GameObject(int x, int y, int width, int height)
-    {
+
+    public GameObject(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
 
-    public int getX()
-    {
+    public int getX() {
         return x;
     }
 
-    public int getY()
-    {
+    public int getY() {
         return y;
     }
 
-    public int getWidth()
-    {
+    public int getWidth() {
         return width;
     }
 
-    public int getHeight()
-    {
+    public int getHeight() {
         return height;
     }
 
-    public void setX(int x)
-    {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public void setY(int y)
-    {
+    public void setY(int y) {
         this.y = y;
     }
 
-    public void setWidth(int width)
-    {
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    public void setHeight(int height)
-    {
+    public void setHeight(int height) {
         this.height = height;
     }
 

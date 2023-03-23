@@ -14,7 +14,7 @@ public class Solution {
     public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
         Solution solution = new Solution();
         String nameOfFileToBeOpenedByNotepad = solution.getAbsolutePathToDefaultTxtFile().toString();
-        Process notepad= solution.getStartNotepadProcess(nameOfFileToBeOpenedByNotepad);
+        Process notepad = solution.getStartNotepadProcess(nameOfFileToBeOpenedByNotepad);
         notepad.waitFor();
     }
 

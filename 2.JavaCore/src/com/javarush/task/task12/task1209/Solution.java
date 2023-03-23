@@ -9,18 +9,17 @@ public class Solution {
 
     }
 
-    public  static int min(int i, int k)
-    {
+    public static int min(int i, int k) {
         return i < k ? i : k;
 
     }
-    public  static long min(long i, long k)
-    {
+
+    public static long min(long i, long k) {
         return i < k ? i : k;
 
     }
-    public static double min(double i, double k)
-    {
+
+    public static double min(double i, double k) {
         return i < k ? i : k;
 
     }

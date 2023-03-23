@@ -17,16 +17,12 @@ public class Solution {
     public static String firstFileName;
     public static String secondFileName;
 
-    static
-    {
-        try
-        {
+    static {
+        try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             firstFileName = br.readLine();
             secondFileName = br.readLine();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
 
         }
     }
@@ -55,19 +51,16 @@ public class Solution {
         void start();
     }
 
-    public static class ReadFileThread extends Thread implements ReadFileInterface
-    {
+    public static class ReadFileThread extends Thread implements ReadFileInterface {
         private String name;
         //private List<String> list;
         private String fileInString;
 
-        public void setFileName(String fullFileName)
-        {
+        public void setFileName(String fullFileName) {
             name = fullFileName;
         }
 
-        public String  getFileContent()
-        {
+        public String getFileContent() {
             return fileInString == null ? "" : fileInString;
             /*StringBuilder sb = new StringBuilder();
 
@@ -80,28 +73,25 @@ public class Solution {
 
         //public void join() throws InterruptedException{};
 
-        public void start()
-        {
+        public void start() {
             run();
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
             List<String> list = new ArrayList<>();
             {
-            };
-
-            try
-            {
-                list = Files.readAllLines(Paths.get(name));
             }
-            catch (IOException e) {}
+            ;
+
+            try {
+                list = Files.readAllLines(Paths.get(name));
+            } catch (IOException e) {
+            }
 
             StringBuilder sb = new StringBuilder();
 
-            for (String str:list)
-            {
+            for (String str : list) {
                 sb.append(str + ' ');
             }
             fileInString = null == list ? "" : sb.toString().trim();

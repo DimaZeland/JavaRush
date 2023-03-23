@@ -12,13 +12,13 @@ public class Solution {
         new Solution.Lanos().printlnDesire();
     }
 
-    public static class Ferrari extends LuxuriousCar{
+    public static class Ferrari extends LuxuriousCar {
         public void printlnDesire() {
             System.out.println(Constants.WANT_STRING + Constants.FERRARI_NAME);
         }
     }
 
-    public static class Lanos extends CheapCar{
+    public static class Lanos extends CheapCar {
         public void printlnDesire() {
             System.out.println(Constants.WANT_STRING + Constants.LANOS_NAME);
         }
@@ -32,18 +32,14 @@ public class Solution {
         public static String LANOS_NAME = "Ланосе";
     }
 
-    public static class LuxuriousCar
-    {
-        protected void printlnDesire()
-        {
+    public static class LuxuriousCar {
+        protected void printlnDesire() {
             System.out.println(Constants.WANT_STRING + Constants.LUXURIOUS_CAR);
         }
     }
 
-    public static class CheapCar
-    {
-        protected void printlnDesire()
-        {
+    public static class CheapCar {
+        protected void printlnDesire() {
             System.out.println(Constants.WANT_STRING + Constants.CHEAP_CAR);
         }
     }

@@ -24,12 +24,10 @@ public class Solution {
         initEmployees();
     }
 
-    public static void paySalary(String name)
-    {
-        if(null == name)
+    public static void paySalary(String name) {
+        if (null == name)
             return;
-        else if(waitingEmployees.contains(name))
-        {
+        else if (waitingEmployees.contains(name)) {
             alreadyGotSalaryEmployees.add(name);
             waitingEmployees.set(waitingEmployees.indexOf(name), null);
         }

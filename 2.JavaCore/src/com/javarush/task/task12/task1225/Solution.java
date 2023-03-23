@@ -18,18 +18,18 @@ public class Solution {
         String result;
 
 
-        if(o instanceof Tiger)
+        if (o instanceof Tiger)
             result = "Тигр";
-        else if(o instanceof Lion)
+        else if (o instanceof Lion)
             result = "Лев";
-        else         if(o instanceof Cat)
+        else if (o instanceof Cat)
             result = "Кот";
-        else if(o instanceof Bull)
+        else if (o instanceof Bull)
             result = "Бык";
-        else if(o instanceof Cow)
+        else if (o instanceof Cow)
             result = "Корова";
         else
-            result  = "Животное";
+            result = "Животное";
         return result;
 
     }

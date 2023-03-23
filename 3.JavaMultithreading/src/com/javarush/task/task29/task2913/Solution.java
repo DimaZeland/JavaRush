@@ -21,18 +21,17 @@ public class Solution {
         }
     }*/
 
-    public static String getAllNumbersBetween(int a, int b)
-    {
+    public static String getAllNumbersBetween(int a, int b) {
         StringBuilder builder = new StringBuilder();
 
-        if(a < b)
+        if (a < b)
             for (int i = a; i <= b; i++)
                 builder.append(i + " ");
-        else if(a >= b) // 100 1
+        else if (a >= b) // 100 1
             for (int i = a; i >= b; i--)
                 builder.append(i + " ");
 
-            return builder.toString().trim();
+        return builder.toString().trim();
     }
 
     public static void main(String[] args) {

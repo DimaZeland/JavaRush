@@ -7,10 +7,8 @@ import java.util.ArrayList;
 Замена знаков
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String f1 = br.readLine();
@@ -22,8 +20,7 @@ public class Solution
 
         StringBuilder sb = new StringBuilder();
 
-        while (fileReader.ready())
-        {
+        while (fileReader.ready()) {
             char ch = (char) fileReader.read();
             sb.append(ch);
         }

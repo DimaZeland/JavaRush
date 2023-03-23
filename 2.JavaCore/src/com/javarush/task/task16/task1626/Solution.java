@@ -32,29 +32,24 @@ public class Solution {
         }
     }
 
-    public static class CountUpRunnable implements Runnable
-    {
+    public static class CountUpRunnable implements Runnable {
         private int countIndexUp;
 
         @Override
-        public void run()
-        {
-            try
-            {
-                while (true)
-                {
+        public void run() {
+            try {
+                while (true) {
                     countIndexUp += 1;
                     System.out.println(toString());
                     Thread.sleep(500);
-                    if(countIndexUp == Solution.number) return;
+                    if (countIndexUp == Solution.number) return;
                 }
-            }catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
 
             }
         }
-        public String toString()
-        {
+
+        public String toString() {
             return Thread.currentThread().getName() + ": " + countIndexUp;
         }
     }

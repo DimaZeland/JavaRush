@@ -22,25 +22,23 @@ public class Solution {
         String fileName1 = "";
         String fileName2 = "";
 
-        try
-        {
+        try {
             fileName1 = br.readLine();
             fileName2 = br.readLine();
 
-        allLines = Files.readAllLines(Paths.get(fileName1));
-        forRemoveLines = Files.readAllLines(Paths.get(fileName2));
+            allLines = Files.readAllLines(Paths.get(fileName1));
+            forRemoveLines = Files.readAllLines(Paths.get(fileName2));
 
-        new Solution().joinData();
+            new Solution().joinData();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (IOException e)
-        {e.printStackTrace();}
     }
 
     public void joinData() throws CorruptedDataException {
         if (allLines.containsAll(forRemoveLines))
             allLines.removeAll(forRemoveLines);
-            else
-        {
+        else {
             allLines.clear();
             throw new CorruptedDataException();
         }

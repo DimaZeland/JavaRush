@@ -18,11 +18,10 @@ public class Solution {
 
         int n = 0;
         int min = Byte.MAX_VALUE;
-        while (fi.available() > 0)
-        {
+        while (fi.available() > 0) {
             n = fi.read();
 
-            if(min > n)
+            if (min > n)
                 min = n;
         }
         fi.close();

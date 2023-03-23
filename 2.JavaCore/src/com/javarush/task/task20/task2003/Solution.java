@@ -9,24 +9,21 @@ import java.util.Properties;
 Знакомство с properties
 */
 
-public class Solution
-{
+public class Solution {
 
     public static Map<String, String> runtimeStorage = new HashMap<>();
 
-    public static void save(OutputStream outputStream) throws Exception
-    {
+    public static void save(OutputStream outputStream) throws Exception {
         Properties prop = new Properties();
 
-        for (Map.Entry<String, String> entry : runtimeStorage.entrySet())
-        {
+        for (Map.Entry<String, String> entry : runtimeStorage.entrySet()) {
             String name = entry.getKey();
             String value = entry.getValue();
 
-            prop.setProperty(name,value);
+            prop.setProperty(name, value);
         }
 
-        prop.store(outputStream,null);
+        prop.store(outputStream, null);
     }
 
     public static void load(InputStream inputStream) throws IOException {
@@ -97,14 +94,11 @@ public class Solution
         bufferedReader.close();
     }*/
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-             FileInputStream fos = new FileInputStream(reader.readLine()))
-        {
+             FileInputStream fos = new FileInputStream(reader.readLine())) {
             load(fos);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

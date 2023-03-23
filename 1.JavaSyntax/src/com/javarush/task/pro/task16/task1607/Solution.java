@@ -20,11 +20,11 @@ public class Solution {
     }
 
     static LocalDate ofExample() {
-        return LocalDate.of(2020,9,12);
+        return LocalDate.of(2020, 9, 12);
     }
 
     static LocalDate ofYearDayExample() {
-        return LocalDate.ofYearDay(2020,256);
+        return LocalDate.ofYearDay(2020, 256);
     }
 
     static LocalDate ofEpochDayExample() {

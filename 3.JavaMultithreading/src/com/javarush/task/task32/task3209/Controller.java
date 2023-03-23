@@ -8,83 +8,75 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.*;
 
-public class Controller
-{
+public class Controller {
     private View view;
     private HTMLDocument document;
     private File currentFile;
 
-    public Controller(View view)
-    {
+    public Controller(View view) {
         this.view = view;
     }
 
     public static void main(String[] args) {
         View view = new View();
         Controller controller = new Controller(view);
-        
+
         view.setController(controller);
         view.init();
         controller.init();
     }
 
     @SuppressWarnings("checkstyle:LeftCurly")
-    public void init()
-    {
+    public void init() {
         createNewDocument();
     }
 
     @SuppressWarnings("checkstyle:LeftCurly")
-    public void exit()
-    {
+    public void exit() {
         System.exit(0);
     }
 
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:DesignForExtension"})
-    public HTMLDocument getDocument()
-    {
+    public HTMLDocument getDocument() {
         return document;
     }
 
     @SuppressWarnings("checkstyle:WhitespaceAround")
-    public void resetDocument(){
+    public void resetDocument() {
         UndoListener undoListener = view.getUndoListener();
-        if(document != null)
+        if (document != null)
             document.removeUndoableEditListener(undoListener);
-         
-            document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();
-            document.addUndoableEditListener(undoListener);
-            view.update();
+
+        document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();
+        document.addUndoableEditListener(undoListener);
+        view.update();
     }
 
     @SuppressWarnings("checkstyle:FinalParameters")
-    public void setPlainText(String text){
+    public void setPlainText(String text) {
         resetDocument();
         StringReader stringReader = new StringReader(text);
-        
-        try{
-            new HTMLEditorKit().read(stringReader,document,0);
-        }catch (IOException | BadLocationException e)
-        {
+
+        try {
+            new HTMLEditorKit().read(stringReader, document, 0);
+        } catch (IOException | BadLocationException e) {
             ExceptionHandler.log(e);
         }
     }
 
-    public String getPlainText(){
+    public String getPlainText() {
         StringWriter stringWriter = new StringWriter();
-        try
-        {
+        try {
             HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
             htmlEditorKit.write(stringWriter, document, 0, document.getLength());
-        } catch (IOException| BadLocationException e)
-        {
+        } catch (IOException | BadLocationException e) {
             ExceptionHandler.log(e);
         }
         return stringWriter.toString();
     }
-    
+
     @SuppressWarnings("checkstyle:DesignForExtension")
-    public void createNewDocument(){
+    public void createNewDocument() {
         view.selectHtmlTab();
         resetDocument();
         view.setTitle("HTML редактор");
@@ -92,7 +84,7 @@ public class Controller
     }
 
     @SuppressWarnings("checkstyle:WhitespaceAround")
-    public void openDocument(){
+    public void openDocument() {
         view.selectHtmlTab();
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileFilter(new HTMLFileFilter());
@@ -111,7 +103,7 @@ public class Controller
         }
     }
 
-    public void saveDocument(){
+    public void saveDocument() {
         view.selectHtmlTab();
         if (currentFile != null) {
             try (FileWriter fileWriter = new FileWriter(currentFile)) {
@@ -124,7 +116,7 @@ public class Controller
         }
     }
 
-    public void saveDocumentAs(){
+    public void saveDocumentAs() {
         view.selectHtmlTab();
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileFilter(new HTMLFileFilter());

@@ -16,77 +16,65 @@ public class Util {
 
     public static List<Jeans> getAllJeans() {
 
-        abstract class AbstractJeans implements Jeans
-        {
+        abstract class AbstractJeans implements Jeans {
             private int id;
             private int length;
             private int size;
             private double price;
 
-            AbstractJeans(int id, int length, int size, double price)
-            {
-               this.id = id;
-               this.length = length;
-               this.size = size;
-               this.price = price;
+            AbstractJeans(int id, int length, int size, double price) {
+                this.id = id;
+                this.length = length;
+                this.size = size;
+                this.price = price;
             }
+
             @Override
-            public int getId()
-            {
+            public int getId() {
                 return id;
             }
 
             @Override
-            public double getPrice()
-            {
+            public double getPrice() {
                 return price;
             }
 
             @Override
-            public int getLength()
-            {
+            public int getLength() {
                 return length;
             }
 
             @Override
-            public int getSize()
-            {
+            public int getSize() {
                 return size;
             }
 
             @Override
-            public String toString()
-            {
+            public String toString() {
                 String name = this.getClass().getSimpleName();
 
-                return String.format("%s{id=%d, length=%d, size=%d, price=%f.1}",name,id,length,size,price);
+                return String.format("%s{id=%d, length=%d, size=%d, price=%f.1}", name, id, length, size, price);
 
             }
         }
 
-        class Levis extends AbstractJeans
-        {
-            Levis(int id, int length, int size, double price)
-            {
+        class Levis extends AbstractJeans {
+            Levis(int id, int length, int size, double price) {
                 super(id, length, size, price);
             }
 
             @Override
-            public String getTM()
-            {
+            public String getTM() {
                 return "Levi's";
             }
         }
-        class Denim extends AbstractJeans
-        {
-            Denim(int id, int length, int size, double price)
-            {
+        class Denim extends AbstractJeans {
+            Denim(int id, int length, int size, double price) {
                 super(id, length, size, price);
             }
 
             @Override
-            public String getTM()
-            {
+            public String getTM() {
                 return "Denim";
             }
         }

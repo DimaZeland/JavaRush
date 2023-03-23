@@ -10,21 +10,16 @@ public class Solution {
     public static void main(String[] args) throws DownloadException {
 
 
-        while (true)
-        {
-            try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
-            {
+        while (true) {
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
                 String file = br.readLine();
-                try(FileInputStream fi = new FileInputStream(file))
-                {
-                    if(fi.available() < 1000)
-                    {
+                try (FileInputStream fi = new FileInputStream(file)) {
+                    if (fi.available() < 1000) {
                         throw new DownloadException();
                     }
                 }
+            } catch (IOException e) {
             }
-            catch (IOException e)
-            {}
         }
     }
 

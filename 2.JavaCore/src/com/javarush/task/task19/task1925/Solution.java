@@ -7,11 +7,9 @@ import java.util.ArrayList;
 Длинные слова
 */
 
-public class Solution
-{
+public class Solution {
     //static boolean tested = false;
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         String fileName1 = args[0];
         String fileName2 = args[1];
         String input;

@@ -7,11 +7,9 @@ import java.time.temporal.ChronoUnit;
 Ой как много методов!
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Instant instant = Instant.ofEpochSecond(10);
         System.out.println(instant);
         System.out.println(plusMinutes(instant, 2));
@@ -22,13 +20,11 @@ public class Solution
         System.out.println(minusDays(instant, 2));
     }
 
-    static public Instant plusMinutes(Instant instant, long minutes)
-    {
+    static public Instant plusMinutes(Instant instant, long minutes) {
         return instant.plusSeconds(minutes * 60);
     }
 
-    static public Instant plusHours(Instant instant, long hours)
-    {
+    static public Instant plusHours(Instant instant, long hours) {
         return plusMinutes(instant, hours * 60);
     }
 

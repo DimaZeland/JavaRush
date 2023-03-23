@@ -17,24 +17,23 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String dirName = reader.readLine();
-        
+
         Path directory = Paths.get(dirName);
-        
-        if(!Files.isDirectory(directory))
+
+        if (!Files.isDirectory(directory))
             System.out.println(directory.toString() + " - не папка.");
-        else
-        {
+        else {
             AtomicInteger folderCounter = new AtomicInteger();
             AtomicInteger fileCounter = new AtomicInteger();
             AtomicLong sizeCounter = new AtomicLong();
-            
-            Files.walkFileTree(directory, new SimpleFileVisitor<Path>(){
+
+            Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
                 @Override
                 public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-                    if(!dir.equals(directory)) folderCounter.incrementAndGet();
+                    if (!dir.equals(directory)) folderCounter.incrementAndGet();
                     return FileVisitResult.CONTINUE;
                 }
-                
+
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                     fileCounter.incrementAndGet();

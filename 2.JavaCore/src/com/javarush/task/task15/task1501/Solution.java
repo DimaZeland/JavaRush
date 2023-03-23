@@ -21,22 +21,19 @@ public class Solution {
         Object getAllowedAction();
     }
 
-    public static class Clothes implements Discountable, Sellable, Movable{
+    public static class Clothes implements Discountable, Sellable, Movable {
         @Override
-        public boolean isMovable()
-        {
+        public boolean isMovable() {
             return false;
         }
 
         @Override
-        public Object getAllowedAction(String name)
-        {
+        public Object getAllowedAction(String name) {
             return null;
         }
 
         @Override
-        public Object getAllowedAction()
-        {
+        public Object getAllowedAction() {
             return null;
         }
     }

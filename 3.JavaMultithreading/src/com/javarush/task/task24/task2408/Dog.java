@@ -7,12 +7,10 @@ import java.util.Date;
 Класс DogPet использует 2 класса - SuperDog и Dog, разберись с getName в классе DogPet
 Так намного лучше, чем Copy+Paste!
  */
-public class Dog implements Pet
-{
+public class Dog implements Pet {
     private String name;
 
-    public Dog(String name)
-    {
+    public Dog(String name) {
         this.name = name;
     }
 
@@ -45,19 +43,15 @@ public class Dog implements Pet
      * @param i количество букв 'а' в слове гав
      * @return экземпляр класса DogPet
      */
-    public Sayable toSayable(final int i)
-    {
-        class DogPet extends SuperDog implements Sayable
-        {
+    public Sayable toSayable(final int i) {
+        class DogPet extends SuperDog implements Sayable {
             @Override
-            public String say()
-            {
+            public String say() {
                 String result = "";
 
-                if(i < 1)
+                if (i < 1)
                     result = getName() + " спит.";
-                else
-                {
+                else {
                     StringBuilder stringBuilder = new StringBuilder(getName()).append(" лает г");
 
                     for (int j = 0; j < i; j++)
@@ -66,15 +60,14 @@ public class Dog implements Pet
                     stringBuilder.append("в!");
                     stringBuilder.append(" ");
                     stringBuilder.append(formatter.format(new Date()));
-                    
+
                     result = stringBuilder.toString();
                 }
 
                 return result;
             }
 
-            private String getName()
-            {
+            private String getName() {
                 return getSuperQuotes() + Dog.this.name + getSuperQuotes();
             }
         }

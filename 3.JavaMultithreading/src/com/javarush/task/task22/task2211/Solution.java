@@ -7,10 +7,8 @@ import java.nio.charset.StandardCharsets;
 Смена кодировки
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         String file1 = args[0];
         String file2 = args[1];
 

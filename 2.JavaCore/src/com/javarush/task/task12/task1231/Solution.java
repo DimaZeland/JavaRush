@@ -12,7 +12,7 @@ public class Solution {
     }
 
     public interface CanFly {
-         void fly();
+        void fly();
     }
 
     public static class Horse {

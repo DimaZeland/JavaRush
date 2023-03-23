@@ -24,8 +24,7 @@ public class Solution {
     }
 
     public static void printStudentsInfo() {
-        for (Map.Entry<String,Double> e: grades.entrySet())
-        {
+        for (Map.Entry<String, Double> e : grades.entrySet()) {
             String name = e.getKey();
             Double AverMark = e.getValue();
             System.out.println(name + " : " + AverMark);

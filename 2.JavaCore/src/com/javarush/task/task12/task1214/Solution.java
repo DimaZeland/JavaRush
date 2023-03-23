@@ -13,10 +13,9 @@ public class Solution {
         public abstract String getName();
     }
 
-    public static class Cow extends Animal{
+    public static class Cow extends Animal {
         @Override
-        public String getName()
-        {
+        public String getName() {
             return "Cow";
         }
     }

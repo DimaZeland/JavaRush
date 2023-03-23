@@ -29,10 +29,9 @@ public class Solution {
         public void run() {
             try {
                 Thread current = Thread.currentThread();
-                
-                
-                while (false == current.isInterrupted())
-                {
+
+
+                while (false == current.isInterrupted()) {
                     Thread.sleep(1000);
                     ++seconds;
                 }

@@ -7,11 +7,11 @@ import com.javarush.engine.cell.Game;
 Наследование
 */
 
-public class InheritanceGame extends Game{
+public class InheritanceGame extends Game {
 
     @Override
     public void initialize() {
-        setScreenSize(10,10);
+        setScreenSize(10, 10);
         for (int x = 0; x < 10; x++) {
             for (int y = 0; y < 10; y++) {
                 setCellColor(x, y, Color.ORANGE);

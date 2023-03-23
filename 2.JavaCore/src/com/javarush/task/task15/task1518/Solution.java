@@ -11,15 +11,13 @@ public class Solution {
 
     }
 
-    static
-    {
+    static {
         cat = new Cat();
         cat.name = "Fred";
         System.out.println(cat.name);
     }
 
-    public static class Cat
-    {
+    public static class Cat {
         public String name;
     }
 }

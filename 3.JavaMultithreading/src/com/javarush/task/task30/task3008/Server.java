@@ -5,6 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 /*
 Итак, чтобы насладиться плодами наших титанических:
 1. Запускаем программу из класса Server
@@ -21,76 +22,60 @@ import java.util.concurrent.ConcurrentHashMap;
 В окне чата бот умеет отвечать на наши сообщения, которые мы указывали в классе BotClient в методе processIncomingMessage (дата, день, месяц, год, время, час, минуты, секунды).
 Можно научить бота отвечать на любые другие наши сообщения, но потребуется немного изменить метод processIncomingMessage.
  */
-public class Server
-{
+public class Server {
     static private Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
-    public static void sendBroadcastMessage(Message message)
-    {
-        for (Connection connection : connectionMap.values())
-        {
-            try
-            {
+    public static void sendBroadcastMessage(Message message) {
+        for (Connection connection : connectionMap.values()) {
+            try {
                 connection.send(message);
-            } catch (IOException e)
-            {
+            } catch (IOException e) {
                 ConsoleHelper.writeMessage("Не смогли отправить сообщение" + connection.getRemoteSocketAddress());
-            } catch (ClassNotFoundException e)
-            {
+            } catch (ClassNotFoundException e) {
 
             }
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         ConsoleHelper.writeMessage("Введите порт сервера:");
         int port = ConsoleHelper.readInt();
 
-        try (ServerSocket serverSocket = new ServerSocket(port))
-        {
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
             ConsoleHelper.writeMessage("Чат сервер запущен.");
 
-            while (true)
-            {
+            while (true) {
                 // Ожидаем входящее соединение и запускаем отдельный поток при его принятии
                 Socket socket = serverSocket.accept();
                 new Handler(socket).start();
             }
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             ConsoleHelper.writeMessage("Произошла ошибка при запуске или работе сервера.");
         }
     }
 
-    private static class Handler extends Thread
-    {
+    private static class Handler extends Thread {
         private Socket socket;
 
-        public Handler(Socket socket)
-        {
+        public Handler(Socket socket) {
             this.socket = socket;
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
             ConsoleHelper.writeMessage("Установлено новое соединение с " + socket.getRemoteSocketAddress());
 
             String userName = null;
 
-            try (Connection connection = new Connection(socket))
-            {
+            try (Connection connection = new Connection(socket)) {
                 userName = serverHandshake(connection);
                 sendBroadcastMessage(new Message(MessageType.USER_ADDED, userName));
                 notifyUsers(connection, userName);
                 serverMainLoop(connection, userName);
-            } catch (IOException | ClassNotFoundException e)
-            {
+            } catch (IOException | ClassNotFoundException e) {
                 ConsoleHelper.writeMessage("Ошибка при обмене данными с " + socket.getRemoteSocketAddress());
             }
-            if (userName != null)
-            {
+            if (userName != null) {
                 connectionMap.remove(userName);
                 sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
             }
@@ -98,14 +83,11 @@ public class Server
             ConsoleHelper.writeMessage("Соединение с " + socket.getRemoteSocketAddress() + " закрыто.");
         }
 
-        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException
-        {
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
             Message response = null;
             String name = "";
-            do
-            {
-                do
-                {
+            do {
+                do {
                     Message query = new Message(MessageType.NAME_REQUEST);
                     connection.send(query);
 
@@ -133,32 +115,25 @@ public class Server
             return name;
         }
 
-        private void notifyUsers(Connection connection, String userName) throws IOException
-        {
-            for (String name : connectionMap.keySet())
-            {
+        private void notifyUsers(Connection connection, String userName) throws IOException {
+            for (String name : connectionMap.keySet()) {
                 if (name.equals(userName))
                     continue;
 
-                try
-                {
+                try {
                     connection.send(new Message(MessageType.USER_ADDED, name));
-                } catch (ClassNotFoundException e)
-                {
+                } catch (ClassNotFoundException e) {
 
                 }
             }
         }
 
-        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException
-        {
-            while (true)
-            {
+        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException {
+            while (true) {
                 String newText = "";
                 Message message = connection.receive();
 
-                if (MessageType.TEXT == message.getType())
-                {
+                if (MessageType.TEXT == message.getType()) {
                     newText = userName + ": " + message.getData();
                     sendBroadcastMessage(new Message(MessageType.TEXT, newText));
                 } else

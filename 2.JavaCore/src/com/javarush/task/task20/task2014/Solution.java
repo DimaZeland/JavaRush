@@ -8,10 +8,8 @@ import java.util.Date;
 Serializable Solution
 */
 
-public class Solution implements Serializable
-{
-    public static void main(String[] args)
-    {
+public class Solution implements Serializable {
+    public static void main(String[] args) {
         System.out.println(new Solution(4));
     }
 
@@ -20,8 +18,7 @@ public class Solution implements Serializable
     transient private int temperature;
     String string;
 
-    public Solution(int temperature)
-    {
+    public Solution(int temperature) {
         this.currentDate = new Date();
         this.temperature = temperature;
 
@@ -31,8 +28,7 @@ public class Solution implements Serializable
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return this.string;
     }
 }

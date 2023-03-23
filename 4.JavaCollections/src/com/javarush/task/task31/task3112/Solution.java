@@ -25,14 +25,14 @@ public class Solution {
     public static Path downloadFile(String urlString, Path downloadDirectory) throws IOException {
         String downloadFileName = urlString.split("/")[urlString.split("/").length - 1];
         Path downloadFilePath = downloadDirectory.resolve(downloadFileName);
-        
+
         URL url = new URL(urlString);
         InputStream inputStream = url.openStream();
 
         Path tempFile = Files.createTempFile(null, null);
-        Files.copy(inputStream,tempFile, StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
 
-        Files.move(tempFile,downloadFilePath);
+        Files.move(tempFile, downloadFilePath);
 
         return downloadFilePath;
     }

@@ -8,24 +8,19 @@ import java.io.InputStreamReader;
 Закрепляем паттерн Singleton
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
 
     }
 
     public static Planet thePlanet;
 
-    static
-    {
+    static {
         readKeyFromConsoleAndInitPlanet();
     }
 
-    public static void readKeyFromConsoleAndInitPlanet()
-    {
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
-        {
+    public static void readKeyFromConsoleAndInitPlanet() {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             String str = br.readLine();
 
             if (str.equals(Planet.EARTH))
@@ -36,8 +31,7 @@ public class Solution
                 thePlanet = Sun.getInstance();
             else
                 thePlanet = null;
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

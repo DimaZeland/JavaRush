@@ -18,12 +18,12 @@ public class Solution {
     }
 
     //public static void print(int i) {
-   //     System.out.println("Это Integer2");
-   // }
+    //     System.out.println("Это Integer2");
+    // }
 
-   // public static void print(Short i) {
+    // public static void print(Short i) {
     //    System.out.println("Это Object3");
-   // }
+    // }
 
     public static void print(Object i) {
         System.out.println("Это Object");
@@ -37,7 +37,7 @@ public class Solution {
     //    System.out.println("Это double6");
     //}
 
-   // public static void print(float i) {
-   //     System.out.println("Это Double7");
-   // }
+    // public static void print(float i) {
+    //     System.out.println("Это Double7");
+    // }
 }

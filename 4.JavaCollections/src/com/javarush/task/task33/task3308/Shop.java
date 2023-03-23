@@ -8,8 +8,7 @@ import java.util.List;
 
 @XmlType(name = "shop")
 @XmlRootElement
-public class Shop
-{
+public class Shop {
     public Goods goods;
     public int count;
     public double profit;

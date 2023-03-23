@@ -6,10 +6,8 @@ import java.util.Set;
 Убираем deadLock используя открытые вызовы
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         final long deadline = System.currentTimeMillis() + 5000; //waiting for 5 sec
 
         final RealEstate realEstate = new RealEstate();
@@ -17,44 +15,33 @@ public class Solution
 
         final Apartment[] apartments = allApartments.toArray(new Apartment[allApartments.size()]);
 
-        for (int i = 0; i < 20; i++)
-        {
-            new Thread(new Runnable()
-            {
+        for (int i = 0; i < 20; i++) {
+            new Thread(new Runnable() {
                 @Override
-                public void run()
-                {
-                    for (int i = 0; i < 10; i++)
-                    {
+                public void run() {
+                    for (int i = 0; i < 10; i++) {
                         realEstate.revalidate();
                     }
                 }
             }, "RealEstateThread" + i).start();
 
-            new Thread(new Runnable()
-            {
+            new Thread(new Runnable() {
                 @Override
-                public void run()
-                {
-                    for (int i = 0; i < apartments.length; i++)
-                    {
+                public void run() {
+                    for (int i = 0; i < apartments.length; i++) {
                         apartments[i].revalidate(true);
                     }
                 }
             }, "ApartmentThread" + i).start();
         }
 
-        Thread deamonThread = new Thread(new Runnable()
-        {
+        Thread deamonThread = new Thread(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 while (System.currentTimeMillis() < deadline)
-                    try
-                    {
+                    try {
                         Thread.sleep(2);
-                    } catch (InterruptedException ignored)
-                    {
+                    } catch (InterruptedException ignored) {
                     }
                 System.out.println("Deadlock occurred");
             }

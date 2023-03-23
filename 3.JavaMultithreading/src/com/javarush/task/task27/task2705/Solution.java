@@ -14,10 +14,8 @@ public class Solution {
     }
 
     public void secondMethod() {
-        synchronized (lock)
-        {
-            synchronized (this)
-            {
+        synchronized (lock) {
+            synchronized (this) {
                 doSomething();
             }
         }

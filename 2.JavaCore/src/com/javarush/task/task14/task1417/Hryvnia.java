@@ -1,15 +1,12 @@
 package com.javarush.task.task14.task1417;
 
-public class Hryvnia extends Money
-{
+public class Hryvnia extends Money {
     @Override
-    public String getCurrencyName()
-    {
+    public String getCurrencyName() {
         return "UAH";
     }
 
-    public Hryvnia(double v)
-    {
+    public Hryvnia(double v) {
         super(v);
     }
 }

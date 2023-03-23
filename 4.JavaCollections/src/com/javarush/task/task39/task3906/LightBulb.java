@@ -1,6 +1,6 @@
 package com.javarush.task.task39.task3906;
 
-public class LightBulb implements Switchable{
+public class LightBulb implements Switchable {
     private boolean on = false;
 
     public boolean isOn() {

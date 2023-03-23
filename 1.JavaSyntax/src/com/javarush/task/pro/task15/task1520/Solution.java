@@ -10,20 +10,16 @@ import java.util.Scanner;
 Перемещение файлов
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         Path sourceDirectory = Path.of(scanner.nextLine());
         Path targetDirectory = Path.of(scanner.nextLine());
 
 
-        try (var filesDir1 = Files.newDirectoryStream(sourceDirectory))
-        {
+        try (var filesDir1 = Files.newDirectoryStream(sourceDirectory)) {
             for (Path path : filesDir1)
-                if (Files.isRegularFile(path))
-                {
+                if (Files.isRegularFile(path)) {
                     Path resolve = targetDirectory.resolve(path.getFileName());
                     Files.move(path, resolve);
                 }

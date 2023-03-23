@@ -17,16 +17,14 @@ public class TimerGame extends Game {
 
     @Override
     public void onTurn(int step) {
-        setCellNumber(1,1,step);
+        setCellNumber(1, 1, step);
 
         Color clr = 0 == step % 2 ? Color.GREEN : Color.ORANGE;
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    setCellColor(j,i,clr);
-                }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                setCellColor(j, i, clr);
             }
+        }
     }
 }

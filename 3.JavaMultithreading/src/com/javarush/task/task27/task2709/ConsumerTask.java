@@ -10,10 +10,8 @@ public class ConsumerTask implements Runnable {
     }
 
     public void run() {
-        synchronized (this)
-        {
-            while (!stopped)
-            {
+        synchronized (this) {
+            while (!stopped) {
                 transferObject.get();
             }
         }

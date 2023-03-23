@@ -18,8 +18,7 @@ public class Solution {
     }
 
     public static void ourInterruptMethod() {
-        for (Thread thread: threads)
-        {
+        for (Thread thread : threads) {
             thread.interrupt();
         }
     }

@@ -22,13 +22,11 @@ public class Solution {
 
         final int size = array.length;
 
-        int medianValue = size % 2 == 1 ? array[size/2] : (array[size/2] + array[size/2 - 1]) / 2;
+        int medianValue = size % 2 == 1 ? array[size / 2] : (array[size / 2] + array[size / 2 - 1]) / 2;
 
-        Comparator<Integer> medianComparator = new Comparator<Integer>()
-        {
+        Comparator<Integer> medianComparator = new Comparator<Integer>() {
             @Override
-            public int compare(Integer o1, Integer o2)
-            {
+            public int compare(Integer o1, Integer o2) {
                 // 13 17 5
                 int o1Diff = Math.abs(medianValue - o1); // 4
                 int o2Diff = Math.abs(medianValue - o2); //8
@@ -36,7 +34,7 @@ public class Solution {
             }
         };
 
-        Arrays.sort(array,medianComparator);
+        Arrays.sort(array, medianComparator);
 
         return array;
     }

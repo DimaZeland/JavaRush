@@ -12,7 +12,7 @@ public class Solution {
     public void someMethod() throws InterruptedException {
         latch.countDown();
         latch.await();
-            retrieveValue();
+        retrieveValue();
 
     }
 
@@ -20,7 +20,7 @@ public class Solution {
         System.out.println("Value retrieved.");
     }
 
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
         Solution sol = new Solution();
         sol.someMethod();
     }

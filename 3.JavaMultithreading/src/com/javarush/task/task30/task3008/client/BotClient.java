@@ -7,20 +7,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class BotClient extends Client
-{
-    public class BotSocketThread extends SocketThread
-    {
+public class BotClient extends Client {
+    public class BotSocketThread extends SocketThread {
         @Override
-        protected void clientMainLoop() throws IOException, ClassNotFoundException
-        {
+        protected void clientMainLoop() throws IOException, ClassNotFoundException {
             sendTextMessage("Привет чатику. Я бот. Понимаю команды: дата, день, месяц, год, время, час, минуты, секунды.");
             super.clientMainLoop();
         }
 
         @Override
-        protected void processIncomingMessage(String message)
-        {
+        protected void processIncomingMessage(String message) {
             // Выводим текст сообщения в консоль
             ConsoleHelper.writeMessage(message);
 
@@ -108,26 +104,22 @@ public class BotClient extends Client
     }
 
     @Override
-    protected SocketThread getSocketThread()
-    {
+    protected SocketThread getSocketThread() {
         return new BotSocketThread();
     }
 
     @Override
-    protected boolean shouldSendTextFromConsole()
-    {
+    protected boolean shouldSendTextFromConsole() {
         return false;
     }
 
     @Override
-    protected String getUserName()
-    {
+    protected String getUserName() {
         String X = String.valueOf((int) (Math.random() * 100));
         return "date_bot_" + X;
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         BotClient botClient = new BotClient();
         botClient.run();
     }

@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Human implements Alive
-{
-    public class Size
-    {
+public class Human implements Alive {
+    public class Size {
         public int height;
         public int weight;
     }
@@ -22,77 +20,63 @@ public class Human implements Alive
 
     private BloodGroup bloodGroup;
 
-    public List<Human> getChildren()
-    {
+    public List<Human> getChildren() {
         return Collections.unmodifiableList(children);
     }
 
-    public void addChild(Human human)
-    {
+    public void addChild(Human human) {
         children.add(human);
     }
 
-    public void removeChild(Human human)
-    {
+    public void removeChild(Human human) {
         children.remove(human);
     }
 
-    public void setBloodGroup(BloodGroup code)
-    {
+    public void setBloodGroup(BloodGroup code) {
         bloodGroup = code;
     }
 
-    public BloodGroup getBloodGroup()
-    {
+    public BloodGroup getBloodGroup() {
         return bloodGroup;
     }
 
-    public Human(String name, int age)
-    {
+    public Human(String name, int age) {
         this.name = name;
         this.age = age;
         this.id = nextId;
         nextId++;
     }
 
-    public int getAge()
-    {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(int age)
-    {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public void printSize()
-    {
+    public void printSize() {
         System.out.println("Рост: " + size.height + " Вес: " + size.weight);
     }
 
     @Override
-    public void live()
-    {
+    public void live() {
 
     }
 
-    public String getPosition()
-    {
+    public String getPosition() {
         return "Человек";
     }
 

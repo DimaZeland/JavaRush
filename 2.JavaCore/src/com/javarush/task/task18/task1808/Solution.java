@@ -7,7 +7,7 @@ import java.io.*;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String file1 = br.readLine();
         String file2 = br.readLine();
@@ -20,19 +20,16 @@ public class Solution {
         int count = fi.available();
 
         byte[] arr = new byte[count];
-        fi.read(arr,0,count);
+        fi.read(arr, 0, count);
         fi.close();
 
-        if(0 == count % 2)
-        {
-            
-            fo2.write(arr, 0,count / 2);
-            fo3.write(arr, (count/2), count/ 2);
-        }
-        else
-        {
-            fo2.write(arr, 0,(count / 2) + 1);
-            fo3.write(arr, (count/2)+1 , count / 2);
+        if (0 == count % 2) {
+
+            fo2.write(arr, 0, count / 2);
+            fo3.write(arr, (count / 2), count / 2);
+        } else {
+            fo2.write(arr, 0, (count / 2) + 1);
+            fo3.write(arr, (count / 2) + 1, count / 2);
         }
         fo2.close();
         fo3.close();

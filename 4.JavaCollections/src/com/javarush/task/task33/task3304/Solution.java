@@ -27,10 +27,10 @@ public class Solution {
         String key1 = "\"" + one.getClass().getSimpleName().toLowerCase() + "\"";
         String key2 = "\"" + resultClassObject.getSimpleName().toLowerCase() + "\"";
         ss = ss.replaceFirst(key1, key2);
-        
+
         StringReader reader = new StringReader(ss);
         ObjectMapper mapper2 = new ObjectMapper();
-        return mapper2.readValue(reader,resultClassObject);
+        return mapper2.readValue(reader, resultClassObject);
     }
 
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "className")

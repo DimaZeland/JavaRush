@@ -1,6 +1,6 @@
 package com.javarush.task.task13.task1328;
 
-public abstract class AbstractRobot implements Attackable,Defensable{
+public abstract class AbstractRobot implements Attackable, Defensable {
     private int hitCount;
 
     private String name;
@@ -24,8 +24,8 @@ public abstract class AbstractRobot implements Attackable,Defensable{
         } else if (hitCount == 3) {
             attackedBodyPart = BodyPart.LEG;
         } else if (hitCount == 4) {
-                hitCount = 0;
-                attackedBodyPart = BodyPart.CHEST;
+            hitCount = 0;
+            attackedBodyPart = BodyPart.CHEST;
         }
         return attackedBodyPart;
     }

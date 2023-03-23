@@ -32,11 +32,11 @@ public class Solution {
     }
 
     public static Optional<Car> getCheapestCar(Stream<Car> cars) {
-        return cars.min((car1,car2)->car1.getPrice()- car2.getPrice());
+        return cars.min((car1, car2) -> car1.getPrice() - car2.getPrice());
     }
 
     public static Optional<Car> getCheaperCar(Stream<Car> cars, Car cheapestCar) {
-        return cars.filter(car->car.getPrice() < cheapestCar.getPrice()).findFirst();
+        return cars.filter(car -> car.getPrice() < cheapestCar.getPrice()).findFirst();
     }
 }
 

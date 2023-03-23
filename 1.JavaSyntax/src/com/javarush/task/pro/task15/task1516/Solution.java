@@ -8,17 +8,14 @@ import java.util.Scanner;
 Файл или директория
 */
 
-public class Solution
-{
+public class Solution {
     private static final String THIS_IS_FILE = " - это файл";
     private static final String THIS_IS_DIR = " - это директория";
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true)
-        {
+        while (true) {
             String str = scanner.nextLine();
 
             if (str.isEmpty())

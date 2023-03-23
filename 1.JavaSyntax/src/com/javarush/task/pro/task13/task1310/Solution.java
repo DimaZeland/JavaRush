@@ -25,15 +25,15 @@ public class Solution {
     }
 
     public static void printStudents() {
-        for(String name: grades.keySet())
+        for (String name : grades.keySet())
             System.out.println(name);
     }
 
     public static Double getAverageMark() {
         double average = 0;
-        for (double mark: grades.values())
-            average+= mark;
+        for (double mark : grades.values())
+            average += mark;
 
-        return average/ grades.size();
+        return average / grades.size();
     }
 }

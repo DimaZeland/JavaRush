@@ -26,9 +26,9 @@ public class Solution {
             Thread t = Thread.currentThread();
             String name = t.getName();
             System.out.println("Name=" + name);
-            try{Thread.sleep(1);}
-            catch (InterruptedException e)
-            {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

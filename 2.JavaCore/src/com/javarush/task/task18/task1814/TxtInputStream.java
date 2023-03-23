@@ -10,13 +10,11 @@ UnsupportedFileName
 
 public class TxtInputStream extends FileInputStream {
 
-    public TxtInputStream(String fileName) throws FileNotFoundException, UnsupportedFileNameException, IOException
-    {
+    public TxtInputStream(String fileName) throws FileNotFoundException, UnsupportedFileNameException, IOException {
         super(fileName);
-        String end = fileName.substring(fileName.length() - 4,fileName.length());
+        String end = fileName.substring(fileName.length() - 4, fileName.length());
 
-        if(false == end.equals(".txt"))
-        {
+        if (false == end.equals(".txt")) {
             super.close();
             throw new UnsupportedFileNameException();
         }

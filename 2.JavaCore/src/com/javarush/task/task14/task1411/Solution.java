@@ -7,16 +7,13 @@ import java.io.InputStreamReader;
 User, Loser, Coder and Proger
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Person person = null;
         String key = null;
 
-        while (true)
-        {
+        while (true) {
             key = reader.readLine();
 
             if (key.equals("user"))
@@ -34,15 +31,14 @@ public class Solution
         }
     }
 
-    public static void doWork(Person person)
-    {
-        if(person instanceof Person.User)
+    public static void doWork(Person person) {
+        if (person instanceof Person.User)
             ((Person.User) person).live();
-        else if(person instanceof Person.Loser)
+        else if (person instanceof Person.Loser)
             ((Person.Loser) person).doNothing();
-        else if(person instanceof Person.Coder)
+        else if (person instanceof Person.Coder)
             ((Person.Coder) person).writeCode();
-        else if(person instanceof Person.Proger)
+        else if (person instanceof Person.Proger)
             ((Person.Proger) person).enjoy();
     }
 }

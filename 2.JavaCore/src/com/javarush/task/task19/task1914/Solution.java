@@ -32,8 +32,7 @@ public class Solution {
         String sign = res[1];
         int result = 0;
 
-        switch (sign)
-        {
+        switch (sign) {
             case "+":
                 result = a + b;
                 break;

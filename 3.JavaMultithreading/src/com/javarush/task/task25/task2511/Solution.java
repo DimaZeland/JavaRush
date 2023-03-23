@@ -11,16 +11,13 @@ public class Solution extends TimerTask {
     protected final Thread.UncaughtExceptionHandler handler;
 
     public Solution(TimerTask original) {
-        class MyClass implements Thread.UncaughtExceptionHandler
-        {
+        class MyClass implements Thread.UncaughtExceptionHandler {
             @Override
-            public void uncaughtException(Thread t, Throwable e)
-            {
+            public void uncaughtException(Thread t, Throwable e) {
                 int size = t.getName().length();
                 StringBuilder mask = new StringBuilder("");
 
-                for (int i = 0; i < size; i++)
-                {
+                for (int i = 0; i < size; i++) {
                     mask.append("*");
                 }
 
@@ -29,7 +26,7 @@ public class Solution extends TimerTask {
                 System.out.println(e.getMessage().replaceAll(t.getName(), mask.toString()));
             }
         }
-        
+
         if (original == null) {
             throw new NullPointerException();
         }

@@ -14,7 +14,7 @@ public class Solution {
         System.out.println(getProgrammingLanguages());
     }
 
-    public static HashMap<Integer,String> getProgrammingLanguages() {
+    public static HashMap<Integer, String> getProgrammingLanguages() {
         //напишите тут ваш код
         ArrayList<String> programmingLanguages = new ArrayList<>();
         programmingLanguages.add("Java");
@@ -26,10 +26,10 @@ public class Solution {
         programmingLanguages.add("PHP");
         programmingLanguages.add("C++");
 
-        HashMap<Integer,String> result = new HashMap<>();
+        HashMap<Integer, String> result = new HashMap<>();
 
-        for (String name: programmingLanguages)
-            result.put(programmingLanguages.indexOf(name),name );
+        for (String name : programmingLanguages)
+            result.put(programmingLanguages.indexOf(name), name);
 
         return result;
     }

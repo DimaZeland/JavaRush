@@ -20,39 +20,35 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
         return foundFiles;
     }
 
-    public void setPartOfName(String partOfName)
-    {
+    public void setPartOfName(String partOfName) {
         this.partOfName = partOfName;
     }
 
-    public void setPartOfContent(String partOfContent)
-    {
+    public void setPartOfContent(String partOfContent) {
         this.partOfContent = partOfContent;
     }
 
-    public void setMinSize(int minSize)
-    {
+    public void setMinSize(int minSize) {
         this.minSize = minSize;
     }
 
-    public void setMaxSize(int maxSize)
-    {
+    public void setMaxSize(int maxSize) {
         this.maxSize = maxSize;
     }
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if(partOfName != null && !file.getFileName().toString().contains(partOfName))
+        if (partOfName != null && !file.getFileName().toString().contains(partOfName))
             return FileVisitResult.CONTINUE;
-        
+
         byte[] content = Files.readAllBytes(file); // размер файла: content.length
 
-        if((maxSize > 0 && content.length > maxSize) || minSize > 0 && content.length < minSize)
+        if ((maxSize > 0 && content.length > maxSize) || minSize > 0 && content.length < minSize)
             return FileVisitResult.CONTINUE;
-        
-        if(partOfContent != null && !partOfContent.isEmpty()) {
+
+        if (partOfContent != null && !partOfContent.isEmpty()) {
             String contentString = new String(content);
-            if(!contentString.contains(partOfContent)) 
+            if (!contentString.contains(partOfContent))
                 return FileVisitResult.CONTINUE;
         }
         // if all checks are passed, add file to result list

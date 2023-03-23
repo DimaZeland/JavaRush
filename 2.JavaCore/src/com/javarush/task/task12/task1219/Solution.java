@@ -4,78 +4,61 @@ package com.javarush.task.task12.task1219;
 Создаем человека
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
 
     }
 
-    public interface CanFly
-    {
+    public interface CanFly {
         public void fly();
     }
 
-    public interface CanRun
-    {
+    public interface CanRun {
         public void run();
     }
 
-    public interface CanSwim
-    {
+    public interface CanSwim {
         public void swim();
     }
 
 
-    public class Human implements CanRun, CanSwim
-    {
+    public class Human implements CanRun, CanSwim {
         @Override
-        public void run()
-        {
+        public void run() {
         }
 
         @Override
-        public void swim()
-        {
+        public void swim() {
         }
     }
 
-    public class Duck implements CanFly, CanRun, CanSwim
-    {
+    public class Duck implements CanFly, CanRun, CanSwim {
         @Override
-        public void fly()
-        {
+        public void fly() {
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
         }
 
         @Override
-        public void swim()
-        {
+        public void swim() {
         }
     }
 
-    public class Penguin implements CanRun, CanSwim
-    {
+    public class Penguin implements CanRun, CanSwim {
         @Override
-        public void run()
-        {
+        public void run() {
         }
 
         @Override
-        public void swim()
-        {
+        public void swim() {
         }
     }
 
-    public class Airplane implements CanFly
-    {
+    public class Airplane implements CanFly {
         @Override
-        public void fly()
-        {
+        public void fly() {
         }
     }
 }

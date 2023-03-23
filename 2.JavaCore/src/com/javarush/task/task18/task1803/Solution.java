@@ -26,13 +26,13 @@ public class Solution {
 
         int max = -1;
 
-        for (int i:arr)
-            if(i > max)
+        for (int i : arr)
+            if (i > max)
                 max = i;
 
 
         for (int i = 0; i < arr.length; i++)
-        if(arr[i] == max)
-            System.out.print(i + " ");
+            if (arr[i] == max)
+                System.out.print(i + " ");
     }
 }

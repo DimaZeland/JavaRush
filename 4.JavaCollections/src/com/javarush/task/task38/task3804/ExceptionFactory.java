@@ -1,7 +1,6 @@
 package com.javarush.task.task38.task3804;
 
-public class ExceptionFactory
-{
+public class ExceptionFactory {
     static Throwable getException(Enum enumm) {
         if (enumm == null) return new IllegalArgumentException();
         String message = enumm.name().toLowerCase().replaceAll("[_]", " ");

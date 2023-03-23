@@ -1,15 +1,12 @@
 package com.javarush.task.task14.task1417;
 
-public class Ruble extends Money
-{
+public class Ruble extends Money {
     @Override
-    public String getCurrencyName()
-    {
+    public String getCurrencyName() {
         return "RUB";
     }
 
-    public Ruble(double v)
-    {
+    public Ruble(double v) {
         super(v);
     }
 }

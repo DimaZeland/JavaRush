@@ -15,9 +15,9 @@ public class Solution {
     }
 
     public static void printMainInfo(Object object) {
-        if(object instanceof Drawable)
+        if (object instanceof Drawable)
             ((Drawable) object).draw();
-        else if(object instanceof Movable)
+        else if (object instanceof Movable)
             ((Movable) object).move();
     }
 

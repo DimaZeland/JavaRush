@@ -15,14 +15,12 @@ public class Solution {
 
     public static class Human implements HasWeight, HasHeight {
         @Override
-        public int getWeight()
-        {
+        public int getWeight() {
             return 1;
         }
 
         @Override
-        public int getHeight()
-        {
+        public int getHeight() {
             return 2;
         }
     }

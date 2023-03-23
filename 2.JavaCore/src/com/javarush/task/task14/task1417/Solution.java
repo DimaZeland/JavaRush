@@ -7,23 +7,18 @@ import java.util.List;
 Валюты
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Person ivan = new Person("Иван");
-        for (Money money : ivan.getAllMoney())
-        {
+        for (Money money : ivan.getAllMoney()) {
             System.out.println(ivan.name + " имеет заначку в размере " + money.getAmount() + " " + money.getCurrencyName());
         }
     }
 
-    static class Person
-    {
+    static class Person {
         public String name;
 
-        Person(String name)
-        {
+        Person(String name) {
             this.name = name;
             this.allMoney = new ArrayList<Money>();
             allMoney.add(new USD(10));
@@ -34,8 +29,7 @@ public class Solution
 
         private List<Money> allMoney;
 
-        public List<Money> getAllMoney()
-        {
+        public List<Money> getAllMoney() {
             return allMoney;
         }
     }

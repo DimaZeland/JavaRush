@@ -10,23 +10,19 @@ import java.util.Scanner;
 Фейсконтроль
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
-        try(Scanner scanner = new Scanner(System.in))
-        {
+public class Solution {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
             List<String> fileText = Files.readAllLines(Paths.get(scanner.nextLine()));
 
-            fileText.forEach(string ->{
+            fileText.forEach(string -> {
                 char[] chars = string.toCharArray();
-                
-                for(char ch: chars)
-                    if(ch != ' ' && ch != '.' && ch != ',')
+
+                for (char ch : chars)
+                    if (ch != ' ' && ch != '.' && ch != ',')
                         System.out.print(ch);
             });
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

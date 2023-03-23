@@ -16,17 +16,17 @@ public class Solution {
     public static String getObjectType(Object o) {
         String result;
 
-        if(o instanceof Cat)
+        if (o instanceof Cat)
             result = "Кот";
-        else if(o instanceof Tiger)
+        else if (o instanceof Tiger)
             result = "Тигр";
-        else if(o instanceof Lion)
+        else if (o instanceof Lion)
             result = "Лев";
-        else if(o instanceof Bull)
+        else if (o instanceof Bull)
             result = "Бык";
         else
-            result  = "Животное";
-            return result;
+            result = "Животное";
+        return result;
     }
 
     public static class Cat {

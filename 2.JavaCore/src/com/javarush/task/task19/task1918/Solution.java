@@ -14,8 +14,7 @@ import java.util.regex.Pattern;
 Знакомство с тегами
 */
 
-public class Solution
-{
+public class Solution {
     public static void main(String[] args) {
         String fileName = null;
         try (BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in))) {

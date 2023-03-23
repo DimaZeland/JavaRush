@@ -10,9 +10,7 @@ import java.io.IOException;
 
 public class Solution {
     public void printFile1() throws IOException {
-        try (FileInputStream fileInputStream = new FileInputStream("file.txt"))
-        {
-
+        try (FileInputStream fileInputStream = new FileInputStream("file.txt")) {
 
 
             int data = fileInputStream.read();
@@ -25,9 +23,8 @@ public class Solution {
 
     public void printFile2() throws IOException {
 
-        try(FileInputStream fileInputStream = new FileInputStream("file.txt");
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream))
-        {
+        try (FileInputStream fileInputStream = new FileInputStream("file.txt");
+             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream)) {
 
             int data = bufferedInputStream.read();
             while (data != -1) {

@@ -18,8 +18,7 @@ public class Solution {
         }
     }
 
-    public static Boolean isLess(int first, int second)
-    {
+    public static Boolean isLess(int first, int second) {
         return first < second ? true : false;
     }
 }

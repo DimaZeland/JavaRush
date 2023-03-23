@@ -9,7 +9,7 @@ import java.io.Serializable;
 Переопределение сериализации
 */
 
-public class Solution implements Serializable, Runnable{
+public class Solution implements Serializable, Runnable {
     transient private Thread runner;
     private int speed;
 

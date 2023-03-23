@@ -1,12 +1,10 @@
 package com.javarush.task.task29.task2912;
 
-public abstract class AbstractLogger implements Logger
-{
+public abstract class AbstractLogger implements Logger {
     protected int level;
     protected Logger next;
 
-    public AbstractLogger(int level)
-    {
+    public AbstractLogger(int level) {
         this.level = level;
     }
 

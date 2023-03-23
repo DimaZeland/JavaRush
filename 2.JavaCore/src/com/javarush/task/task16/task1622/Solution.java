@@ -29,12 +29,12 @@ public class Solution {
 
                 if (--countdownIndex == 0)
                     return;
-                
-                try{
+
+                try {
                     Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    System.out.println("Нить прервана");
                 }
-                catch (InterruptedException e)
-                {System.out.println("Нить прервана");}
 
             }
 

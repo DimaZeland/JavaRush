@@ -24,9 +24,9 @@ public class Solution {
     }
 
     public static void haveFun(Person person) {
-        if(person instanceof Player)
+        if (person instanceof Player)
             ((Player) person).play();
-        else if(person instanceof Dancer)
+        else if (person instanceof Dancer)
             ((Dancer) person).dance();
     }
 

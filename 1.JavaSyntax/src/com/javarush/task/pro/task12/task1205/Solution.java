@@ -14,19 +14,18 @@ public class Solution {
         divide(200, 20);
     }
 
-    public static void divide(double a, double b)
-    {
+    public static void divide(double a, double b) {
         Double result;
 
-        if(a>0 && 0 == b
-                ||Double.POSITIVE_INFINITY == a && b >= 0 && Double.POSITIVE_INFINITY != Double.POSITIVE_INFINITY
-            || Double.NEGATIVE_INFINITY == a && b < 0 && Double.NEGATIVE_INFINITY != b)
-         result = Double.POSITIVE_INFINITY;
-        else if(0 > a && 0 == b
-            || Double.NEGATIVE_INFINITY == a && b >= 0 && Double.POSITIVE_INFINITY != b
+        if (a > 0 && 0 == b
+                || Double.POSITIVE_INFINITY == a && b >= 0 && Double.POSITIVE_INFINITY != Double.POSITIVE_INFINITY
+                || Double.NEGATIVE_INFINITY == a && b < 0 && Double.NEGATIVE_INFINITY != b)
+            result = Double.POSITIVE_INFINITY;
+        else if (0 > a && 0 == b
+                || Double.NEGATIVE_INFINITY == a && b >= 0 && Double.POSITIVE_INFINITY != b
                 || Double.POSITIVE_INFINITY == a && b < 0 && Double.NEGATIVE_INFINITY != b)
             result = Double.NEGATIVE_INFINITY;
-        else if(0 == a && 0 == b
+        else if (0 == a && 0 == b
                 || Double.NaN == a
                 || Double.NaN == b
                 || Double.POSITIVE_INFINITY == a && b == Double.POSITIVE_INFINITY
@@ -36,7 +35,7 @@ public class Solution {
             result = Double.NaN;
         else
             result = a / b;
-        
+
         System.out.println(result);
     }
 }

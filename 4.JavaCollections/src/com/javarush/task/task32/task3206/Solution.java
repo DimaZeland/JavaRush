@@ -26,9 +26,8 @@ public class Solution {
         System.out.format("%b %b %b\n", isItem, isBig, isSmall);
     }
 
-    public <T extends Item> T getProxy(Class<T> original, Class<?>... interfaces)
-    {
-        Class<?>[] interfacesArr = new Class<?>[interfaces.length+1];
+    public <T extends Item> T getProxy(Class<T> original, Class<?>... interfaces) {
+        Class<?>[] interfacesArr = new Class<?>[interfaces.length + 1];
         interfacesArr[0] = original;
         System.arraycopy(interfaces, 0, interfacesArr, 1, interfaces.length);
         ItemInvocationHandler invocationHandler = new ItemInvocationHandler();

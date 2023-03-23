@@ -14,14 +14,12 @@ public class Solution {
 
     public static StringWriter getAllDataFromInputStream(InputStream is) throws IOException {
         StringWriter writer = new StringWriter();
-        if(null != is)
-        {
+        if (null != is) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
             String line = "";
             writer.write(line);
 
-            while (null != (line = bufferedReader.readLine()))
-            {
+            while (null != (line = bufferedReader.readLine())) {
                 writer.write(line);
             }
         }

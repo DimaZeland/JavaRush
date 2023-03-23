@@ -22,15 +22,15 @@ public class Solution {
         research((Cat) astronauts.get(3));
     }
 
-    public static void pilot(Human human){
+    public static void pilot(Human human) {
         System.out.println("Член экипажа " + human.getInfo() + " пилотирует корабль.");
     }
 
-    public static void createDirection(Dog dog){
+    public static void createDirection(Dog dog) {
         System.out.println("Член экипажа " + dog.getInfo() + " занимается созданием навигационного маршрута.");
     }
 
-    public static void research(Cat cat){
+    public static void research(Cat cat) {
         System.out.println("Член экипажа " + cat.getInfo() + " исследует ближайшие планеты.");
     }
 

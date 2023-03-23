@@ -15,28 +15,26 @@ public class Solution {
         public abstract Pet getChild();
     }
 
-    public static class Cat extends Pet{
+    public static class Cat extends Pet {
         @Override
-        public Pet getChild()
-        {
+        public Pet getChild() {
             return new Cat();
         }
+
         @Override
-        public String getName()
-        {
+        public String getName() {
             return "Cat";
         }
     }
 
-    public static class Dog extends Pet{
+    public static class Dog extends Pet {
         @Override
-        public Pet getChild()
-        {
+        public Pet getChild() {
             return new Dog();
         }
+
         @Override
-        public String getName()
-        {
+        public String getName() {
             return "Dog";
         }
     }

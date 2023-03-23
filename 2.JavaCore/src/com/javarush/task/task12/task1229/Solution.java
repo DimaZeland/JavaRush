@@ -15,14 +15,13 @@ public class Solution {
         public void workHard();
     }
 
-    public static class CTO extends Best implements Businessman{
+    public static class CTO extends Best implements Businessman {
 
     }
 
     public static class Best {
 
-        public void workHard()
-        {
+        public void workHard() {
 
         }
     }

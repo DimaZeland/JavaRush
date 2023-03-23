@@ -4,7 +4,7 @@ package com.javarush.task.task17.task1714;
 Comparable
 */
 
-public class Beach implements Comparable<Beach>{
+public class Beach implements Comparable<Beach> {
     private String name;      //название
     private float distance;   //расстояние
     private int quality;    //качество
@@ -44,22 +44,21 @@ public class Beach implements Comparable<Beach>{
     }
 
     @Override
-    public synchronized int compareTo(Beach o)
-    {
+    public synchronized int compareTo(Beach o) {
         int r1 = 0;
         int r2 = 0;
 
-        if(this.getQuality() != o.getQuality())
-        if(this.getQuality() > o.getQuality())
-            ++r1;
-        else
-            ++r2;
-
-        if(this.getDistance() != o.getDistance())
-            if(this.getDistance() < o.getDistance())
+        if (this.getQuality() != o.getQuality())
+            if (this.getQuality() > o.getQuality())
                 ++r1;
-        else
-            ++r2;
+            else
+                ++r2;
+
+        if (this.getDistance() != o.getDistance())
+            if (this.getDistance() < o.getDistance())
+                ++r1;
+            else
+                ++r2;
 
         return r1 - r2;
     }

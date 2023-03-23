@@ -13,8 +13,7 @@ import java.util.Set;
 */
 
 public class Solution {
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
        /* String fileName = args[0];
         FileReader fr = new FileReader(fileName);
 

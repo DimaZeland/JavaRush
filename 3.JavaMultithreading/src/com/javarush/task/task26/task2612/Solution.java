@@ -7,33 +7,24 @@ import java.util.concurrent.locks.ReentrantLock;
 Весь мир играет комедию
 */
 
-public class Solution
-{
+public class Solution {
     private Lock lock = new ReentrantLock();
 
-    public void someMethod()
-    {
-        if (true == lock.tryLock())
-        {
-            try
-            {
+    public void someMethod() {
+        if (true == lock.tryLock()) {
+            try {
                 actionIfLockIsFree();
-            }
-            finally
-            {
+            } finally {
                 lock.unlock();
             }
 
-        }
-        else
+        } else
             actionIfLockIsBusy();
     }
 
-    public void actionIfLockIsFree()
-    {
+    public void actionIfLockIsFree() {
     }
 
-    public void actionIfLockIsBusy()
-    {
+    public void actionIfLockIsBusy() {
     }
 }

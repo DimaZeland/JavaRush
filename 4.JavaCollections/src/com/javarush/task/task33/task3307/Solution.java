@@ -13,8 +13,7 @@ import java.io.StringReader;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException, JAXBException
-    {
+    public static void main(String[] args) throws IOException, JAXBException {
         String xmlData = "<cat><name>Murka</name><age>5</age><weight>4</weight></cat>";
         Cat cat = convertFromXmlToNormal(xmlData, Cat.class);
         System.out.println(cat);

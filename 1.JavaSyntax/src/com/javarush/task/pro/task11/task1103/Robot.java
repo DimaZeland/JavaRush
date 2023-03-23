@@ -24,6 +24,6 @@ public class Robot {
 
     public void displayInformation() {
         System.out.printf("Я %d-й из %d роботов. Модель: %s. Произведен компанией %s в %d году.\n",
-                 id, robotCounter, model, vendor, productionYear);
+                id, robotCounter, model, vendor, productionYear);
     }
 }

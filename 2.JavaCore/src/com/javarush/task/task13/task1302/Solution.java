@@ -14,10 +14,9 @@ public class Solution {
         boolean isAlcoholic();
     }
 
-    public static class AlcoholicBeer implements Drink{
+    public static class AlcoholicBeer implements Drink {
         @Override
-        public boolean isAlcoholic()
-        {
+        public boolean isAlcoholic() {
             return true;
         }
 

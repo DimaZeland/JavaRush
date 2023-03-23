@@ -26,14 +26,12 @@ public class Solution {
     public static class TableAdapter implements BTable {
         private ATable aTable;
 
-        public TableAdapter(ATable a)
-        {
+        public TableAdapter(ATable a) {
             aTable = a;
         }
 
         @Override
-        public String getHeaderText()
-        {
+        public String getHeaderText() {
             return "[" + aTable.getCurrentUserName() + "] : " + aTable.getTableName();
         }
     }

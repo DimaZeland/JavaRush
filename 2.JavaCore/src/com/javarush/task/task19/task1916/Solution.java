@@ -11,12 +11,10 @@ import java.util.List;
 Отслеживаем изменения
 */
 
-public class Solution
-{
+public class Solution {
     public static List<LineItem> lines = new ArrayList<LineItem>();
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         String fileName1 = /*"D:\\1.txt";//*/bufferedReader.readLine(); //
@@ -47,32 +45,26 @@ public class Solution
         int oldFileLine = 0;
         int newFileLine = 0;
 
-        while ((oldFileLine < oldFileLines.size()) && (newFileLine < newFileLines.size()))
-        {
+        while ((oldFileLine < oldFileLines.size()) && (newFileLine < newFileLines.size())) {
 
-            if (oldFileLines.get(oldFileLine).equals(newFileLines.get(newFileLine)))
-            {
+            if (oldFileLines.get(oldFileLine).equals(newFileLines.get(newFileLine))) {
                 lines.add(new LineItem(Type.SAME, oldFileLines.get(oldFileLine)));
                 oldFileLine++;
                 newFileLine++;
-            } else if ((newFileLine + 1 < newFileLines.size()) && oldFileLines.get(oldFileLine).equals(newFileLines.get(newFileLine + 1)))
-            {
+            } else if ((newFileLine + 1 < newFileLines.size()) && oldFileLines.get(oldFileLine).equals(newFileLines.get(newFileLine + 1))) {
                 lines.add(new LineItem(Type.ADDED, newFileLines.get(newFileLine)));
                 newFileLine++;
-            } else if ((oldFileLine + 1 < oldFileLines.size()) && oldFileLines.get(oldFileLine + 1).equals(newFileLines.get(newFileLine)))
-            {
+            } else if ((oldFileLine + 1 < oldFileLines.size()) && oldFileLines.get(oldFileLine + 1).equals(newFileLines.get(newFileLine))) {
                 lines.add(new LineItem(Type.REMOVED, oldFileLines.get(oldFileLine)));
                 oldFileLine++;
             }
         }
 
-        while (oldFileLine < (oldFileLines.size()))
-        {
+        while (oldFileLine < (oldFileLines.size())) {
             lines.add(new LineItem(Type.REMOVED, oldFileLines.get(oldFileLine)));
             oldFileLine++;
         }
-        while (newFileLine < (newFileLines.size()))
-        {
+        while (newFileLine < (newFileLines.size())) {
             lines.add(new LineItem(Type.ADDED, newFileLines.get(newFileLine)));
             newFileLine++;
         }
@@ -131,20 +123,17 @@ public class Solution
     }
 
 
-    public static enum Type
-    {
+    public static enum Type {
         ADDED,        //добавлена новая строка
         REMOVED,      //удалена строка
         SAME          //без изменений
     }
 
-    public static class LineItem
-    {
+    public static class LineItem {
         public Type type;
         public String line;
 
-        public LineItem(Type type, String line)
-        {
+        public LineItem(Type type, String line) {
             this.type = type;
             this.line = line;
         }

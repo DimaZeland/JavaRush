@@ -10,19 +10,16 @@ import java.util.Scanner;
 А что же внутри папки?
 */
 
-public class Solution
-{
+public class Solution {
 
     private static final String THIS_IS_FILE = " - это файл";
     private static final String THIS_IS_DIR = " - это директория";
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         Path directory = Path.of(scanner.nextLine());
 
-        try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(directory))
-        {
+        try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(directory)) {
             for (Path path : dirStream)
                 if (Files.isDirectory(path))
                     System.out.println(path.toString() + THIS_IS_DIR);

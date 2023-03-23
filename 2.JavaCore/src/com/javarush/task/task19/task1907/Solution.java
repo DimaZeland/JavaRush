@@ -9,10 +9,8 @@ import java.io.InputStreamReader;
 Считаем слово
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String s = br.readLine();
@@ -21,8 +19,7 @@ public class Solution
         FileReader fr = new FileReader(s);
         StringBuilder sb = new StringBuilder();
 
-        while (fr.ready())
-        {
+        while (fr.ready()) {
             char ch = (char) fr.read();
             sb.append(ch);
         }

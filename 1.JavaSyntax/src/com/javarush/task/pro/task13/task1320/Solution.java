@@ -11,8 +11,7 @@ public class Solution {
     public static String getMonthByIndex(int monthIndex) {
         String monthString;
 
-        switch (monthIndex)
-        {
+        switch (monthIndex) {
             case 1:
                 monthString = "Январь";
                 break;

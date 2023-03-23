@@ -18,14 +18,13 @@ public class Solution {
     }
 
     public static void cleanAllApartments(List<Apartment> apartments) {
-        for (Apartment flat:
-             apartments)
-        {
-            if (flat instanceof  ThreeRoomApt)
+        for (Apartment flat :
+                apartments) {
+            if (flat instanceof ThreeRoomApt)
                 ((ThreeRoomApt) flat).clean3Rooms();
-            else if (flat instanceof  TwoRoomApt)
+            else if (flat instanceof TwoRoomApt)
                 ((TwoRoomApt) flat).clean2Rooms();
-            else if (flat instanceof  OneRoomApt)
+            else if (flat instanceof OneRoomApt)
                 ((OneRoomApt) flat).clean1Room();
         }
     }

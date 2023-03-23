@@ -13,8 +13,7 @@ public class Solution {
     public static void print(HashSet<String> words) {
         Iterator<String> it = words.iterator();
 
-        while (it.hasNext())
-        {
+        while (it.hasNext()) {
             System.out.println(it.next());
         }
     }

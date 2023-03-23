@@ -8,7 +8,7 @@ import java.util.ArrayList;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         String s1 = bufferedReader.readLine();
@@ -19,12 +19,11 @@ public class Solution {
         FileReader fr = new FileReader(s1);
         FileWriter fw = new FileWriter(s2);
 
-        for (int i = 0; fr.ready(); i++)
-        {
+        for (int i = 0; fr.ready(); i++) {
             int ch = fr.read();
 
             if (i % 2 == 1)
-                fw.append((char)ch);
+                fw.append((char) ch);
         }
 
         fr.close();

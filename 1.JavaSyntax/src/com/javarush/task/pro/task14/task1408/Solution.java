@@ -9,12 +9,9 @@ public class Solution {
     public static String errorMessage = "не повезло";
 
     public static void main(String[] args) {
-        try
-        {
+        try {
             generateLuckyNumber();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(errorMessage);
         }
     }

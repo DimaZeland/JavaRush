@@ -6,7 +6,7 @@ import java.io.*;
 Найти ошибки
 */
 
-public class Solution implements Serializable{
+public class Solution implements Serializable {
     public static class A {
 
         protected String nameA = "A";
@@ -15,7 +15,8 @@ public class Solution implements Serializable{
             this.nameA += nameA;
         }
 
-        public A(){}
+        public A() {
+        }
     }
 
     public class B extends A implements Serializable {
@@ -24,30 +25,24 @@ public class Solution implements Serializable{
 
         public B(String nameA, String nameB) {
             super(nameA);
-             this.nameA += nameA;
+            this.nameA += nameA;
             this.nameB = nameB;
         }
-        private void writeObject(ObjectOutputStream objectOutputStream)
-        {
-            try
-            {
+
+        private void writeObject(ObjectOutputStream objectOutputStream) {
+            try {
                 objectOutputStream.defaultWriteObject();
                 objectOutputStream.writeObject(nameA);
-            }
-            catch (IOException e)
-            {
+            } catch (IOException e) {
 
             }
         }
-        private void readObject(ObjectInputStream objectInputStream)
-        {
-            try
-            {
+
+        private void readObject(ObjectInputStream objectInputStream) {
+            try {
                 objectInputStream.defaultReadObject();
                 nameA = (String) objectInputStream.readObject();
-            }
-            catch (ClassNotFoundException | IOException e)
-            {
+            } catch (ClassNotFoundException | IOException e) {
 
             }
         }

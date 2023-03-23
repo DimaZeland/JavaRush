@@ -9,11 +9,9 @@ import java.util.List;
 Подчищаем хвосты
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         List<Date> dateList = new ArrayList<>();
         dateList.add(new Date(2015, 12, 25, 20, 40));
         dateList.add(new Date("July 20, 1969"));
@@ -29,16 +27,13 @@ public class Solution
         dateList.forEach(System.out::println);
     }
 
-    static void fixDate(List<Date> brokenDates)
-    {
+    static void fixDate(List<Date> brokenDates) {
 
         Iterator<Date> iter = brokenDates.iterator();
 
-        while (iter.hasNext())
-        {
+        while (iter.hasNext()) {
             Date date = iter.next();
-            if(date.after(new Date()))
-            {
+            if (date.after(new Date())) {
                 date.setYear(date.getYear() - 1900);
                 date.setMonth(date.getMonth() - 1);
             }

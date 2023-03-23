@@ -15,17 +15,12 @@ public class Solution {
     }
 
     static void copyFile(String sourceFile, String destinationFile) {
-        try
-        {
+        try {
             FileUtils.readFile(sourceFile);
             FileUtils.writeFile(destinationFile);
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        }
-        catch (FileSystemException e)
-        {
+        } catch (FileSystemException e) {
             throw new RuntimeException(e);
         }
     }

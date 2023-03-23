@@ -1,6 +1,6 @@
 package com.javarush.task.task39.task3906;
 
-public class SecuritySystem implements Switchable{
+public class SecuritySystem implements Switchable {
     private boolean on = false;
 
     public boolean isOn() {

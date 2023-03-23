@@ -24,15 +24,13 @@ public class Solution {
         isStopped = true;
     }
 
-    public static class Apteka implements Runnable{
+    public static class Apteka implements Runnable {
         @Override
-        public void run()
-        {
-            while (false ==isStopped)
-            {
+        public void run() {
+            while (false == isStopped) {
                 Drug drug = getRandomDrug();
                 int value = getRandomCount();
-                drugsController.sell(drug,value);
+                drugsController.sell(drug, value);
                 waitAMoment();
                 waitAMoment();
                 waitAMoment();
@@ -40,15 +38,13 @@ public class Solution {
         }
     }
 
-    public static class Person implements Runnable{
+    public static class Person implements Runnable {
         @Override
-        public void run()
-        {
-            while (false == isStopped)
-            {
+        public void run() {
+            while (false == isStopped) {
                 Drug drug = getRandomDrug();
                 int value = getRandomCount();
-                drugsController.buy(drug,value);
+                drugsController.buy(drug, value);
                 waitAMoment();
             }
         }

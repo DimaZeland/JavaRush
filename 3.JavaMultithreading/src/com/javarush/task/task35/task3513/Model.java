@@ -108,7 +108,7 @@ public class Model {
     }
 
     public void left() {
-        if(true == isSaveNeeded)
+        if (true == isSaveNeeded)
             saveState(gameTiles);
 
         boolean moveFlag = false;
@@ -195,12 +195,10 @@ public class Model {
         }
     }
 
-    public void randomMove()
-    {
+    public void randomMove() {
         int n = ((int) (Math.random() * 100)) % 4;
 
-        switch (n)
-        {
+        switch (n) {
             case 0:
                 left();
                 break;

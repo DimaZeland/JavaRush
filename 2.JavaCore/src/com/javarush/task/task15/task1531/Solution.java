@@ -21,13 +21,13 @@ public class Solution {
     }
 
     public static String factorial(int n) {
-       if(0 > n)
-           return "0";
+        if (0 > n)
+            return "0";
         if (n == 0) return "1";
-        
+
         BigInteger result = BigInteger.ONE;
 
-        for(int i = n; i > 0; --i)
+        for (int i = n; i > 0; --i)
             result = result.multiply(BigInteger.valueOf(i));
 
         return result.toString();

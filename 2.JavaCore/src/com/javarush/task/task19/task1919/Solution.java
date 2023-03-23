@@ -12,10 +12,8 @@ import java.util.TreeMap;
 Считаем зарплаты
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws FileNotFoundException, IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         Boolean tested = false;
 
         String fileName = tested ? "D:\\1.txt" : args[0];
@@ -26,8 +24,7 @@ public class Solution
 
         TreeMap<String, Double> data = new TreeMap<>();
 
-        while (null != (line = bufferedReader.readLine()))
-        {
+        while (null != (line = bufferedReader.readLine())) {
             String[] lineValues = line.split(" ");
             String key = lineValues[0];
             Double newValue = Double.parseDouble(lineValues[1]);

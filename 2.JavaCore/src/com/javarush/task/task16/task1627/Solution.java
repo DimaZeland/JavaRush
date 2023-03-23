@@ -52,17 +52,17 @@ public class Solution {
 
         @Override
         public void run() {
-                for (String step: OnlineGame.steps)
-                {
-                    System.out.println(getName() + ":" + step);
-                    try {Thread.sleep(1000/rating);}
-                    catch (InterruptedException e){
-                        System.out.println(getName() + ":проиграл");
-                        return;
-                    }
+            for (String step : OnlineGame.steps) {
+                System.out.println(getName() + ":" + step);
+                try {
+                    Thread.sleep(1000 / rating);
+                } catch (InterruptedException e) {
+                    System.out.println(getName() + ":проиграл");
+                    return;
                 }
-            if(false == OnlineGame.isWinnerFound)
-                    System.out.println(getName() + ":победитель!");
+            }
+            if (false == OnlineGame.isWinnerFound)
+                System.out.println(getName() + ":победитель!");
             OnlineGame.isWinnerFound = true;
         }
     }

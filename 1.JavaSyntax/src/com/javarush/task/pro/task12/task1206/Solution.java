@@ -20,28 +20,28 @@ public class Solution {
 
     public static int countDigits(String string) {
         int count = 0;
-        for(int i = 0; i < string.length();++i)
-            if(Character.isDigit(string.charAt(i)))
+        for (int i = 0; i < string.length(); ++i)
+            if (Character.isDigit(string.charAt(i)))
                 ++count;
 
-        return  count;
+        return count;
     }
 
     public static int countLetters(String string) {
         int count = 0;
-        for(int i = 0; i < string.length();++i)
-            if(Character.isLetter(string.charAt(i)))
+        for (int i = 0; i < string.length(); ++i)
+            if (Character.isLetter(string.charAt(i)))
                 ++count;
 
-        return  count;
+        return count;
     }
 
     public static int countSpaces(String string) {
         int count = 0;
-        for(int i = 0; i < string.length();++i)
-            if(Character.isSpaceChar(string.charAt(i)))
+        for (int i = 0; i < string.length(); ++i)
+            if (Character.isSpaceChar(string.charAt(i)))
                 ++count;
 
-        return  count;
+        return count;
     }
 }

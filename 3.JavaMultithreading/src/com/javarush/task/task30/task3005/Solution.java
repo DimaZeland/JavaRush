@@ -13,7 +13,7 @@ public class Solution {
     }
 
     public static void checkAFlag(D d) {
-        if(null != d &&
+        if (null != d &&
                 null != d.cs &&
                 d.cs.size() > 0 &&
                 null != d.cs.get(0).bs &&
@@ -21,7 +21,7 @@ public class Solution {
                 null != d.cs.get(0).bs.get(0).as &&
                 d.cs.get(0).bs.get(0).as.size() > 0 &&
                 d.cs.get(0).bs.get(0).as.get(0).flag)
-                                        System.out.println("A's flag is true");
+            System.out.println("A's flag is true");
         else //all other cases
             System.out.println("Oops!");
     }

@@ -25,19 +25,18 @@ public class Solution {
         Set<Integer> friends = new HashSet<>();
 
         // ищем по горизонтали друзей человека с индексом index
-        for (int i = 0; i <index; i++)
-            if(humanRelationships[index][i])
+        for (int i = 0; i < index; i++)
+            if (humanRelationships[index][i])
                 friends.add(i);
 
         // ищем по вертикали друзей человека с индексом index
         for (int i = index + 1; i < humanRelationships.length; i++)
-            if(humanRelationships[i][index])
+            if (humanRelationships[i][index])
                 friends.add(i);
 
         --deep; // при нахождении друзей человека с индексом index глубина поиска "1" отработана
 
-        if (deep > 0)
-        {
+        if (deep > 0) {
             Iterator<Integer> iterator = friends.iterator();
             Set<Integer> friendsOfFriends = new HashSet<>();
 

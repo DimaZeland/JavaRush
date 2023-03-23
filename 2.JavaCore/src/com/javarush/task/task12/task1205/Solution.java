@@ -11,17 +11,19 @@ public class Solution {
         System.out.println(getObjectType(new Whale()));
         System.out.println(getObjectType(new Pig()));
     }
-{
-    System.out.println("ff");
-}
+
+    {
+        System.out.println("ff");
+    }
+
     public static String getObjectType(Object o) {
         String result = "Неизвестное животное";
 
-        if(o instanceof Cow)
+        if (o instanceof Cow)
             result = "Корова";
-        else if(o instanceof Dog)
+        else if (o instanceof Dog)
             result = "Собака";
-        else if(o instanceof Whale)
+        else if (o instanceof Whale)
             result = "Кит";
 
         return result;

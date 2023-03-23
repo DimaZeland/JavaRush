@@ -39,12 +39,9 @@ public class Solution {
             }
 
             int studentId;
-            try
-            {
-            studentId = Integer.parseInt(input);
-            }
-            catch (NumberFormatException e)
-            {
+            try {
+                studentId = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
                 System.out.println(INTEGER_REQUIRED);
                 continue;
             }

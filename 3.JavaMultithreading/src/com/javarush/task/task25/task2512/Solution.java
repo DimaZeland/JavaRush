@@ -10,8 +10,7 @@ import java.util.List;
 public class Solution implements Thread.UncaughtExceptionHandler {
 
     @Override
-    public void uncaughtException(Thread t, Throwable e)
-    {
+    public void uncaughtException(Thread t, Throwable e) {
         t.interrupt();
 
         List<String> res = new LinkedList<>();

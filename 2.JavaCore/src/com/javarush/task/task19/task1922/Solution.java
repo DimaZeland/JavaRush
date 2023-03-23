@@ -13,15 +13,13 @@ import java.util.*;
 public class Solution {
     public static List<String> words = new ArrayList<String>();
     private static boolean tested = false;
+
     static {
-        if(tested)
-        {
+        if (tested) {
             words.add("А");
             words.add("Б");
             words.add("В");
-        }
-        else
-        {
+        } else {
             words.add("файл");
             words.add("вид");
             words.add("В");

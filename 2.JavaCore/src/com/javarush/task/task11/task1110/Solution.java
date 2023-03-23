@@ -9,10 +9,10 @@ public class Solution {
     }
 
     public class Cat {
-       private int weight;
-       private int age;
-       private int speed;
-       private String name;
+        private int weight;
+        private int age;
+        private int speed;
+        private String name;
 
         public Cat(String name, int age, int weight) {
 
@@ -27,11 +27,11 @@ public class Solution {
         }
 
         public void setWeight(int weight) {
-        this.weight = weight;
+            this.weight = weight;
         }
 
         public void setSpeed(int speed) {
-        this.speed = speed;
+            this.speed = speed;
         }
     }
 }

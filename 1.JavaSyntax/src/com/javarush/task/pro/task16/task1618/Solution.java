@@ -8,11 +8,9 @@ import java.time.ZonedDateTime;
 Лишь бы не запутаться
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         ZoneId zone1 = ZoneId.of("Zulu");
         ZoneId zone2 = ZoneId.of("Etc/GMT+8");
         System.out.println(ZonedDateTime.now(zone1));
@@ -22,8 +20,7 @@ public class Solution
         System.out.println(time);
     }
 
-    static LocalDateTime changeZone(LocalDateTime fromDateTime, ZoneId fromZone, ZoneId toZone)
-    {
+    static LocalDateTime changeZone(LocalDateTime fromDateTime, ZoneId fromZone, ZoneId toZone) {
         ZonedDateTime result = fromDateTime.atZone(fromZone);
         return result.withZoneSameInstant(toZone).toLocalDateTime();
     }

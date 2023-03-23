@@ -12,7 +12,7 @@ public class Solution {
 
     }
 
-    /*public*/ class Pegasus extends Horse{
+    /*public*/ class Pegasus extends Horse {
 
     }
 }

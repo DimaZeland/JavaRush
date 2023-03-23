@@ -4,10 +4,8 @@ package com.javarush.task.task20.task2026;
 Алгоритмы-прямоугольники
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         byte[][] a1 = new byte[][]{
                 {1, 1, 0, 0},
                 {1, 1, 0, 0},
@@ -27,8 +25,7 @@ public class Solution
         System.out.println("count = " + count2 + ". Должно быть 4");
     }
 
-    public static int getRectangleCount(byte[][] a)
-    {
+    public static int getRectangleCount(byte[][] a) {
         final int length = a.length;
 
         int count = 0;

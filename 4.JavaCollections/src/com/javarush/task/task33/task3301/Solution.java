@@ -38,23 +38,30 @@ public class Solution {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(writer, object);
     }
-    
+
     @JsonAutoDetect
     public static class Pet {
         public String name;
-        Pet(){}
+
+        Pet() {
+        }
     }
 
     @JsonAutoDetect
     public static class Cat extends Pet {
         public int age;
         public int weight;
-        Cat(){}
+
+        Cat() {
+        }
     }
+
     @JsonAutoDetect
     public static class Dog extends Pet {
         public int age;
         public String owner;
-        Dog(){}
+
+        Dog() {
+        }
     }
 }

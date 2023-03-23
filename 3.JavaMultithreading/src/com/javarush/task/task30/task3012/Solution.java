@@ -6,10 +6,8 @@ package com.javarush.task.task30.task3012;
 
 import java.util.LinkedList;
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Solution solution = new Solution();
         solution.createExpression(1234);
     }

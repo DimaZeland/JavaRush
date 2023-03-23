@@ -9,10 +9,8 @@ import java.util.List;
 Кроссворд
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         int[][] crossword = new int[][]{
                 {'f', 'd', 'e', 'r', 'l', 'k'},
                 {'u', 's', 'a', 'm', 'e', 'o'},
@@ -281,34 +279,29 @@ same - (1, 1) - (4, 1)
         return result;
     }*/
 
-    public static class Word
-    {
+    public static class Word {
         private String text;
         private int startX;
         private int startY;
         private int endX;
         private int endY;
 
-        public Word(String text)
-        {
+        public Word(String text) {
             this.text = text;
         }
 
-        public void setStartPoint(int i, int j)
-        {
+        public void setStartPoint(int i, int j) {
             startX = i;
             startY = j;
         }
 
-        public void setEndPoint(int i, int j)
-        {
+        public void setEndPoint(int i, int j) {
             endX = i;
             endY = j;
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return String.format("%s - (%d, %d) - (%d, %d)", text, startX, startY, endX, endY);
         }
     }

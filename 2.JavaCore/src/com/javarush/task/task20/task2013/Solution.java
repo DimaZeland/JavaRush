@@ -12,7 +12,7 @@ Externalizable Person
 */
 
 public class Solution {
-    public static class Person implements Externalizable{
+    public static class Person implements Externalizable {
         private String firstName;
         private String lastName;
         private int age;
@@ -20,8 +20,7 @@ public class Solution {
         private Person father;
         private List<Person> children;
 
-        public Person()
-        {
+        public Person() {
         }
 
         public Person(String firstName, String lastName, int age) {

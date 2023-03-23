@@ -49,8 +49,7 @@ public class Solution {
         }
 
         switch (args[0]) {
-            case "-u":
-            {
+            case "-u": {
                 int id = Integer.parseInt(args[1]);
 
                 String name = "";
@@ -72,9 +71,8 @@ public class Solution {
 
                 boolean is = false;
 
-                for (Product p:products)
-                    if(p.id == product.id)
-                    {
+                for (Product p : products)
+                    if (p.id == product.id) {
                         p.price = product.price;
                         p.name = product.name;
                         p.quantity = product.quantity;
@@ -82,43 +80,34 @@ public class Solution {
                         break;
                     }
 
-                if(false == is)
-                try (FileWriter fileWriter = new FileWriter(fileName, true))
-                {
-                    fileWriter.write("\n");
-                    fileWriter.write(product.toString());
-                }
-                else
-                {
-                    try (FileWriter fileWriter = new FileWriter(fileName, false))
-                    {
-                        for (Product pr: products)
-                        {
-                        fileWriter.write(pr.toString());
+                if (false == is)
+                    try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+                        fileWriter.write("\n");
+                        fileWriter.write(product.toString());
+                    }
+                else {
+                    try (FileWriter fileWriter = new FileWriter(fileName, false)) {
+                        for (Product pr : products) {
+                            fileWriter.write(pr.toString());
                             fileWriter.write("\n");
                         }
                     }
                 }
                 break;
             }
-            case "-d":
-            {
+            case "-d": {
                 int id = Integer.parseInt(args[1]);
 
-                for(Product p : products)
-                {
-                    if(p.id == id)
-                    {
+                for (Product p : products) {
+                    if (p.id == id) {
                         products.remove(p);
                         break;
                     }
                 }
 
 
-                try (FileWriter fileWriter = new FileWriter(fileName, false))
-                {
-                    for(Product product : products)
-                    {
+                try (FileWriter fileWriter = new FileWriter(fileName, false)) {
+                    for (Product product : products) {
                         fileWriter.write(product.toString());
                         fileWriter.write("\n");
                     }

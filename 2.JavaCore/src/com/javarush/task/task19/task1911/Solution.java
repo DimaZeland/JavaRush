@@ -8,12 +8,10 @@ import java.util.Locale;
 Ридер обертка
 */
 
-public class Solution
-{
+public class Solution {
     public static TestString testString = new TestString();
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         PrintStream defaultPrintStream = System.out;
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -29,10 +27,8 @@ public class Solution
         System.out.println(result);
     }
 
-    public static class TestString
-    {
-        public void printSomething()
-        {
+    public static class TestString {
+        public void printSomething() {
             System.out.println("it's a text for testing");
         }
     }

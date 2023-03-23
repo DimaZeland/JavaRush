@@ -11,13 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 Кто первый встал - того и тапки
 */
 
-public class Solution
-{
+public class Solution {
     public static volatile AtomicInteger readStringCount = new AtomicInteger(0);
     public static volatile BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         //read count of strings
         int count = Integer.parseInt(reader.readLine());
 
@@ -30,8 +28,7 @@ public class Solution
         consoleReader2.start();
         consoleReader3.start();
 
-        while (count > readStringCount.get())
-        {
+        while (count > readStringCount.get()) {
         }
 
         consoleReader1.interrupt();
@@ -44,12 +41,10 @@ public class Solution
         reader.close();
     }
 
-    public static class ReaderThread extends Thread
-    {
+    public static class ReaderThread extends Thread {
         private List<String> result = new ArrayList<String>();
 
-        public void run()
-        {
+        public void run() {
             String string;
             try {
                 while (!Thread.currentThread().isInterrupted()) {
@@ -64,8 +59,7 @@ public class Solution
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return result.toString();
         }
     }

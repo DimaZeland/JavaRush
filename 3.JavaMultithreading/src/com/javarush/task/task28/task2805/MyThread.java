@@ -2,16 +2,13 @@ package com.javarush.task.task28.task2805;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class MyThread extends Thread
-{
+public class MyThread extends Thread {
     static volatile AtomicInteger priority = new AtomicInteger(0);
 
-    private static /*synchronized*/ int getNextPriority()
-    {
+    private static /*synchronized*/ int getNextPriority() {
         int i = priority.incrementAndGet();
 
-        if(i > 10)
-        {
+        if (i > 10) {
             i = i % 10;
             priority.set(i);
         }
@@ -19,8 +16,7 @@ public class MyThread extends Thread
         return i;
     }
 
-    private static /*synchronized*/ int getNextPriority(ThreadGroup group)
-    {
+    private static /*synchronized*/ int getNextPriority(ThreadGroup group) {
         int max = group.getMaxPriority();
 
         int i = getNextPriority();
@@ -29,50 +25,42 @@ public class MyThread extends Thread
     }
 
 
-    public MyThread()
-    {
+    public MyThread() {
         setPriority(getNextPriority());
     }
 
-    public MyThread(Runnable target)
-    {
+    public MyThread(Runnable target) {
         super(target);
         setPriority(getNextPriority());
 
     }
 
-    public MyThread(ThreadGroup group, Runnable target)
-    {
+    public MyThread(ThreadGroup group, Runnable target) {
         super(group, target);
         setPriority(getNextPriority(group));
     }
 
-    public MyThread(String name)
-    {
+    public MyThread(String name) {
         super(name);
         setPriority(getNextPriority());
     }
 
-    public MyThread(ThreadGroup group, String name)
-    {
+    public MyThread(ThreadGroup group, String name) {
         super(group, name);
         setPriority(getNextPriority(group));
     }
 
-    public MyThread(Runnable target, String name)
-    {
+    public MyThread(Runnable target, String name) {
         super(target, name);
         setPriority(getNextPriority());
     }
 
-    public MyThread(ThreadGroup group, Runnable target, String name)
-    {
+    public MyThread(ThreadGroup group, Runnable target, String name) {
         super(group, target, name);
         setPriority(getNextPriority(group));
     }
 
-    public MyThread(ThreadGroup group, Runnable target, String name, long stackSize)
-    {
+    public MyThread(ThreadGroup group, Runnable target, String name, long stackSize) {
         super(group, target, name, stackSize);
         setPriority(getNextPriority(group));
     }

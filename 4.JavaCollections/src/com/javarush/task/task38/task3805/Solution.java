@@ -24,23 +24,18 @@ public class Solution {
         }
     }
 
-    public Object read() throws SolutionException
-    {
-        try
-        {
+    public Object read() throws SolutionException {
+        try {
             return connection.read();
-        } catch (WrongDataException | ConnectionException e)
-        {
+        } catch (WrongDataException | ConnectionException e) {
             throw new SolutionException(e.getClass().getSimpleName() + ": " + e.getMessage());
         }
     }
-    public void disconnect() throws SolutionException
-    {
-        try
-        {
+
+    public void disconnect() throws SolutionException {
+        try {
             connection.disconnect();
-        } catch (WrongDataException | ConnectionException e)
-        {
+        } catch (WrongDataException | ConnectionException e) {
             throw new SolutionException(e.getClass().getSimpleName() + ": " + e.getMessage());
         }
     }

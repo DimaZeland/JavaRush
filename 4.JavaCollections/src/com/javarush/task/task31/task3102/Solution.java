@@ -18,10 +18,9 @@ public class Solution {
 
         Collections.addAll(fileTree, rootDir.listFiles());
 
-        while (!fileTree.isEmpty())
-        {
+        while (!fileTree.isEmpty()) {
             File currentFile = fileTree.remove();
-            if(currentFile.isDirectory()){
+            if (currentFile.isDirectory()) {
                 Collections.addAll(fileTree, currentFile.listFiles());
             } else {
                 result.add(currentFile.getAbsolutePath());

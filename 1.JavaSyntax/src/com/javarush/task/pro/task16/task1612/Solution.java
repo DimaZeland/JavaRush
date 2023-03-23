@@ -9,11 +9,9 @@ import java.util.*;
 Синтезируем LocalDateTime
 */
 
-public class Solution
-{
+public class Solution {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Map<LocalDate, List<LocalTime>> dateMap = DateTimeGenerator.generateDateMap();
         printCollection(dateMap.entrySet());
 
@@ -21,16 +19,14 @@ public class Solution
         printCollection(dateSet);
     }
 
-    static Set<LocalDateTime> convert(Map<LocalDate, List<LocalTime>> sourceMap)
-    {
+    static Set<LocalDateTime> convert(Map<LocalDate, List<LocalTime>> sourceMap) {
         Set<LocalDateTime> result = new HashSet<LocalDateTime>();
 
         var dates = sourceMap.keySet();
 
         List<LocalTime> arrayTimes;
 
-        for (var key : dates)
-        {
+        for (var key : dates) {
             arrayTimes = sourceMap.get(key);
 
             for (var time : arrayTimes)
@@ -39,8 +35,7 @@ public class Solution
         return result;
     }
 
-    static void printCollection(Collection<?> collection)
-    {
+    static void printCollection(Collection<?> collection) {
         System.out.println("-----------------------------------------------------");
         collection.forEach(System.out::println);
     }

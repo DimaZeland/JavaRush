@@ -8,16 +8,13 @@ import java.util.*;
 Собираем файл
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         String fileName = "";
         List<String> names = new ArrayList<>();
-        while (!"end".equals(fileName = bufferedReader.readLine()))
-        {
+        while (!"end".equals(fileName = bufferedReader.readLine())) {
             names.add(fileName);
         }
         bufferedReader.close();
@@ -29,8 +26,7 @@ public class Solution
         String fileWrite = firstPart.substring(0, partEndIndex);
         BufferedWriter fo = new BufferedWriter(new FileWriter(fileWrite));
 
-        for (String fileName1 : names)
-        {
+        for (String fileName1 : names) {
             bufferedReader = new BufferedReader(new FileReader(fileName1));
 
             while (bufferedReader.ready())

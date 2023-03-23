@@ -6,17 +6,13 @@ package com.javarush.task.task21.task2108;
 
 import java.util.Arrays;
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Tree tree = new Tree("willow", new String[]{"s1", "s2", "s3", "s4"});
         Tree clone = null;
-        try
-        {
+        try {
             clone = tree.clone();
-        } catch (Exception /*|CloneNotSupportedException*/ e)
-        {
+        } catch (Exception /*|CloneNotSupportedException*/ e) {
             e.printStackTrace();
         }
 
@@ -27,48 +23,40 @@ public class Solution
         System.out.println(clone.branches);
     }
 
-    public static class Plant
-    {
+    public static class Plant {
         private String name;
 
-        public Plant(String name)
-        {
+        public Plant(String name) {
             this.name = name;
         }
 
-        public String getName()
-        {
+        public String getName() {
             return name;
         }
 
-        public Plant clone()
-        {
+        public Plant clone() {
             return new Plant(this.name);
         }
     }
 
-    public static class Tree extends Plant implements Cloneable
-    {
+    public static class Tree extends Plant implements Cloneable {
         private String[] branches;
 
-        public Tree(String name, String[] branches)
-        {
+        public Tree(String name, String[] branches) {
             super(name);
             this.branches = branches;
             //this.branches;// = branches;
         }
 
-        public String[] getBranches()
-        {
+        public String[] getBranches() {
             return branches;
         }
 
         @Override
-        public Tree clone()
-        {
+        public Tree clone() {
             String[] branchesClone = Arrays.copyOf(this.branches, this.branches.length);
 
-            return new Tree(this.getName(),branchesClone);
+            return new Tree(this.getName(), branchesClone);
         }
 
         /*

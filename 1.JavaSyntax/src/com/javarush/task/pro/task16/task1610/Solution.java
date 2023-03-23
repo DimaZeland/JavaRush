@@ -6,8 +6,7 @@ import java.time.LocalTime;
 Тренировка на время
 */
 
-public class Solution
-{
+public class Solution {
 
     static LocalTime timeMax = LocalTime.MAX;
     static LocalTime timeMin = LocalTime.MIN;
@@ -16,8 +15,7 @@ public class Solution
     static LocalTime time3 = LocalTime.of(0, 45, 0, 61);
     static LocalTime time4 = LocalTime.of(14, 0, 45, 1001);
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println(LocalTime.of(time1.getHour(), time2.getMinute(), time3.getSecond(), time4.getNano()));
     }
 }

@@ -13,8 +13,7 @@ public class Solution {
         printValues(SomeTest.class);
     }
 
-    public static boolean printFullyQualifiedNames(Class c)
-    {
+    public static boolean printFullyQualifiedNames(Class c) {
         try {
             PrepareMyTest prepareMyTest = (PrepareMyTest) c.getAnnotation(PrepareMyTest.class);
             for (String fullyQualifiedName : prepareMyTest.fullyQualifiedNames()) {
@@ -27,11 +26,9 @@ public class Solution {
     }
 
     public static boolean printValues(Class c) {
-        try
-        {
+        try {
             PrepareMyTest prepareMyTest = (PrepareMyTest) c.getAnnotation(PrepareMyTest.class);
-            for(Class<?> clazz: prepareMyTest.value())
-            {
+            for (Class<?> clazz : prepareMyTest.value()) {
                 System.out.println(clazz.getSimpleName());
             }
         } catch (Exception e) {

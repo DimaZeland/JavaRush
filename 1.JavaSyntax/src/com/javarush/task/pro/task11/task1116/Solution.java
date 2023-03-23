@@ -10,6 +10,7 @@ public class Solution {
         System.out.println(cat.name);
     }
 }
+
 class Cat {
     String name = "Tom";
 }

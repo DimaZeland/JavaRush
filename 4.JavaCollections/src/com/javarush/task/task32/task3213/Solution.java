@@ -17,14 +17,12 @@ public class Solution {
     public static String decode(StringReader reader, int key) throws IOException {
         StringBuilder decodeString = new StringBuilder();
 
-        if(null != reader)
-        {
+        if (null != reader) {
             BufferedReader bufferedReader = new BufferedReader(reader);
             int ch;
 
-            while(-1 != (ch = bufferedReader.read()))
-            {
-                ch+= key;
+            while (-1 != (ch = bufferedReader.read())) {
+                ch += key;
                 decodeString.append((char) ch);
             }
         }

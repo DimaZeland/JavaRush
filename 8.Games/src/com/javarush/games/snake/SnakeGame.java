@@ -2,8 +2,7 @@ package com.javarush.games.snake;
 
 import com.javarush.engine.cell.*;
 
-public class SnakeGame extends Game
-{
+public class SnakeGame extends Game {
 
     public static final int WIDTH = 15;
     public static final int HEIGHT = 15;
@@ -15,14 +14,12 @@ public class SnakeGame extends Game
     private int score;
 
     @Override
-    public void initialize()
-    {
+    public void initialize() {
         setScreenSize(WIDTH, HEIGHT);
         createGame();
     }
 
-    private void createGame()
-    {
+    private void createGame() {
         snake = new Snake(WIDTH / 2, HEIGHT / 2);
         //apple = new Apple(5,5);
         createNewApple();
@@ -36,25 +33,20 @@ public class SnakeGame extends Game
         setScore(score);
     }
 
-    private void drawScene()
-    {
-        for (int x = 0; x < WIDTH; x++)
-        {
-            for (int y = 0; y < HEIGHT; y++)
-            {
-                setCellValueEx(x, y, Color.DARKSEAGREEN,"");
+    private void drawScene() {
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                setCellValueEx(x, y, Color.DARKSEAGREEN, "");
             }
         }
         snake.draw(this);
         apple.draw(this);
     }
 
-    public void onTurn(int step)
-    {
+    public void onTurn(int step) {
         snake.move(apple);
 
-        if(apple.isAlive == false)
-        {
+        if (apple.isAlive == false) {
             createNewApple();
             score += 5;
             setScore(score);
@@ -62,23 +54,21 @@ public class SnakeGame extends Game
             setTurnTimer(turnDelay);
         }
 
-        if(false == snake.isAlive)
+        if (false == snake.isAlive)
             gameOver();
 
-        if(snake.getLength() > GOAL)
+        if (snake.getLength() > GOAL)
             win();
 
         drawScene();
     }
-    
+
     @Override
-    public void onKeyPress(Key key)
-    {
+    public void onKeyPress(Key key) {
         if (Key.SPACE == key && true == isGameStopped)
             createGame();
 
-        switch (key)
-        {
+        switch (key) {
             case LEFT:
                 snake.setDirection(Direction.LEFT);
                 break;
@@ -94,31 +84,27 @@ public class SnakeGame extends Game
         }
     }
 
-    private void createNewApple()
-    {
-            int x = getRandomNumber(WIDTH);
-            int y = getRandomNumber(HEIGHT);
+    private void createNewApple() {
+        int x = getRandomNumber(WIDTH);
+        int y = getRandomNumber(HEIGHT);
 
-        while (snake.checkCollision(new Apple(x,y)))
-        {
+        while (snake.checkCollision(new Apple(x, y))) {
             x = getRandomNumber(WIDTH);
             y = getRandomNumber(HEIGHT);
         }
 
-        apple = new Apple(x,y);
+        apple = new Apple(x, y);
     }
 
-    private void gameOver()
-    {
+    private void gameOver() {
         stopTurnTimer();
         isGameStopped = true;
-        showMessageDialog(Color.NONE,"GAME OVER",Color.RED,50);
+        showMessageDialog(Color.NONE, "GAME OVER", Color.RED, 50);
     }
 
-    private void win()
-    {
+    private void win() {
         stopTurnTimer();
         isGameStopped = true;
-        showMessageDialog(Color.NONE,"YOU WIN",Color.GOLD,50);
+        showMessageDialog(Color.NONE, "YOU WIN", Color.GOLD, 50);
     }
 }

@@ -7,10 +7,8 @@ import java.util.ArrayList;
 Выделяем числа
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String f1 = br.readLine();
@@ -22,8 +20,7 @@ public class Solution
 
         StringBuilder sb = new StringBuilder();
 
-        while (fileReader.ready())
-        {
+        while (fileReader.ready()) {
             char ch = (char) fileReader.read();
             sb.append(ch);
         }
@@ -32,13 +29,12 @@ public class Solution
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(f2));
 
-        for (String s : sb.toString().split(" "))
-        {
+        for (String s : sb.toString().split(" ")) {
             int i = 0;
-            try
-            {
+            try {
                 i = Integer.parseInt(s);
-            } catch (NumberFormatException e) {}
+            } catch (NumberFormatException e) {
+            }
             bw.append(String.valueOf(i) + " ");
         }
         sb = null;

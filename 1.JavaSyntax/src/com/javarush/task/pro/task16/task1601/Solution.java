@@ -12,7 +12,7 @@ import java.util.Locale;
 
 public class Solution {
 
-    static Date birthDate = new Date(90,4,18);
+    static Date birthDate = new Date(90, 4, 18);
 
     public static void main(String[] args) {
         System.out.println(getDayOfWeek(birthDate));
@@ -22,7 +22,7 @@ public class Solution {
         DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols() {
             @Override
             public String[] getWeekdays() {
-                return new String[] {"", "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"};
+                return new String[]{"", "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"};
             }
         };
 
@@ -30,5 +30,5 @@ public class Solution {
 
         String message = sdf.format(date);
         return message;
-           }
+    }
 }

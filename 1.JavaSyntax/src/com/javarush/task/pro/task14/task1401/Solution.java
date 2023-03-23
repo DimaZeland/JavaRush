@@ -43,22 +43,22 @@ public class Solution {
 
         int status = user.setName(name);
 
-        if(-1 == status)
+        if (-1 == status)
             System.out.println(CANNOT_BE_NULL);
-        else if(-2 == status)
+        else if (-2 == status)
             System.out.println(CANNOT_BE_EMPTY);
-        else if(-3 == status)
+        else if (-3 == status)
             System.out.println(CANNOT_CONTAIN_DIGIT);
-        else if(0 != status)
+        else if (0 != status)
             System.out.println(UNKNOWN_ERROR);
 
         status = user.setAge(age);
 
-        if(-1 == status)
+        if (-1 == status)
             System.out.println(CANNOT_BE_NEGATIVE);
-        else if(-2 == status)
+        else if (-2 == status)
             System.out.println(CANNOT_BE_TOO_BIG);
-        else if(0 != status)
+        else if (0 != status)
             System.out.println(UNKNOWN_ERROR);
 
         users.add(user);
@@ -67,7 +67,7 @@ public class Solution {
     static void findUserIndex(User user) {
         int status = users.indexOf(user);
 
-        if(-1 == status)
+        if (-1 == status)
             System.out.printf(NOT_FOUND, user.getName());
         else
             System.out.printf(FOUND, user.getName(), users.indexOf(user));

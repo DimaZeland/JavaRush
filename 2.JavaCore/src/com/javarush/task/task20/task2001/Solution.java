@@ -10,13 +10,10 @@ import java.util.List;
 Читаем и пишем в файл: Human
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         //исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
-        try
-        {
+        try {
             File your_file_name = File.createTempFile("your_file_name", null);
             OutputStream outputStream = new FileOutputStream(your_file_name);
             InputStream inputStream = new FileInputStream(your_file_name);
@@ -32,38 +29,31 @@ public class Solution
 
             System.out.println(ivanov.equals(somePerson));
 
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             //e.printStackTrace();
             System.out.println("Oops, something wrong with my file");
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             //e.printStackTrace();
             System.out.println("Oops, something wrong with save/load method");
         }
     }
 
-    public static class Human
-    {
+    public static class Human {
         public String name;
         public List<Asset> assets = new ArrayList<>();
 
-        public Human()
-        {
+        public Human() {
         }
 
-        public Human(String name, Asset... assets)
-        {
+        public Human(String name, Asset... assets) {
             this.name = name;
-            if (assets != null)
-            {
+            if (assets != null) {
                 this.assets.addAll(Arrays.asList(assets));
             }
         }
 
         @Override
-        public boolean equals(Object o)
-        {
+        public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
@@ -74,15 +64,13 @@ public class Solution
         }
 
         @Override
-        public int hashCode()
-        {
+        public int hashCode() {
             int result = name != null ? name.hashCode() : 0;
             result = 31 * result + (assets != null ? assets.hashCode() : 0);
             return result;
         }
 
-        public void save(OutputStream outputStream) throws Exception
-        {
+        public void save(OutputStream outputStream) throws Exception {
             PrintWriter writer = new PrintWriter(outputStream);
 
             String isNamePresent = name != null ? "yes" : "no";
@@ -104,8 +92,7 @@ public class Solution
             writer.close();
         }
 
-        public void load(InputStream inputStream) throws Exception
-        {
+        public void load(InputStream inputStream) throws Exception {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
             String isNamePresent = reader.readLine();
@@ -118,8 +105,7 @@ public class Solution
             String line = "";
 
             if ("yes".equals(isAssetsPresent))
-                while (null != (line = reader.readLine()))
-                {
+                while (null != (line = reader.readLine())) {
                     String[] assetNamePrice = line.split(" ");
 
                     assets.add(new Asset(assetNamePrice[0], Double.parseDouble(assetNamePrice[1])));

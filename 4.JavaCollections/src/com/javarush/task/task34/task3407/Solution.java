@@ -77,9 +77,8 @@ public class Solution {
 
         public List<PhantomReference<Monkey>> getPopulatedList() {
             ArrayList<PhantomReference<Monkey>> list = new ArrayList<PhantomReference<Monkey>>();
-            for (int i = 0; i < 200; i++)
-            {
-                list.add(new PhantomReference<Monkey>(new Monkey(),helper.getQueue()));
+            for (int i = 0; i < 200; i++) {
+                list.add(new PhantomReference<Monkey>(new Monkey(), helper.getQueue()));
             }
             return list;
         }

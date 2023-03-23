@@ -37,17 +37,12 @@ public class Solution {
             if (input.toLowerCase().equals(EXIT)) {
                 break;
             }
-            try
-            {
+            try {
                 int studentId = Integer.parseInt(input);
                 System.out.println(ANSWERING + studentsJournal.get(studentId));
-            }
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 System.out.println(INTEGER_REQUIRED);
-            }
-            catch (ArrayIndexOutOfBoundsException e)
-            {
+            } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println(NOT_EXIST);
             }
         }

@@ -19,6 +19,6 @@ public class Solution {
     }
 
     public static Set<String> getFilteredStrings(Stream<String> stringStream) {
-        return stringStream.filter(str->str.length() > 6).collect(toSet());
+        return stringStream.filter(str -> str.length() > 6).collect(toSet());
     }
 }

@@ -25,18 +25,15 @@ public class View extends JFrame {
         setVisible(true);
     }
 
-    public void setEventListener(EventListener eventListener)
-    {
+    public void setEventListener(EventListener eventListener) {
         field.setEventListener(eventListener);
     }
 
-    public void update()
-    {
+    public void update() {
         field.repaint();
     }
 
-    public GameObjects getGameObjects()
-    {
+    public GameObjects getGameObjects() {
         return controller.getGameObjects();
     }
 

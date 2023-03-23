@@ -52,11 +52,9 @@ public class Solution {
         }
     }
 
-    public static class SortThread extends Thread
-    {
+    public static class SortThread extends Thread {
         @Override
-        public void run()
-        {
+        public void run() {
             sort(testArray);
         }
     }
