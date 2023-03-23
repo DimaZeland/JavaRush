@@ -12,6 +12,8 @@
 
 # Package Files #
 *.jar
+# add .jar files in under folders
+!lib/*jar
 *.war
 *.nar
 *.ear
