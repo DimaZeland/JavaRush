@@ -32,6 +32,9 @@ public class EnemyFleet {
                 ships.add(new EnemyShip(x * STEP, y * STEP + 12));
             }
         }
+
+        Boss boss = new Boss(STEP * COLUMNS_COUNT / 2 - ShapeMatrix.BOSS_ANIMATION_FIRST.length / 2 - 1, 5);
+        ships.add(boss);
     }
 
     private double getLeftBorder() {
@@ -78,5 +81,61 @@ public class EnemyFleet {
         for (EnemyShip ship : ships) {
             ship.move(currentDirection, speed);
         }
+    }
+
+    public Bullet fire(Game game) {
+        if (ships.isEmpty()) {
+            return null;
+        }
+
+        int random = game.getRandomNumber(100 / SpaceInvadersGame.COMPLEXITY);
+        if (random > 0) {
+            return null;
+        }
+
+        int shipNumber = game.getRandomNumber(ships.size());
+        EnemyShip ship = ships.get(shipNumber);
+
+        return ship.fire();
+    }
+
+    public int verifyHit(List<Bullet> bullets) {
+        if (bullets.isEmpty()) {
+            return 0;
+        }
+
+        int score = 0;
+        for (Bullet bullet : bullets) {
+            for (EnemyShip ship : ships) {
+                if (ship.isAlive && bullet.isAlive && ship.isCollision(bullet)) {
+                    ship.kill();
+                    bullet.kill();
+                    score += ship.score;
+                }
+            }
+        }
+        return score;
+    }
+
+    public void deleteHiddenShips() {
+        for (EnemyShip ship : new ArrayList<>(ships)) {
+            if (!ship.isVisible()) {
+                ships.remove(ship);
+            }
+        }
+    }
+
+    public double getBottomBorder() {
+        double bottom = 0;
+        for (GameObject ship : ships) {
+            if (ship.y + ship.height > bottom) {
+                bottom = ship.y + ship.height;
+            }
+        }
+        return bottom;
+    }
+
+    public int getShipsCount() {
+        return ships.size();
     }
 }
