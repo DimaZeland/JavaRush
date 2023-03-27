@@ -2,6 +2,24 @@
 
 🏆 Solutions to the challenges of the [JavaRush online programming course](https://javarush.com/quests)
 
+### ⚙️ The project uses:
+
+- Java SE 19 (for distributing a portable code for desktops and servers)
+- Apache Maven (project build system)
+- FasterXML Jackson (a suite of data-processing tools for Java)
+- JavaFx (to create a functional application with the ability to use a lightweight API)
+- Jsoup (Java library for working with real-world HTML)
+- JAXB API (automate the mapping between XML documents and Java objects)
+- The Apache Commons Collections (extend and augment the Java Collections Framework)
+- Guava (Google Core Libraries For Java)
+- JUnit 4 framework (to perform unit, integration and acceptance tests) 
+- Hamcrest library (for conveniently composing test checks using the assertThat predicate)
+- Log4j (Apache Logging Service for logging application behavior)
+- SLF4J logging library (adapter for working with Log4J logging environment)
+- Apache HttpClient (client side of the most recent HTTP standards)
+- Jakarta Mail (to send and receive email via SMTP, POP3 and IMAP)
+- Apache Tomcat (web server and servlet container)
+
 ## 📚 Contents
 
 ### [1️⃣ Java Syntax](https://github.com/DimaZeland/JavaRush/tree/master/1.JavaSyntax/src/com/javarush/task/pro)
