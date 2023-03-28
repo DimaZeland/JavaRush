@@ -15,17 +15,17 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <repositories>
-<!--        mvn deploy:deploy-file -Durl=file:lib2 -Dfile=desktop-game-engine.jar -DgroupId=com.javarush -DartifactId=desktop-game-engine -Dpackaging=jar -Dversion=1-->
+<!--        mvn deploy:deploy-file -Durl=file:lib -Dfile=desktop-game-engine.jar -DgroupId=com.javarush -DartifactId=desktop-game-engine -Dpackaging=jar -Dversion=1-->
         <repository>
             <id>localrep</id>
             <name>local repository</name>
-            <url>file:${project.basedir}/lib2</url>
+            <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-<!--            <systemPath>${project.basedir}/lib2</systemPath>-->
+<!--            <systemPath>${project.basedir}/lib</systemPath>-->
             <groupId>com.javarush</groupId>
             <artifactId>desktop-game-engine</artifactId>
             <version>1</version>
