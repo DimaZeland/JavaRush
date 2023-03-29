@@ -37,6 +37,9 @@ replay_pid*
 # compiled software files
 out/
 
+# maven compile code
+**/target/
+
 # Java Rush Plugin files
 Instruction.png
 JavaRushPlugin.properties
