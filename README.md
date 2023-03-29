@@ -16,10 +16,11 @@
 - [Hamcrest library](https://hamcrest.org/)
 - [Apache Log4j](https://logging.apache.org/log4j/2.x/)
 - [SLF4J logging library](https://www.slf4j.org/)
+- [HTML](https://html.spec.whatwg.org/multipage/)
+- [Apache Tomcat](https://tomcat.apache.org/)
 - [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.2.x/)
 - [Jakarta Mail](https://jakarta.ee/specifications/mail/2.0/jakarta-mail-spec-2.0.html)
 - [JavaBeans Activation Framework](https://www.oracle.com/java/technologies/javase/jaf.html)
-- [Apache Tomcat](https://tomcat.apache.org/)
 
 ## 📚 Contents
 
