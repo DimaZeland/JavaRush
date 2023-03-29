@@ -19,10 +19,9 @@
     </modules>
 
     <properties>
-        <!--        <maven.compiler.source>17</maven.compiler.source>-->
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
-        <project.java.version>19</project.java.version>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
+        <project.java.version>20</project.java.version>
         <project.build.sourceEncoding>Windows-1251</project.build.sourceEncoding>
     </properties>
 
